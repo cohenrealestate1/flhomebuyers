@@ -1,6 +1,7 @@
+import React from "react";
 import Head from "next/head";
 
-export default function Home() {
+export const App = () => {
   return (
     <div>
       <Head>
@@ -11,4 +12,6 @@ export default function Home() {
       <main>Hello, World!</main>
     </div>
   );
-}
+};
+
+export default App;
