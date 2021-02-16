@@ -2,30 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import Link from "../link";
 import { Routes } from "../../constants/routes";
+import Top from "./top";
+import Bottom from "./bottom";
 
-const Container = styled.div`
+const Container = styled.nav`
   width: 60%;
   margin: auto;
   display: flex;
+  flex-direction: column;
 `;
 
-const Left = styled.div`
-  margin-right: auto;
-`;
-
-const Right = styled.div`
-  margin-left: auto;
+const TopContainer = styled.div`
+  margin-bottom: 36px;
+  display: flex;
 `;
 
 export const Header = () => {
   return (
     <Container>
-      <Left>Logo</Left>
-      <Right>
-        CALL US! (954) 661-6317{" "}
-        <Link href={Routes.AboutUs} text="About us" color="red" />{" "}
-        <Link href={Routes.ContactUs} text="Contact us" color="red" />
-      </Right>
+      <TopContainer>
+        <Top />
+      </TopContainer>
+      <Bottom />
     </Container>
   );
 };
