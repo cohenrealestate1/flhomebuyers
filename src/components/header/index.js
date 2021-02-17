@@ -7,7 +7,8 @@ import Bottom from "./bottom";
 
 const Container = styled.nav`
   width: 60%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
 `;
