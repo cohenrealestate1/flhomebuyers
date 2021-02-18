@@ -5,6 +5,7 @@ import { withFormik, useFormikContext } from "formik";
 import getInitialValues from "../../components/form/initial-values";
 import Step1 from "./step-1";
 import Step2 from "./step-2";
+import { FormContainer } from "./styled-components";
 
 export const Form = () => {
   const {
@@ -19,7 +20,7 @@ export const Form = () => {
         return <Step2 />;
     }
   };
-  return <Page content={getContent()} />;
+  return <FormContainer>{getContent()}</FormContainer>;
 };
 
 export default withFormik({
