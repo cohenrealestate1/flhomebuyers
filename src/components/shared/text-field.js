@@ -6,14 +6,17 @@ import { useFormikContext } from "formik";
 interface Props {
   fieldName: string;
   label: string;
+  value: any;
+  restrictToNumbers: boolean;
 }
 
 export const TextField = (props: Props) => {
   const { setFieldValue } = useFormikContext();
-  const { fieldName, label } = props;
+  const { fieldName, label, value } = props;
   return (
     <MaterialTextField
       label={label}
+      value={value}
       onChange={(event) => setFieldValue(fieldName, event.target.value, false)}
     />
   );

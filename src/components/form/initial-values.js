@@ -8,7 +8,7 @@ type FormValuesType = {
     email: string,
   },
   step2: {
-    addressConfirm: string,
+    address: string,
     city: string,
     state: string,
     zip: string,
@@ -39,7 +39,7 @@ export const getInitialValues = (): FormValuesType => {
       email: "",
     },
     step2: {
-      addressConfirm: "",
+      address: "",
       city: "",
       state: "",
       zip: "",
