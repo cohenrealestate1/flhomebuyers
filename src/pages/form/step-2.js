@@ -5,7 +5,7 @@ import { useFormikContext } from "formik";
 import TextField from "../../components/shared/text-field";
 import ZipInput from "../../components/shared/zip-input";
 import Select from "../../components/shared/select";
-import { States } from "../../constants/states";
+import { StatesOptions } from "../../constants/states";
 
 export const FormStep2 = () => {
   const {
@@ -27,7 +27,7 @@ export const FormStep2 = () => {
         fieldName="step2.state"
         label="State"
         value={state}
-        options={States}
+        options={StatesOptions}
       />
       <ZipInput fieldName="step2.zip" label="Zipcode" value={zip} />
     </>

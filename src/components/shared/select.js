@@ -7,7 +7,7 @@ interface Props {
   fieldName: string;
   label: string;
   value: any;
-  options: { [key: string]: string };
+  options: any[];
 }
 
 export const Select = (props: Props) => {
@@ -19,9 +19,9 @@ export const Select = (props: Props) => {
       value={value}
       onChange={(event) => setFieldValue(fieldName, event.target.value, false)}
     >
-      {Object.keys(options).map((optionKey) => (
-        <MenuItem key={options[optionKey]} value={options[optionKey]}>
-          {options[optionKey]}
+      {options.map((option) => (
+        <MenuItem key={option} value={option}>
+          {option}
         </MenuItem>
       ))}
     </MaterialSelect>
