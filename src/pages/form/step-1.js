@@ -8,22 +8,26 @@ import PhoneInput from "../../components/shared/phone-input";
 export const FormStep1 = () => {
   const {
     values: {
-      step1: { address, phoneNumber, email },
+      formWide: { email, phoneNumber, address },
     },
   } = useFormikContext();
   return (
     <>
       <TextField
-        fieldName="step1.address"
+        fieldName="formWide.address"
         label="Property address"
         value={address}
       />
       <PhoneInput
-        fieldName="step1.phoneNumber"
+        fieldName="formWide.phoneNumber"
         label="Phone number"
         value={phoneNumber}
       />
-      <TextField fieldName="step1.email" label="Email address" value={email} />
+      <TextField
+        fieldName="formWide.email"
+        label="Email address"
+        value={email}
+      />
     </>
   );
 };

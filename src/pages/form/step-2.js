@@ -10,14 +10,15 @@ import { States } from "../../constants/states";
 export const FormStep2 = () => {
   const {
     values: {
-      step2: { address, city, zip, state },
+      formWide: { address },
+      step2: { city, zip, state },
     },
   } = useFormikContext();
 
   return (
     <>
       <TextField
-        fieldName="step2.address"
+        fieldName="formWide.address"
         label="Street address"
         value={address}
       />

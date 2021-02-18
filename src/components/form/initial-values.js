@@ -3,13 +3,12 @@ import { States } from "../../constants/states";
 
 type FormValuesType = {
   step: number,
-  step1: {
-    address: string,
-    phoneNumber: string,
+  formWide: {
     email: string,
+    phoneNumber: string,
+    address: string,
   },
   step2: {
-    address: string,
     city: string,
     state: string,
     zip: string,
@@ -17,8 +16,6 @@ type FormValuesType = {
   step3: {
     firstName: string,
     lastName: string,
-    email: string,
-    phone: string,
   },
   step4: {
     numBeds: number,
@@ -34,13 +31,12 @@ type FormValuesType = {
 export const getInitialValues = (): FormValuesType => {
   return {
     step: 1,
-    step1: {
-      address: "",
-      phoneNumber: "",
+    formWide: {
       email: "",
+      phoneNumber: "",
+      address: "",
     },
     step2: {
-      address: "",
       city: "",
       state: States.Florida,
       zip: "",
@@ -48,8 +44,6 @@ export const getInitialValues = (): FormValuesType => {
     step3: {
       firstName: "",
       lastName: "",
-      email: "",
-      phone: "",
     },
     step4: {
       numBeds: 1,

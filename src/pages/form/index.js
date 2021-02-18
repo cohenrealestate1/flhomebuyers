@@ -4,6 +4,7 @@ import { withFormik, useFormikContext } from "formik";
 import getInitialValues from "../../components/form/initial-values";
 import Step1 from "./step-1";
 import Step2 from "./step-2";
+import Step3 from "./step-3";
 import { FormContainer } from "./styled-components";
 import styled from "styled-components";
 
@@ -37,6 +38,9 @@ export const Form = () => {
         </ChildContainer>
         <ChildContainer>
           <Step2 />
+        </ChildContainer>
+        <ChildContainer>
+          <Step3 />
         </ChildContainer>
       </MainContainer>
     </FormContainer>
