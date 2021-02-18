@@ -13,7 +13,6 @@ export const TextField = (props: Props) => {
   const { fieldName, label } = props;
   return (
     <MaterialTextField
-      id="outlined"
       label={label}
       onChange={(event) => setFieldValue(fieldName, event.target.value, false)}
     />
