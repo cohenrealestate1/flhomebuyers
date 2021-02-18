@@ -29,3 +29,5 @@ export const IsOccupiedOptions = [
 ];
 
 export const IsListedOptions = ["Yes", "No"];
+
+export const NeedToSellFastOptions = ["Yes", "No"];

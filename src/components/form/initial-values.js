@@ -25,6 +25,11 @@ type FormValuesType = {
     isOccupied: string,
     isListed: boolean,
   },
+  step5: {
+    needToSellFast: string,
+    whySelling: string,
+    ultimateGoal: string,
+  },
 };
 
 export const getInitialValues = (): FormValuesType => {
@@ -52,6 +57,11 @@ export const getInitialValues = (): FormValuesType => {
       repairsNeeded: "",
       isOccupied: "",
       isListed: true,
+    },
+    step5: {
+      needToSellFast: "Yes",
+      whySelling: "",
+      ultimateGoal: "",
     },
   };
 };

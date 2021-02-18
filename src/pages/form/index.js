@@ -6,6 +6,7 @@ import Step1 from "./step-1";
 import Step2 from "./step-2";
 import Step3 from "./step-3";
 import Step4 from "./step-4";
+import Step5 from "./step-5";
 import { FormContainer } from "./styled-components";
 import styled from "styled-components";
 
@@ -45,6 +46,9 @@ export const Form = () => {
         </ChildContainer>
         <ChildContainer>
           <Step4 />
+        </ChildContainer>
+        <ChildContainer>
+          <Step5 />
         </ChildContainer>
       </MainContainer>
     </FormContainer>
