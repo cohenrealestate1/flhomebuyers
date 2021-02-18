@@ -7,7 +7,6 @@ interface Props {
   fieldName: string;
   label: string;
   value: any;
-  restrictToNumbers: boolean;
 }
 
 export const TextField = (props: Props) => {

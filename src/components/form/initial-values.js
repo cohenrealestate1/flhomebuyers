@@ -1,4 +1,5 @@
 // @flow
+import { States } from "../../constants/states";
 
 type FormValuesType = {
   step: number,
@@ -41,7 +42,7 @@ export const getInitialValues = (): FormValuesType => {
     step2: {
       address: "",
       city: "",
-      state: "",
+      state: States.Florida,
       zip: "",
     },
     step3: {
