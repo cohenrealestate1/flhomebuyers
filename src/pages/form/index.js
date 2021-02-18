@@ -1,5 +1,5 @@
+// @flow
 import React from "react";
-import { useFormik } from "formik";
 import Page from "../../components/page";
 
 export const Form = () => {

@@ -30,7 +30,7 @@ type FormValuesType = {
   },
 };
 
-export const getInitialValues = () => {
+export const getInitialValues = (): FormValuesType => {
   return {
     step: 1,
     step1: {

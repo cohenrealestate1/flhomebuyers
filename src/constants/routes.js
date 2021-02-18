@@ -1,3 +1,4 @@
+// @flow
 export const Routes = {
   Home: "/",
   AboutUs: "/about-us",

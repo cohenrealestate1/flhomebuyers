@@ -1,3 +1,4 @@
+// @flow
 import Home from "./home";
 import AboutUs from "./about-us";
 import ContactUs from "./contact-us";

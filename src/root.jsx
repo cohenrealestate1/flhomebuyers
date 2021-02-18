@@ -1,6 +1,6 @@
+// @flow
 import React from "react";
 import { Route, Switch } from "fusion-plugin-react-router";
-import Home from "./pages/home";
 import styled from "styled-components";
 import { Routes } from "./constants/routes";
 import { Pages } from "./pages";

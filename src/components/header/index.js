@@ -1,7 +1,6 @@
+// @flow
 import React from "react";
 import styled from "styled-components";
-import Link from "../link";
-import { Routes } from "../../constants/routes";
 import Top from "./top";
 import Bottom from "./bottom";
 
