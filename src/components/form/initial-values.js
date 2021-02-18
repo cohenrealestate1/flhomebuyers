@@ -61,3 +61,5 @@ export const getInitialValues = (): FormValuesType => {
     },
   };
 };
+
+export default getInitialValues;
