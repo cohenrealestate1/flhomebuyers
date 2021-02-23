@@ -1,6 +1,6 @@
 // @flow
 
-type FormValuesType = {
+export type FormValuesType = {
   step: number,
   formWide: {
     email: string,
@@ -23,7 +23,7 @@ type FormValuesType = {
     condition: string,
     repairsNeeded: string,
     isOccupied: string,
-    isListed: boolean,
+    isListed: string,
   },
   step5: {
     needToSellFast: string,
@@ -56,7 +56,7 @@ export const getInitialValues = (): FormValuesType => {
       condition: "",
       repairsNeeded: "",
       isOccupied: "",
-      isListed: true,
+      isListed: "",
     },
     step5: {
       needToSellFast: "Yes",

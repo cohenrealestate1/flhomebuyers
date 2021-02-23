@@ -22,9 +22,7 @@ const ChildContainer = styled.div`
 `;
 
 export const Form = () => {
-  const {
-    values: { step },
-  } = useFormikContext();
+  const { values } = useFormikContext();
   const sendEmail = useRPCRedux("sendEmail");
 
   // const getContent = () => {
@@ -54,7 +52,7 @@ export const Form = () => {
         <ChildContainer>
           <Step5 />
         </ChildContainer>
-        <Button onClick={async () => console.log(await sendEmail())}>
+        <Button onClick={async () => console.log(await sendEmail(values))}>
           Click me
         </Button>
       </MainContainer>
