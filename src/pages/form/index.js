@@ -9,6 +9,8 @@ import Step4 from "./step-4";
 import Step5 from "./step-5";
 import { FormContainer } from "./styled-components";
 import styled from "styled-components";
+import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
+import { Button } from "@material-ui/core";
 
 const MainContainer = styled.div`
   display: flex;
@@ -23,6 +25,8 @@ export const Form = () => {
   const {
     values: { step },
   } = useFormikContext();
+  const sendEmail = useRPCRedux("sendEmail");
+
   // const getContent = () => {
   //   switch (step) {
   //     case 1:
@@ -50,6 +54,9 @@ export const Form = () => {
         <ChildContainer>
           <Step5 />
         </ChildContainer>
+        <Button onClick={async () => console.log(await sendEmail())}>
+          Click me
+        </Button>
       </MainContainer>
     </FormContainer>
   );
