@@ -1,7 +1,6 @@
 // @flow
+import { sendEmail } from "../index";
 
 export const handlers = {
-  sendEmail: async ({ name }, ctx) => {
-    return [1, 2, 3];
-  },
+  sendEmail,
 };
