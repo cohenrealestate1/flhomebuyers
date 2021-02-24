@@ -1,6 +1,10 @@
 // @flow
-import React from "react";
-import { TextField as MaterialTextField, MenuItem } from "@material-ui/core";
+import React, { ReactNode } from "react";
+import {
+  TextField as MaterialTextField,
+  MenuItem,
+  InputAdornment,
+} from "@material-ui/core";
 import { useFormikContext } from "formik";
 import styled from "styled-components";
 import { StyledFormControlLabel } from "./styled-components";
@@ -13,6 +17,7 @@ interface Props {
   onChange?: Function;
   select?: boolean;
   options?: any[];
+  adornment?: ReactNode;
 }
 
 const StyledMaterialTextField = styled(MaterialTextField)`
@@ -27,7 +32,6 @@ const StyledMaterialTextField = styled(MaterialTextField)`
   }
 `;
 
-// TODO Add adornment
 export const TextField = (props: Props) => {
   const { setFieldValue } = useFormikContext();
   const {
@@ -37,11 +41,20 @@ export const TextField = (props: Props) => {
     multiline = false,
     select = false,
     options = [],
+    adornment,
   } = props;
   const onChange = (event) =>
     props.onChange
       ? props.onChange(event)
       : setFieldValue(fieldName, event.target.value, false);
+
+  const InputProps = adornment
+    ? {
+        startAdornment: (
+          <InputAdornment position="start">{adornment}</InputAdornment>
+        ),
+      }
+    : {};
 
   return (
     <StyledFormControlLabel
@@ -52,8 +65,8 @@ export const TextField = (props: Props) => {
           select={select}
           multiline={multiline}
           onChange={onChange}
+          InputProps={InputProps}
         >
-          {" "}
           {options.map((option) => (
             <MenuItem key={option} value={option}>
               {option}

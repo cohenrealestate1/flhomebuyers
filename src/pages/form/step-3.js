@@ -5,6 +5,8 @@ import { useFormikContext } from "formik";
 import TextField from "../../components/shared/text-field";
 import PhoneInput from "../../components/shared/phone-input";
 import FormStep from "./form-step";
+import { assetUrl } from "fusion-core";
+import { StyledAdornment } from "./styled-components";
 
 export const FormStep3 = () => {
   const {
@@ -29,11 +31,13 @@ export const FormStep3 = () => {
         fieldName="formWide.email"
         label="Email address"
         value={email}
+        adornment={<StyledAdornment src={assetUrl("../../static/email.svg")} />}
       />
       <PhoneInput
         fieldName="formWide.phoneNumber"
         label="Phone number"
         value={phoneNumber}
+        adornment={<StyledAdornment src={assetUrl("../../static/phone.svg")} />}
       />
     </FormStep>
   );

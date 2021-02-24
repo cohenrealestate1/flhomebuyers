@@ -7,6 +7,8 @@ import ZipInput from "../../components/shared/zip-input";
 import Select from "../../components/shared/select";
 import { StatesOptions } from "../../constants/states";
 import FormStep from "./form-step";
+import { assetUrl } from "fusion-core";
+import { StyledAdornment } from "./styled-components";
 
 export const FormStep2 = () => {
   const {
@@ -22,6 +24,7 @@ export const FormStep2 = () => {
         fieldName="formWide.address"
         label="Street address"
         value={address}
+        adornment={<StyledAdornment src={assetUrl("../../static/house.svg")} />}
       />
       <TextField fieldName="step2.city" label="City" value={city} />
       <Select
