@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "../link";
 import { Routes } from "../../constants/routes";
+import { PhoneNumber } from "../../constants";
 
 const Left = styled.div`
   margin-right: auto;
@@ -17,7 +18,7 @@ export const Top = () => {
     <>
       <Left>Logo</Left>
       <Right>
-        CALL US! (954) 661-6317{" "}
+        CALL US! {PhoneNumber}{" "}
         <Link href={Routes.AboutUs} text="About us" color="red" />{" "}
         <Link href={Routes.ContactUs} text="Contact us" color="red" />
       </Right>

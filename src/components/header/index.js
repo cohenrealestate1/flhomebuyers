@@ -3,9 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import Top from "./top";
 import Bottom from "./bottom";
+import { StyleConstants } from "../../constants/styles";
 
 const Container = styled.nav`
-  width: 60%;
+  width: ${StyleConstants.PageWidth};
   margin-left: auto;
   margin-right: auto;
   display: flex;

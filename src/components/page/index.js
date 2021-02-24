@@ -4,11 +4,19 @@ import Header from "../header";
 import { Container } from "@material-ui/core";
 import styled from "styled-components";
 import Footer from "../footer";
+import { StyleConstants } from "../../constants/styles";
 
 const LayoutContainer = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+`;
+
+const ContentContainer = styled(Container)`
+  &.MuiContainer-root {
+    width: ${StyleConstants.PageWidth};
+    box-sizing: content-box;
+  }
 `;
 
 type Props = {
@@ -20,7 +28,7 @@ export const Page = (props: Props) => {
   return (
     <LayoutContainer>
       <Header />
-      <Container>{content}</Container>
+      <ContentContainer>{content}</ContentContainer>
       <Footer />
     </LayoutContainer>
   );
