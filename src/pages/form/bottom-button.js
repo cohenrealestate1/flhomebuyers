@@ -7,7 +7,7 @@ import { withRouter } from "fusion-plugin-react-router";
 
 type Props = {
   nextRoute?: string,
-  validate: (values: any) => any,
+  validate?: (values: any) => any,
 };
 
 export const BottomButton = (props: Props) => {
@@ -17,7 +17,7 @@ export const BottomButton = (props: Props) => {
 
   if (nextRoute) {
     const onClick = () => {
-      const errors = validate(values);
+      const errors = validate ? validate(values) : {};
       if (Object.keys(errors).length > 0) {
         setErrors(errors);
       } else {

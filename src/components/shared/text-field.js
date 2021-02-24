@@ -25,11 +25,20 @@ const StyledMaterialTextField = styled(MaterialTextField)`
   & .MuiOutlinedInput-root {
     background-color: white;
     border-radius: 0;
-    height: 42px;
+    height: ${(props) => (props.$multiline ? "unset" : "42px")};
   }
 
   & .MuiInputBase-root {
     width: 200px;
+  }
+
+  & .MuiFormHelperText-contained {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  textarea {
+    height: calc(42px * 4);
   }
 `;
 
@@ -68,6 +77,8 @@ export const TextField = (props: Props) => {
           error={Boolean(error)}
           helperText={error || ""}
           multiline={multiline}
+          $multiline={multiline}
+          rows={4}
           onChange={onChange}
           InputProps={InputProps}
         >
