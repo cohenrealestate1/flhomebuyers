@@ -9,6 +9,7 @@ import { StatesOptions } from "../../constants/states";
 import FormStep from "./form-step";
 import { assetUrl } from "fusion-core";
 import { StyledAdornment } from "./styled-components";
+import { Routes } from "../../constants/routes";
 
 export const FormStep2 = () => {
   const {
@@ -19,7 +20,7 @@ export const FormStep2 = () => {
   } = useFormikContext();
 
   return (
-    <FormStep>
+    <FormStep nextRoute={Routes.FormStep3}>
       <TextField
         fieldName="formWide.address"
         label="Street address"

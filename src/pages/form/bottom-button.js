@@ -1,21 +1,21 @@
 // @flow
 import React from "react";
 import { useFormikContext } from "formik";
-import { TotalSteps } from "../../components/form/initial-values";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import { Button } from "@material-ui/core";
+import { withRouter } from "fusion-plugin-react-router";
 
-export const BottomButton = () => {
-  const { values, setFieldValue } = useFormikContext();
-  const { step } = values;
+type Props = {
+  nextRoute?: string,
+};
+
+export const BottomButton = (props: Props) => {
+  const { nextRoute, history } = props;
+  const { values } = useFormikContext();
   const sendEmail = useRPCRedux("sendEmail");
 
-  if (step < TotalSteps) {
-    return (
-      <Button onClick={() => setFieldValue("step", step + 1, false)}>
-        Next!
-      </Button>
-    );
+  if (nextRoute) {
+    return <Button onClick={() => history.push(nextRoute)}>Next!</Button>;
   }
 
   return (
@@ -25,4 +25,4 @@ export const BottomButton = () => {
   );
 };
 
-export default BottomButton;
+export default withRouter(BottomButton);

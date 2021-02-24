@@ -8,6 +8,7 @@ import FormStep from "./form-step";
 import styled from "styled-components";
 import { assetUrl } from "fusion-core";
 import { StyledAdornment } from "./styled-components";
+import { Routes } from "../../constants/routes";
 
 const EmailInputContainer = styled.div`
   margin-left: auto;
@@ -23,7 +24,7 @@ export const FormStep1 = () => {
     },
   } = useFormikContext();
   return (
-    <FormStep>
+    <FormStep nextRoute={Routes.FormStep2}>
       <TextField
         fieldName="formWide.address"
         label="Property address"

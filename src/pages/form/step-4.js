@@ -12,6 +12,7 @@ import {
   IsListedOptions,
 } from "../../constants/form-options";
 import FormStep from "./form-step";
+import { Routes } from "../../constants/routes";
 
 export const FormStep4 = () => {
   const {
@@ -28,7 +29,7 @@ export const FormStep4 = () => {
     },
   } = useFormikContext();
   return (
-    <FormStep>
+    <FormStep nextRoute={Routes.FormStep5}>
       <Select
         fieldName="step4.numBeds"
         label="How many beds?"

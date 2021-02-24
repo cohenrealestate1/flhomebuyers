@@ -7,6 +7,7 @@ import PhoneInput from "../../components/shared/phone-input";
 import FormStep from "./form-step";
 import { assetUrl } from "fusion-core";
 import { StyledAdornment } from "./styled-components";
+import { Routes } from "../../constants/routes";
 
 export const FormStep3 = () => {
   const {
@@ -16,7 +17,7 @@ export const FormStep3 = () => {
     },
   } = useFormikContext();
   return (
-    <FormStep>
+    <FormStep nextRoute={Routes.FormStep4}>
       <TextField
         fieldName="step3.firstName"
         label="First name"

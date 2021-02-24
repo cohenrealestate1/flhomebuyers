@@ -1,6 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import BottomButton from "./bottom-button";
 
 const Container = styled.div`
   padding: 32px;
@@ -13,11 +14,17 @@ const Container = styled.div`
 
 type Props = {
   children: ReactNode,
+  nextRoute: string,
 };
 
 export const FormStep = (props: Props) => {
-  const { children } = props;
-  return <Container>{children}</Container>;
+  const { children, nextRoute } = props;
+  return (
+    <Container>
+      {children}
+      <BottomButton nextRoute={nextRoute} />
+    </Container>
+  );
 };
 
 export default FormStep;

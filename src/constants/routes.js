@@ -7,4 +7,5 @@ export const Routes = {
   FormStep2: "/get-cash-offer/step2",
   FormStep3: "/get-cash-offer/step3",
   FormStep4: "/get-cash-offer/step4",
+  FormStep5: "/get-cash-offer/step5",
 };
