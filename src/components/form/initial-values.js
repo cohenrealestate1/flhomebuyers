@@ -3,7 +3,6 @@
 export const TotalSteps = 5;
 
 export type FormValuesType = {
-  step: number,
   formWide: {
     email: string,
     phoneNumber: string,
@@ -36,7 +35,6 @@ export type FormValuesType = {
 
 export const getInitialValues = (): FormValuesType => {
   return {
-    step: 1,
     formWide: {
       email: "",
       phoneNumber: "",
