@@ -7,15 +7,25 @@ import { withRouter } from "fusion-plugin-react-router";
 
 type Props = {
   nextRoute?: string,
+  validate: (values: any) => any,
 };
 
 export const BottomButton = (props: Props) => {
-  const { nextRoute, history } = props;
-  const { values } = useFormikContext();
+  const { nextRoute, history, validate } = props;
+  const { values, setErrors } = useFormikContext();
   const sendEmail = useRPCRedux("sendEmail");
 
   if (nextRoute) {
-    return <Button onClick={() => history.push(nextRoute)}>Next!</Button>;
+    const onClick = () => {
+      const errors = validate(values);
+      if (Object.keys(errors).length > 0) {
+        setErrors(errors);
+      } else {
+        setErrors({});
+        history.push(nextRoute);
+      }
+    };
+    return <Button onClick={onClick}>Next!</Button>;
   }
 
   return (

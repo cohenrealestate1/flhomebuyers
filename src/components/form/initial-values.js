@@ -1,7 +1,5 @@
 // @flow
 
-export const TotalSteps = 5;
-
 export type FormValuesType = {
   formWide: {
     email: string,

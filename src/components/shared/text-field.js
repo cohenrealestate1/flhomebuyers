@@ -18,6 +18,7 @@ interface Props {
   select?: boolean;
   options?: any[];
   adornment?: ReactNode;
+  error?: string;
 }
 
 const StyledMaterialTextField = styled(MaterialTextField)`
@@ -42,6 +43,7 @@ export const TextField = (props: Props) => {
     select = false,
     options = [],
     adornment,
+    error,
   } = props;
   const onChange = (event) =>
     props.onChange
@@ -63,6 +65,8 @@ export const TextField = (props: Props) => {
           value={value}
           variant="outlined"
           select={select}
+          error={Boolean(error)}
+          helperText={error || ""}
           multiline={multiline}
           onChange={onChange}
           InputProps={InputProps}

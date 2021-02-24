@@ -39,7 +39,7 @@ function phoneFormat(input) {
 
 export const PhoneInput = (props: Props) => {
   const { setFieldValue } = useFormikContext();
-  const { fieldName, label, value, adornment } = props;
+  const { fieldName, label, value, adornment, error } = props;
   return (
     <TextField
       label={label}
@@ -48,6 +48,7 @@ export const PhoneInput = (props: Props) => {
         setFieldValue(fieldName, phoneFormat(event.target.value), false)
       }
       value={value}
+      error={error}
     />
   );
 };

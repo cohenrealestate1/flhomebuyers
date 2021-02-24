@@ -15,14 +15,15 @@ const Container = styled.div`
 type Props = {
   children: ReactNode,
   nextRoute: string,
+  validate: (values: any) => any,
 };
 
 export const FormStep = (props: Props) => {
-  const { children, nextRoute } = props;
+  const { children, nextRoute, validate } = props;
   return (
     <Container>
       {children}
-      <BottomButton nextRoute={nextRoute} />
+      <BottomButton nextRoute={nextRoute} validate={validate} />
     </Container>
   );
 };

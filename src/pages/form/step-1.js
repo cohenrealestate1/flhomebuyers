@@ -9,12 +9,14 @@ import styled from "styled-components";
 import { assetUrl } from "fusion-core";
 import { StyledAdornment } from "./styled-components";
 import { Routes } from "../../constants/routes";
+import { validateStep1 } from "../../components/form/validate";
 
-const EmailInputContainer = styled.div`
+const EmailInput = styled(TextField)`
   margin-left: auto;
 `;
 const BottomContainer = styled.div`
   display: flex;
+  align-items: flex-start;
 `;
 
 export const FormStep1 = () => {
@@ -22,14 +24,16 @@ export const FormStep1 = () => {
     values: {
       formWide: { email, phoneNumber, address },
     },
+    errors,
   } = useFormikContext();
   return (
-    <FormStep nextRoute={Routes.FormStep2}>
+    <FormStep nextRoute={Routes.FormStep2} validate={validateStep1}>
       <TextField
         fieldName="formWide.address"
         label="Property address"
         value={address}
         adornment={<StyledAdornment src={assetUrl("../../static/house.svg")} />}
+        error={errors.address}
       />
       <BottomContainer>
         <PhoneInput
@@ -39,17 +43,17 @@ export const FormStep1 = () => {
           adornment={
             <StyledAdornment src={assetUrl("../../static/phone.svg")} />
           }
+          error={errors.phoneNumber}
         />
-        <EmailInputContainer>
-          <TextField
-            fieldName="formWide.email"
-            label="Email address"
-            value={email}
-            adornment={
-              <StyledAdornment src={assetUrl("../../static/email.svg")} />
-            }
-          />
-        </EmailInputContainer>
+        <EmailInput
+          fieldName="formWide.email"
+          label="Email address"
+          value={email}
+          adornment={
+            <StyledAdornment src={assetUrl("../../static/email.svg")} />
+          }
+          error={errors.email}
+        />
       </BottomContainer>
     </FormStep>
   );
