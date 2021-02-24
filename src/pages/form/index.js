@@ -9,51 +9,36 @@ import Step4 from "./step-4";
 import Step5 from "./step-5";
 import { FormContainer } from "./styled-components";
 import styled from "styled-components";
-import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
-import { Button } from "@material-ui/core";
+import BottomButton from "./bottom-button";
 
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const ChildContainer = styled.div`
-  margin-bottom: 36px;
-`;
 
 export const Form = () => {
   const { values } = useFormikContext();
-  const sendEmail = useRPCRedux("sendEmail");
+  const { step } = values;
 
-  // const getContent = () => {
-  //   switch (step) {
-  //     case 1:
-  //       return <Step1 />;
-  //     case 2:
-  //     default:
-  //       return <Step2 />;
-  //   }
-  // };
+  const getContent = () => {
+    switch (step) {
+      case 1:
+        return <Step1 />;
+      case 2:
+        return <Step2 />;
+      case 3:
+        return <Step3 />;
+      case 4:
+        return <Step4 />;
+      case 5:
+        return <Step5 />;
+    }
+  };
   return (
     <FormContainer>
       <MainContainer>
-        <ChildContainer>
-          <Step1 />
-        </ChildContainer>
-        <ChildContainer>
-          <Step2 />
-        </ChildContainer>
-        <ChildContainer>
-          <Step3 />
-        </ChildContainer>
-        <ChildContainer>
-          <Step4 />
-        </ChildContainer>
-        <ChildContainer>
-          <Step5 />
-        </ChildContainer>
-        <Button onClick={async () => console.log(await sendEmail(values))}>
-          Click me
-        </Button>
+        {getContent()}
+        <BottomButton />
       </MainContainer>
     </FormContainer>
   );
