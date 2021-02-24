@@ -18,7 +18,6 @@ const MainContainer = styled.div`
 `;
 const ChildContainer = styled.div`
   margin-bottom: 36px;
-  background-color: grey;
 `;
 
 export const Form = () => {

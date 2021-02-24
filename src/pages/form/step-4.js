@@ -11,6 +11,7 @@ import {
   IsOccupiedOptions,
   IsListedOptions,
 } from "../../constants/form-options";
+import FormStep from "./form-step";
 
 export const FormStep4 = () => {
   const {
@@ -27,7 +28,7 @@ export const FormStep4 = () => {
     },
   } = useFormikContext();
   return (
-    <>
+    <FormStep>
       <Select
         fieldName="step4.numBeds"
         label="How many beds?"
@@ -69,7 +70,7 @@ export const FormStep4 = () => {
         value={isListed}
         options={IsListedOptions}
       />
-    </>
+    </FormStep>
   );
 };
 

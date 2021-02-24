@@ -1,8 +1,8 @@
 /* eslint-disable no-self-assign */
 // @flow
 import React from "react";
-import { TextField as MaterialTextField } from "@material-ui/core";
 import { useFormikContext } from "formik";
+import TextField from "./text-field";
 
 interface Props {
   fieldName: string;
@@ -41,7 +41,7 @@ export const PhoneInput = (props: Props) => {
   const { setFieldValue } = useFormikContext();
   const { fieldName, label, value } = props;
   return (
-    <MaterialTextField
+    <TextField
       label={label}
       onChange={(event) =>
         setFieldValue(fieldName, phoneFormat(event.target.value), false)

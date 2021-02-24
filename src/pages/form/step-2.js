@@ -6,6 +6,7 @@ import TextField from "../../components/shared/text-field";
 import ZipInput from "../../components/shared/zip-input";
 import Select from "../../components/shared/select";
 import { StatesOptions } from "../../constants/states";
+import FormStep from "./form-step";
 
 export const FormStep2 = () => {
   const {
@@ -16,7 +17,7 @@ export const FormStep2 = () => {
   } = useFormikContext();
 
   return (
-    <>
+    <FormStep>
       <TextField
         fieldName="formWide.address"
         label="Street address"
@@ -30,7 +31,7 @@ export const FormStep2 = () => {
         options={StatesOptions}
       />
       <ZipInput fieldName="step2.zip" label="Zipcode" value={zip} />
-    </>
+    </FormStep>
   );
 };
 

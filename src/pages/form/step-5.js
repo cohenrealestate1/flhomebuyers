@@ -5,6 +5,7 @@ import { useFormikContext } from "formik";
 import TextField from "../../components/shared/text-field";
 import Select from "../../components/shared/select";
 import { NeedToSellFastOptions } from "../../constants/form-options";
+import FormStep from "./form-step";
 
 export const FormStep5 = () => {
   const {
@@ -13,7 +14,7 @@ export const FormStep5 = () => {
     },
   } = useFormikContext();
   return (
-    <>
+    <FormStep>
       <Select
         fieldName="step5.numBeds"
         label="Do you need to sell your home fast?"
@@ -32,7 +33,7 @@ export const FormStep5 = () => {
         value={ultimateGoal}
         multiline={true}
       />
-    </>
+    </FormStep>
   );
 };
 

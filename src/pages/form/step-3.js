@@ -4,6 +4,7 @@ import React from "react";
 import { useFormikContext } from "formik";
 import TextField from "../../components/shared/text-field";
 import PhoneInput from "../../components/shared/phone-input";
+import FormStep from "./form-step";
 
 export const FormStep3 = () => {
   const {
@@ -13,7 +14,7 @@ export const FormStep3 = () => {
     },
   } = useFormikContext();
   return (
-    <>
+    <FormStep>
       <TextField
         fieldName="step3.firstName"
         label="First name"
@@ -34,7 +35,7 @@ export const FormStep3 = () => {
         label="Phone number"
         value={phoneNumber}
       />
-    </>
+    </FormStep>
   );
 };
 
