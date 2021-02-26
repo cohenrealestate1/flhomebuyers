@@ -13,7 +13,7 @@ type Props = {
 export const BottomButton = (props: Props) => {
   const { nextRoute, history, validate } = props;
   const { values, setErrors } = useFormikContext();
-  const sendEmail = useRPCRedux("sendEmail");
+  const sendEmailLead = useRPCRedux("sendEmailLead");
 
   if (nextRoute) {
     const onClick = () => {
@@ -29,7 +29,7 @@ export const BottomButton = (props: Props) => {
   }
 
   return (
-    <Button onClick={async () => console.log(await sendEmail(values))}>
+    <Button onClick={async () => await sendEmailLead(values)}>
       Get your cash offer now!
     </Button>
   );

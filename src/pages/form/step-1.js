@@ -7,7 +7,7 @@ import PhoneInput from "../../components/shared/phone-input";
 import FormStep from "./form-step";
 import styled from "styled-components";
 import { assetUrl } from "fusion-core";
-import { StyledAdornment } from "./styled-components";
+import { StyledAdornment } from "../../components/shared/styled-components";
 import { Routes } from "../../constants/routes";
 import { validateStep1 } from "../../components/form/validate";
 

@@ -1,6 +1,7 @@
 // @flow
-import { sendEmail } from "../index";
+import { sendEmailLead, sendEmailContactUs } from "../index";
 
 export const handlers = {
-  sendEmail,
+  sendEmailLead,
+  sendEmailContactUs,
 };

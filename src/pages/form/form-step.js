@@ -1,16 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
-import styled from "styled-components";
 import BottomButton from "./bottom-button";
-
-const Container = styled.div`
-  padding: 32px;
-  border: 1px solid #e2e2e2;
-  background-color: rgb(233, 236, 239);
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-`;
+import { FormStepContainer } from "../../components/shared/styled-components";
 
 type Props = {
   children: ReactNode,
@@ -21,10 +12,10 @@ type Props = {
 export const FormStep = (props: Props) => {
   const { children, nextRoute, validate } = props;
   return (
-    <Container>
+    <FormStepContainer>
       {children}
       <BottomButton nextRoute={nextRoute} validate={validate} />
-    </Container>
+    </FormStepContainer>
   );
 };
 

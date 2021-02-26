@@ -12,7 +12,7 @@ import { createRPCReducer } from "fusion-plugin-rpc-redux-react";
 import { FetchToken } from "fusion-tokens";
 import root from "./root.jsx";
 
-const reducer = createRPCReducer("sendEmail", {
+const reducer = createRPCReducer("sendEmailLead", {
   start: (state, action) => ({ ...state, loading: true }),
   success: (state, action) => ({ ...state, loading: false }),
   failure: (state, action) => ({ ...state, loading: false }),

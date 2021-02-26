@@ -5,7 +5,7 @@ function validateEmailRegex(email: string) {
   return re.test(String(email).toLowerCase());
 }
 
-const validateEmail = (email: string, errors: any) => {
+export const validateEmail = (email: string, errors: any) => {
   if (!email) {
     errors.email = "Please enter an email";
   } else if (!validateEmailRegex(email)) {
@@ -13,11 +13,23 @@ const validateEmail = (email: string, errors: any) => {
   }
 };
 
-const validatePhoneNumber = (phoneNumber: string, errors: any) => {
+export const validatePhoneNumber = (phoneNumber: string, errors: any) => {
   if (!phoneNumber) {
     errors.phoneNumber = "Please enter a phone number";
   } else if (phoneNumber.length !== 14) {
     errors.phoneNumber = "Please enter a valid phone number";
+  }
+};
+
+export const validateFirstName = (firstName: string, errors: any) => {
+  if (!firstName) {
+    errors.firstName = "Please enter a first name";
+  }
+};
+
+export const validateLastName = (lastName: string, errors: any) => {
+  if (!lastName) {
+    errors.lastName = "Please enter a last name";
   }
 };
 
@@ -42,11 +54,7 @@ export const validateStep3 = (values: FormValuesType) => {
   const errors = {};
   validateEmail(email, errors);
   validatePhoneNumber(phoneNumber, errors);
-  if (!firstName) {
-    errors.firstName = "Please enter a first name";
-  }
-  if (!lastName) {
-    errors.lastName = "Please enter a last name";
-  }
+  validateFirstName(firstName, errors);
+  validateLastName(lastName, errors);
   return errors;
 };

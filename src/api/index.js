@@ -1,9 +1,10 @@
 // @flow
-import { FormValuesType } from "../components/form/initial-values";
+import { type FormValuesType } from "../components/form/initial-values";
+import { type ContactUsFormValues } from "../pages/contact-us/initial-values";
 
 const sendgrid = require("@sendgrid/mail");
 
-export const sendEmail = (values: FormValuesType) => {
+export const sendEmailLead = (values: FormValuesType) => {
   sendgrid.setApiKey(
     "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"
   );
@@ -51,7 +52,51 @@ export const sendEmail = (values: FormValuesType) => {
   const email = {
     to: "cohenrealestate1@gmail.com",
     from: "bencohen0806@gmail.com",
-    subject: "My first email",
+    subject: "New lead",
+    html,
+  };
+  // send the email via sendgrid
+  sendgrid
+    .send(email)
+    .then(() => {
+      console.log("Email sent");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+export const sendEmailContactUs = (values: ContactUsFormValues) => {
+  sendgrid.setApiKey(
+    "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"
+  );
+  const {
+    firstName,
+    lastName,
+    phoneNumber,
+    email: emailAddress,
+    freeFormText,
+  } = values;
+
+  console.log(firstName, lastName, phoneNumber, emailAddress, freeFormText);
+
+  const html = `
+    <div>
+      <p><b><u>New inquiry<u/></b><p>
+      <p><b>Person:</b> ${firstName} ${lastName}</p>
+      <p><b>Email:</b> ${emailAddress}</p>
+      <p><b>Phone Number:</b> ${phoneNumber}</p>
+      <p><b>Question:</b> ${freeFormText}</p>
+    </div>
+  `;
+
+  console.log(html);
+
+  // construct an email
+  const email = {
+    to: "cohenrealestate1@gmail.com",
+    from: "bencohen0806@gmail.com",
+    subject: "New Inquiry",
     html,
   };
   // send the email via sendgrid

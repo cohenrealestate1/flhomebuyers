@@ -8,7 +8,7 @@ import Select from "../../components/shared/select";
 import { StatesOptions } from "../../constants/states";
 import FormStep from "./form-step";
 import { assetUrl } from "fusion-core";
-import { StyledAdornment } from "./styled-components";
+import { StyledAdornment } from "../../components/shared/styled-components";
 import { Routes } from "../../constants/routes";
 
 export const FormStep2 = () => {
