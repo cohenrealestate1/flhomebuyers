@@ -7,16 +7,14 @@ import PhoneLink from "../shared/phone-link";
 import Link from "../link";
 import { Routes } from "../../constants/routes";
 import { CompanyName } from "../../constants";
+import { makeMediaQuery } from "../shared/styled-components";
 
 const Container = styled.div`
   display: flex;
   width: 100%;
   align-items: stretch;
   gap: 36px;
-  @media only screen and (max-width: 800px) {
-    flex-direction: column;
-    gap: 12px;
-  }
+  ${makeMediaQuery(`flex-direction: column; gap: 12px;`)}
   line-height: 18px;
 `;
 

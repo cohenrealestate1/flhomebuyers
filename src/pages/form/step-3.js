@@ -11,6 +11,7 @@ import {
   EmailInput,
   PhoneNumberInput,
 } from "../../components/form/inputs";
+import { FormSideBySideContainer } from "../../components/shared/styled-components";
 
 export const FormStep3 = () => {
   const {
@@ -22,26 +23,30 @@ export const FormStep3 = () => {
   } = useFormikContext();
   return (
     <FormStep nextRoute={Routes.FormStep4} validate={validateStep3}>
-      <FirstNameInput
-        fieldName="step3.firstName"
-        value={firstName}
-        error={errors.firstName}
-      />
-      <LastNameInput
-        fieldName="step3.lastName"
-        value={lastName}
-        error={errors.lastName}
-      />
-      <EmailInput
-        fieldName="formWide.email"
-        value={email}
-        error={errors.email}
-      />
-      <PhoneNumberInput
-        fieldName="formWide.phoneNumber"
-        value={phoneNumber}
-        error={errors.phoneNumber}
-      />
+      <FormSideBySideContainer>
+        <FirstNameInput
+          fieldName="step3.firstName"
+          value={firstName}
+          error={errors.firstName}
+        />
+        <LastNameInput
+          fieldName="step3.lastName"
+          value={lastName}
+          error={errors.lastName}
+        />
+      </FormSideBySideContainer>
+      <FormSideBySideContainer>
+        <EmailInput
+          fieldName="formWide.email"
+          value={email}
+          error={errors.email}
+        />
+        <PhoneNumberInput
+          fieldName="formWide.phoneNumber"
+          value={phoneNumber}
+          error={errors.phoneNumber}
+        />
+      </FormSideBySideContainer>
     </FormStep>
   );
 };

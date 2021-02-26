@@ -8,7 +8,10 @@ import Select from "../../components/shared/select";
 import { StatesOptions } from "../../constants/states";
 import FormStep from "./form-step";
 import { assetUrl } from "fusion-core";
-import { StyledAdornment } from "../../components/shared/styled-components";
+import {
+  StyledAdornment,
+  FormSideBySideContainer,
+} from "../../components/shared/styled-components";
 import { Routes } from "../../constants/routes";
 
 export const FormStep2 = () => {
@@ -21,20 +24,26 @@ export const FormStep2 = () => {
 
   return (
     <FormStep nextRoute={Routes.FormStep3}>
-      <TextField
-        fieldName="formWide.address"
-        label="Street address"
-        value={address}
-        adornment={<StyledAdornment src={assetUrl("../../static/house.svg")} />}
-      />
-      <TextField fieldName="step2.city" label="City" value={city} />
-      <Select
-        fieldName="step2.state"
-        label="State"
-        value={state}
-        options={StatesOptions}
-      />
-      <ZipInput fieldName="step2.zip" label="Zipcode" value={zip} />
+      <FormSideBySideContainer>
+        <TextField
+          fieldName="formWide.address"
+          label="Street address"
+          value={address}
+          adornment={
+            <StyledAdornment src={assetUrl("../../static/house.svg")} />
+          }
+        />
+        <TextField fieldName="step2.city" label="City" value={city} />
+      </FormSideBySideContainer>
+      <FormSideBySideContainer>
+        <Select
+          fieldName="step2.state"
+          label="State"
+          value={state}
+          options={StatesOptions}
+        />
+        <ZipInput fieldName="step2.zip" label="Zipcode" value={zip} />
+      </FormSideBySideContainer>
     </FormStep>
   );
 };

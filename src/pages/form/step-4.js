@@ -13,6 +13,7 @@ import {
 } from "../../constants/form-options";
 import FormStep from "./form-step";
 import { Routes } from "../../constants/routes";
+import { FormSideBySideContainer } from "../../components/shared/styled-components";
 
 export const FormStep4 = () => {
   const {
@@ -30,47 +31,53 @@ export const FormStep4 = () => {
   } = useFormikContext();
   return (
     <FormStep nextRoute={Routes.FormStep5}>
-      <Select
-        fieldName="step4.numBeds"
-        label="How many beds?"
-        value={numBeds}
-        options={NumBedsOptions}
-      />
-      <Select
-        fieldName="step4.numBaths"
-        label="How many baths?"
-        value={numBaths}
-        options={NumBathsOptions}
-      />
-      <TextField
-        fieldName="step4.howLongOwned"
-        label="How long have you owned the property?"
-        value={howLongOwned}
-      />
-      <Select
-        fieldName="step4.condition"
-        label="What is the current condition of the property?"
-        value={condition}
-        options={ConditionOptions}
-      />
+      <FormSideBySideContainer>
+        <Select
+          fieldName="step4.numBeds"
+          label="How many beds?"
+          value={numBeds}
+          options={NumBedsOptions}
+        />
+        <Select
+          fieldName="step4.numBaths"
+          label="How many baths?"
+          value={numBaths}
+          options={NumBathsOptions}
+        />
+      </FormSideBySideContainer>
+      <FormSideBySideContainer>
+        <TextField
+          fieldName="step4.howLongOwned"
+          label="How long have you owned the property?"
+          value={howLongOwned}
+        />
+        <Select
+          fieldName="step4.condition"
+          label="What is the current condition?"
+          value={condition}
+          options={ConditionOptions}
+        />
+      </FormSideBySideContainer>
       <TextField
         fieldName="step4.repairsNeeded"
         label="What kind of repairs and maintenance does the house need?"
         multiline={true}
         value={repairsNeeded}
       />
-      <Select
-        fieldName="step4.isOccupied"
-        label="Is there anyone living in the house?"
-        value={isOccupied}
-        options={IsOccupiedOptions}
-      />
-      <Select
-        fieldName="step4.isListed"
-        label="Is the house currently listed with a realtor?"
-        value={isListed}
-        options={IsListedOptions}
-      />
+      <FormSideBySideContainer>
+        <Select
+          fieldName="step4.isOccupied"
+          label="Is there anyone living in the house?"
+          value={isOccupied}
+          options={IsOccupiedOptions}
+        />
+        <Select
+          fieldName="step4.isListed"
+          label="Is the house currently listed with a realtor?"
+          value={isListed}
+          options={IsListedOptions}
+        />
+      </FormSideBySideContainer>
     </FormStep>
   );
 };

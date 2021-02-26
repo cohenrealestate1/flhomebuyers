@@ -8,6 +8,7 @@ export const StyledFormControlLabel = styled(FormControlLabel)`
     flex-direction: column;
     flex-direction: column-reverse;
     align-items: flex-start;
+    width: 100%;
   }
   & .MuiFormControlLabel-label {
     font-weight: 700;
@@ -34,4 +35,19 @@ export const FormContainer = styled.div`
 export const StyledAdornment = styled.img`
   height: 20px;
   width: 20px;
+`;
+
+export const makeMediaQuery = (query: string) => {
+  return `
+    @media only screen and (max-width: 800px) {
+      ${query}
+    }
+  `;
+};
+
+export const FormSideBySideContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  ${makeMediaQuery(`display: block`)}
 `;

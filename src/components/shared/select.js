@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import TextField2 from "./text-field";
+import TextField from "./text-field";
 
 interface Props {
   fieldName: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Select = (props: Props) => {
-  return <TextField2 select={true} variant="outlined" {...props} />;
+  return <TextField select={true} variant="outlined" {...props} />;
 };
 
 export default Select;

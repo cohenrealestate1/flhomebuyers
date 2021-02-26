@@ -28,10 +28,6 @@ const StyledMaterialTextField = styled(MaterialTextField)`
     height: ${(props) => (props.$multiline ? "unset" : "42px")};
   }
 
-  & .MuiInputBase-root {
-    width: 200px;
-  }
-
   & .MuiFormHelperText-contained {
     margin-left: 0;
     margin-right: 0;
@@ -39,6 +35,14 @@ const StyledMaterialTextField = styled(MaterialTextField)`
 
   textarea {
     height: calc(42px * 4);
+  }
+
+  &.MuiFormControl-root {
+    width: 100%;
+  }
+
+  & .MuiFormControl-root {
+    width: 100%;
   }
 `;
 

@@ -7,17 +7,14 @@ import PhoneInput from "../../components/shared/phone-input";
 import FormStep from "./form-step";
 import styled from "styled-components";
 import { assetUrl } from "fusion-core";
-import { StyledAdornment } from "../../components/shared/styled-components";
+import {
+  StyledAdornment,
+  FormSideBySideContainer,
+} from "../../components/shared/styled-components";
 import { Routes } from "../../constants/routes";
 import { validateStep1 } from "../../components/form/validate";
 
-const EmailInput = styled(TextField)`
-  margin-left: auto;
-`;
-const BottomContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-`;
+const EmailInput = styled(TextField)``;
 
 export const FormStep1 = () => {
   const {
@@ -35,7 +32,7 @@ export const FormStep1 = () => {
         adornment={<StyledAdornment src={assetUrl("../../static/house.svg")} />}
         error={errors.address}
       />
-      <BottomContainer>
+      <FormSideBySideContainer>
         <PhoneInput
           fieldName="formWide.phoneNumber"
           label="Phone number"
@@ -54,7 +51,7 @@ export const FormStep1 = () => {
           }
           error={errors.email}
         />
-      </BottomContainer>
+      </FormSideBySideContainer>
     </FormStep>
   );
 };
