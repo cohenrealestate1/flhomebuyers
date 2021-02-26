@@ -6,6 +6,7 @@ import { assetUrl } from "fusion-core";
 import PhoneLink from "../shared/phone-link";
 import Link from "../link";
 import { Routes } from "../../constants/routes";
+import { CompanyName } from "../../constants";
 
 const Container = styled.div`
   display: flex;
@@ -46,7 +47,7 @@ export const HowItWorks = () => {
         icon={<Icon src={assetUrl("../../static/phone.svg")} />}
         description={
           <div>
-            Call Florida Home Buyers at <StyledPhoneLink /> or fill in our{" "}
+            Call {CompanyName} at <StyledPhoneLink /> or fill in our{" "}
             <StyledLink
               color="blue"
               href={Routes.FormStep1}
@@ -65,7 +66,7 @@ export const HowItWorks = () => {
       <Tile
         title="Step Three - Close whenever you'd like"
         icon={<Icon src={assetUrl("../../static/calendar.svg")} />}
-        description="We will close with whatever timeframe works best for you. You keep so much more of the sale price as you do not need to worry about realtor commissions or home repairs. Maximize your profit as quickly as possible by working with Florida Home Buyers!"
+        description={`We will close with whatever timeframe works best for you. You keep so much more of the sale price as you do not need to worry about realtor commissions or home repairs. Maximize your profit as quickly as possible by working with ${CompanyName}!`}
       />
     </Container>
   );

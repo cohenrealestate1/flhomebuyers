@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { CashVsRealtorItems } from "../../constants";
+import { CashVsRealtorItems, CompanyName } from "../../constants";
 import {
   Table,
   TableHead,
@@ -34,7 +34,7 @@ export const CashVsRealtor = () => {
         <TableRow>
           <StyledTableCell></StyledTableCell>
           <StyledTableCellBold align="">
-            Selling to Florida Home Buyers
+            Selling to {CompanyName}
           </StyledTableCellBold>
           <StyledTableCellBold align="">
             Selling with an Agent
