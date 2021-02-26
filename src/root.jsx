@@ -27,11 +27,10 @@ const root = (
           component={Pages.GetCashOfferCity}
         />
       ))}
+      <Route path={Routes.HowItWorks} component={Pages.HowItWorks} />
       <Route exact path={Routes.Home} component={Pages.Home} />
     </Switch>
   </Container>
 );
 
 export default root;
-
-//<Route path={url} component={Pages.GetCashOfferCity} />

@@ -22,7 +22,6 @@ export default () => {
   const app = new App(root);
   app.register(Styletron);
   app.register(Router);
-  // app.register(SendApiPlugin);
 
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(RPCToken, RPC);
