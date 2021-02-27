@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { PhoneNumber } from "../../constants";
+import PhoneLink from "../shared/phone-link";
 
 export const Bottom = () => {
   return (
@@ -11,7 +11,7 @@ export const Bottom = () => {
         No fees. No commissions. You pick the closing date. We pay all costs
       </div>
       <div>
-        Just call us {PhoneNumber} or Fill In The Form For Your FREE All-Cash
+        Just call us <PhoneLink /> or Fill In The Form For Your FREE All-Cash
         Offer!
       </div>
     </div>

@@ -13,6 +13,7 @@ import {
   PhoneNumber,
   StyleConstants,
 } from "../../constants";
+import PhoneLink from "../shared/phone-link";
 
 const Container = styled(FormSideBySideContainer)`
   margin-top: auto;
@@ -86,7 +87,7 @@ export const Footer = () => {
       <RightSection>
         {CompanyName} is a &quot;we buy houses&quot; company. We help people
         sell their houses fash, for cash. If you want a quick cash offer on your
-        property, give us a call at {PhoneNumber}. &#169; 2021 - {CompanyName}
+        property, give us a call at <PhoneLink />. &#169; 2021 - {CompanyName}
       </RightSection>
     </Container>
   );
