@@ -2,8 +2,8 @@
 import React from "react";
 import { useFormikContext } from "formik";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
-import { Button } from "@material-ui/core";
 import { withRouter } from "fusion-plugin-react-router";
+import { StyledButton } from "../../components/shared/styled-components";
 
 type Props = {
   nextRoute?: string,
@@ -25,13 +25,13 @@ export const BottomButton = (props: Props) => {
         history.push(nextRoute);
       }
     };
-    return <Button onClick={onClick}>Next!</Button>;
+    return <StyledButton onClick={onClick}>Next!</StyledButton>;
   }
 
   return (
-    <Button onClick={async () => await sendEmailLead(values)}>
+    <StyledButton onClick={async () => await sendEmailLead(values)}>
       Get your cash offer now!
-    </Button>
+    </StyledButton>
   );
 };
 

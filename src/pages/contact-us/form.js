@@ -3,6 +3,7 @@ import React from "react";
 import {
   FormContainer,
   FormStepContainer,
+  StyledButton,
 } from "../../components/shared/styled-components";
 import {
   FirstNameInput,
@@ -12,7 +13,6 @@ import {
 } from "../../components/form/inputs";
 import TextField from "../../components/shared/text-field";
 import { useFormikContext } from "formik";
-import { Button } from "@material-ui/core";
 import validate from "./validate";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 
@@ -63,9 +63,9 @@ export const Form = () => {
           multiline={true}
           error={errors.freeFormText}
         />
-        <Button type="submit" disabled={isSubmitting} onClick={onSubmit}>
+        <StyledButton type="submit" disabled={isSubmitting} onClick={onSubmit}>
           Submit your questions and comments
-        </Button>
+        </StyledButton>
       </FormStepContainer>
     </FormContainer>
   );

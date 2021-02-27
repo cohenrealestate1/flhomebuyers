@@ -1,6 +1,6 @@
 // @flow
 import styled from "styled-components";
-import { FormControlLabel } from "@material-ui/core";
+import { FormControlLabel, Button } from "@material-ui/core";
 
 export const StyledFormControlLabel = styled(FormControlLabel)`
   &.MuiFormControlLabel-root {
@@ -22,6 +22,7 @@ export const FormStepContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 400px;
+  border-radius: 4px;
 `;
 
 export const FormContainer = styled.div`
@@ -50,4 +51,10 @@ export const FormSideBySideContainer = styled.div`
   align-items: flex-start;
   gap: 10px;
   ${makeMediaQuery(`display: block`)}
+`;
+
+export const StyledButton = styled(Button)`
+  &.MuiButton-root {
+    text-transform: none;
+  }
 `;
