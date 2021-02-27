@@ -1,8 +1,9 @@
 // @flow
 // import React from "react";
+import { InTheAreas } from "../../constants";
 
 export const WhoWeAre = () => {
-  return `Ben here! We buy houses, multi-family, apartments, and condos in the South Florida, Treasure Coast, and Gulf Coast areas. We are family-run, and we make our family values the center of our business - trustworthiness, respect, and _. `;
+  return `Ben here! We buy houses, multi-family, apartments, and condos in the ${InTheAreas} areas. We are family-run, and we make our family values the center of our business - trustworthiness, respect, and _. `;
 };
 
 export default WhoWeAre;

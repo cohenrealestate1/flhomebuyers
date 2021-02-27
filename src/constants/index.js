@@ -4,6 +4,7 @@ export const PhoneNumber = "(954) 661-6317";
 export const PhoneNumberHref = "tel:954-661-6317";
 
 export const CompanyName = "Florida Home Buyers";
+export const InTheAreas = "South Florida, Treasure Coast, and Gulf Coast";
 
 export const CashVsRealtorItems = [
   {
