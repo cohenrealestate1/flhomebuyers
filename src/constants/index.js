@@ -6,6 +6,19 @@ export const PhoneNumberHref = "tel:954-661-6317";
 export const CompanyName = "Florida Home Buyers";
 export const InTheAreas = "South Florida, Treasure Coast, and Gulf Coast";
 
+export const ExternalLinkProps = {
+  target: "_blank",
+  rel: "noopener noreferrer",
+};
+
+export const SocialMediaLinks = {
+  Twitter: "https://twitter.com/flhomecashbuyrs",
+  Facebook: "https://www.facebook.com/FL-Home-Cash-Buyers-110603414412760",
+  Youtube: "channel/UCOEdpeaJBH3PIQlu0i_Pg9g",
+  Instagram: "https://www.instagram.com/flhomecashbuyers/",
+  LinkedIn: "https://www.linkedin.com/company/fl-home-cash-buyers/",
+};
+
 export const CashVsRealtorItems = [
   {
     title: "Commissions and fees",

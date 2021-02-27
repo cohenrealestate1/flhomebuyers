@@ -1,6 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { StyleConstants } from "../../constants/styles";
 
 interface Props {
   title: string;
@@ -12,7 +13,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 32px 16px 16px 16px;
-  background-color: #b0dfe5;
+  background-color: ${StyleConstants.LightBlue};
   align-items: center;
   flex: 1;
 `;

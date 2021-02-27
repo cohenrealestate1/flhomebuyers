@@ -1,37 +1,107 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Grid } from "@material-ui/core";
+import { assetUrl } from "fusion-core";
+import { StyleConstants } from "../../constants/styles";
+import {
+  FormSideBySideContainer,
+  makeMediaQuery,
+} from "../shared/styled-components";
+import {
+  SocialMediaLinks,
+  ExternalLinkProps,
+  CompanyName,
+  PhoneNumber,
+} from "../../constants";
 
-const Container = styled.div`
+const Container = styled(FormSideBySideContainer)`
   margin-top: auto;
-  background-color: black;
+  background-color: blue;
   color: white;
-`;
-
-const StyledParentGrid = styled(Grid)`
-  height: 40px;
+  padding-left: calc((100% - ${StyleConstants.PageWidth}) / 2);
+  padding-right: calc((100% - ${StyleConstants.PageWidth}) / 2);
   display: flex;
   justify-content: center;
   align-items: center;
+  ${makeMediaQuery("flex-direction: column;")}
 `;
 
-const StyledText = styled(Grid)`
+const Section = styled.div`
+  width: 100%;
+`;
+const LeftSection = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+const RightSection = styled(Section)`
   text-align: right;
+  ${makeMediaQuery("text-align: left")}
+`;
+
+const IconContainer = styled.a`
+  height: 24px;
+  width: 24px;
+  padding: 6px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    background-color: ${StyleConstants.LightBlue};
+    cursor: pointer;
+  }
+  text-decoration: none;
+  border-radius: 4px;
+`;
+const Icon = styled.img`
+  height: 100%;
+  width: 100%;
 `;
 
 export const Footer = () => {
   return (
     <Container>
-      <StyledParentGrid container={true} spacing={0}>
-        <Grid item={true} xs={4}>
-          Images
-        </Grid>
-        <StyledText item={true} xs={4}>
-          Text
-        </StyledText>
-      </StyledParentGrid>
+      <LeftSection>
+        <IconComponent
+          href={SocialMediaLinks.Twitter}
+          src={assetUrl("../../static/company-icons/twitter.svg")}
+        />
+        <IconComponent
+          href={SocialMediaLinks.Facebook}
+          src={assetUrl("../../static/company-icons/facebook.svg")}
+        />
+        <IconComponent
+          href={SocialMediaLinks.Youtube}
+          src={assetUrl("../../static/company-icons/youtube.svg")}
+        />
+        <IconComponent
+          href={SocialMediaLinks.Instagram}
+          src={assetUrl("../../static/company-icons/instagram.svg")}
+        />
+        <IconComponent
+          href={SocialMediaLinks.LinkedIn}
+          src={assetUrl("../../static/company-icons/linkedin.svg")}
+        />
+      </LeftSection>
+      <RightSection>
+        {CompanyName} is a &quot;we buy houses&quot; company. We help people
+        sell their houses fash, for cash. If you want a quick cash offer on your
+        property, give us a call at {PhoneNumber}. &#169; 2021 - {CompanyName}
+      </RightSection>
     </Container>
+  );
+};
+
+type IconComponentProps = {
+  href: string,
+  src: string,
+};
+const IconComponent = (props: IconComponentProps) => {
+  const { href, src } = props;
+  return (
+    <IconContainer href={href} {...ExternalLinkProps}>
+      <Icon src={src} />
+    </IconContainer>
   );
 };
 

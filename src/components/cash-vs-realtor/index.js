@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
 import { CashVsRealtorItems, CompanyName } from "../../constants";
+import { StyleConstants } from "../../constants/styles";
 import {
   Table,
   TableHead,
@@ -11,15 +12,15 @@ import {
 import styled from "styled-components";
 
 const StyledTable = styled(Table)`
-  border: 1px solid rgba(224, 224, 224, 1);
+  border: 1px solid ${StyleConstants.LightGray};
 `;
 const StyledTableBody = styled(TableBody)`
   tr:nth-child(odd) {
-    background: #b0dfe5;
+    background: ${StyleConstants.LightBlue};
   }
 `;
 const StyledTableCell = styled(TableCell)`
-  border: 1px solid rgba(224, 224, 224, 1);
+  border: 1px solid ${StyleConstants.LightGray};
 `;
 const StyledTableCellBold = styled(StyledTableCell)`
   &.MuiTableCell-root {
