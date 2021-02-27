@@ -31,7 +31,6 @@ export const FormStepContainer = styled.div`
 
 export const FormContainer = styled.div`
   max-width: 800px;
-  padding: 20px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -60,5 +59,8 @@ export const FormSideBySideContainer = styled.div`
 export const StyledButton = styled(Button)`
   &.MuiButton-root {
     text-transform: none;
+  }
+  &.MuiButton-contained {
+    background-color: ${(props) => props.$color || "unset"};
   }
 `;

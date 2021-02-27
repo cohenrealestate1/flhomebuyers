@@ -4,6 +4,7 @@ import { useFormikContext } from "formik";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import { withRouter } from "fusion-plugin-react-router";
 import { StyledButton } from "../../components/shared/styled-components";
+import { StyleConstants } from "../../constants";
 
 type Props = {
   nextRoute?: string,
@@ -25,11 +26,23 @@ export const BottomButton = (props: Props) => {
         history.push(nextRoute);
       }
     };
-    return <StyledButton onClick={onClick}>Next!</StyledButton>;
+    return (
+      <StyledButton
+        variant="contained"
+        $color={StyleConstants.LightBlue}
+        onClick={onClick}
+      >
+        Next!
+      </StyledButton>
+    );
   }
 
   return (
-    <StyledButton onClick={async () => await sendEmailLead(values)}>
+    <StyledButton
+      variant="contained"
+      $color={StyleConstants.LightBlue}
+      onClick={async () => await sendEmailLead(values)}
+    >
       Get your cash offer now!
     </StyledButton>
   );

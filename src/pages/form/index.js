@@ -10,18 +10,23 @@ import Step5 from "./step-5";
 import { FormContainer } from "../../components/shared/styled-components";
 import { Route, Switch } from "fusion-plugin-react-router";
 import { Routes } from "../../constants";
+import Page from "../../components/page";
 
 export const Form = () => {
   return (
-    <FormContainer>
-      <Switch>
-        <Route path={Routes.FormStep1} component={Step1} />
-        <Route path={Routes.FormStep2} component={Step2} />
-        <Route path={Routes.FormStep3} component={Step3} />
-        <Route path={Routes.FormStep4} component={Step4} />
-        <Route path={Routes.FormStep5} component={Step5} />
-      </Switch>
-    </FormContainer>
+    <Page
+      content={
+        <FormContainer>
+          <Switch>
+            <Route path={Routes.FormStep1} component={Step1} />
+            <Route path={Routes.FormStep2} component={Step2} />
+            <Route path={Routes.FormStep3} component={Step3} />
+            <Route path={Routes.FormStep4} component={Step4} />
+            <Route path={Routes.FormStep5} component={Step5} />
+          </Switch>
+        </FormContainer>
+      }
+    />
   );
 };
 
