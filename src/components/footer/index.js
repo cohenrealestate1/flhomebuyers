@@ -10,7 +10,6 @@ import {
   SocialMediaLinks,
   ExternalLinkProps,
   CompanyName,
-  PhoneNumber,
   StyleConstants,
 } from "../../constants";
 import PhoneLink from "../shared/phone-link";
