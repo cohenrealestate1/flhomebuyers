@@ -5,14 +5,13 @@ import { useFormikContext } from "formik";
 import TextField from "../../components/shared/text-field";
 import ZipInput from "../../components/shared/zip-input";
 import Select from "../../components/shared/select";
-import { StatesOptions } from "../../constants/states";
+import { StatesOptions, Routes } from "../../constants";
 import FormStep from "./form-step";
 import { assetUrl } from "fusion-core";
 import {
   StyledAdornment,
   FormSideBySideContainer,
 } from "../../components/shared/styled-components";
-import { Routes } from "../../constants/routes";
 
 export const FormStep2 = () => {
   const {

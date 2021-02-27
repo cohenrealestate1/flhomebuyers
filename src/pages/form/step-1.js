@@ -11,7 +11,7 @@ import {
   StyledAdornment,
   FormSideBySideContainer,
 } from "../../components/shared/styled-components";
-import { Routes } from "../../constants/routes";
+import { Routes } from "../../constants";
 import { validateStep1 } from "../../components/form/validate";
 
 const EmailInput = styled(TextField)``;

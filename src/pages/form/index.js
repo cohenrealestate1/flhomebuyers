@@ -9,7 +9,7 @@ import Step4 from "./step-4";
 import Step5 from "./step-5";
 import { FormContainer } from "../../components/shared/styled-components";
 import { Route, Switch } from "fusion-plugin-react-router";
-import { Routes } from "../../constants/routes";
+import { Routes } from "../../constants";
 
 export const Form = () => {
   return (

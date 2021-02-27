@@ -2,8 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "../link";
-import { Routes } from "../../constants/routes";
-import { PhoneNumber } from "../../constants";
+import { PhoneNumber, Routes } from "../../constants";
 
 const Left = styled.div`
   margin-right: auto;

@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 import { assetUrl } from "fusion-core";
-import { StyleConstants } from "../../constants/styles";
 import {
   FormSideBySideContainer,
   makeMediaQuery,
@@ -12,6 +11,7 @@ import {
   ExternalLinkProps,
   CompanyName,
   PhoneNumber,
+  StyleConstants,
 } from "../../constants";
 
 const Container = styled(FormSideBySideContainer)`

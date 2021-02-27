@@ -1,7 +1,10 @@
 // @flow
 import React from "react";
-import { CashVsRealtorItems, CompanyName } from "../../constants";
-import { StyleConstants } from "../../constants/styles";
+import {
+  CashVsRealtorItems,
+  CompanyName,
+  StyleConstants,
+} from "../../constants";
 import {
   Table,
   TableHead,

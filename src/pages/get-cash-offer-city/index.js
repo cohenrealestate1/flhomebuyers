@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { withRouter } from "fusion-plugin-react-router";
-import { getCityNameFromUrl } from "../../constants/cities";
+import { getCityNameFromUrl } from "../../constants";
 import Page from "../../components/page";
 
 export const GetCashOfferCity = (props) => {

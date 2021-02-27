@@ -2,9 +2,8 @@
 import React from "react";
 import { Route, Switch } from "fusion-plugin-react-router";
 import styled from "styled-components";
-import { Routes } from "./constants/routes";
+import { Routes, CityObjects } from "./constants";
 import { Pages } from "./pages";
-import { CityObjects } from "./constants/cities";
 
 const Container = styled.div`
   margin: -8px;

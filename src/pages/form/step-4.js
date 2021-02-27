@@ -10,9 +10,9 @@ import {
   ConditionOptions,
   IsOccupiedOptions,
   IsListedOptions,
-} from "../../constants/form-options";
+  Routes,
+} from "../../constants";
 import FormStep from "./form-step";
-import { Routes } from "../../constants/routes";
 import { FormSideBySideContainer } from "../../components/shared/styled-components";
 
 export const FormStep4 = () => {

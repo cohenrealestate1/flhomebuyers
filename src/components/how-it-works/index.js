@@ -5,8 +5,7 @@ import styled from "styled-components";
 import { assetUrl } from "fusion-core";
 import PhoneLink from "../shared/phone-link";
 import Link from "../link";
-import { Routes } from "../../constants/routes";
-import { CompanyName } from "../../constants";
+import { CompanyName, Routes } from "../../constants";
 import { makeMediaQuery } from "../shared/styled-components";
 
 const Container = styled.div`

@@ -1,7 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { StyleConstants } from "../../constants/styles";
+import { StyleConstants } from "../../constants";
 
 interface Props {
   title: string;

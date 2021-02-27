@@ -4,7 +4,7 @@ import React from "react";
 import { useFormikContext } from "formik";
 import TextField from "../../components/shared/text-field";
 import Select from "../../components/shared/select";
-import { NeedToSellFastOptions } from "../../constants/form-options";
+import { NeedToSellFastOptions } from "../../constants";
 import FormStep from "./form-step";
 
 export const FormStep5 = () => {

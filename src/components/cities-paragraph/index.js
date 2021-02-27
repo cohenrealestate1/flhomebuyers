@@ -1,7 +1,6 @@
 // @flow
 import React from "react";
-import { CityObjects } from "../../constants/cities";
-import { CompanyName, InTheAreas } from "../../constants";
+import { CompanyName, InTheAreas, CityObjects } from "../../constants";
 import Link from "../link";
 import styled from "styled-components";
 

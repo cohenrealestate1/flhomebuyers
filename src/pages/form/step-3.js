@@ -3,7 +3,7 @@
 import React from "react";
 import { useFormikContext } from "formik";
 import FormStep from "./form-step";
-import { Routes } from "../../constants/routes";
+import { Routes } from "../../constants";
 import { validateStep3 } from "../../components/form/validate";
 import {
   FirstNameInput,
