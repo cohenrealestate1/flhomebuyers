@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import { useFormikContext } from "formik";
 import styled from "styled-components";
-import { StyledFormControlLabel } from "./styled-components";
+import { StyledFormControlLabel, StyledAdornment } from "./styled-components";
 
 interface Props {
   fieldName: string;
@@ -19,6 +19,7 @@ interface Props {
   options?: any[];
   adornment?: ReactNode;
   error?: string;
+  adornmentSrc?: any;
 }
 
 const StyledMaterialTextField = styled(MaterialTextField)`
@@ -55,24 +56,27 @@ export const TextField = (props: Props) => {
     multiline = false,
     select = false,
     options = [],
-    adornment,
     error,
+    adornmentSrc,
   } = props;
   const onChange = (event) =>
     props.onChange
       ? props.onChange(event)
       : setFieldValue(fieldName, event.target.value, false);
 
-  const InputProps = adornment
+  const InputProps = adornmentSrc
     ? {
         startAdornment: (
-          <InputAdornment position="start">{adornment}</InputAdornment>
+          <InputAdornment position="start">
+            <StyledAdornment src={adornmentSrc} />
+          </InputAdornment>
         ),
       }
     : {};
 
   return (
     <StyledFormControlLabel
+      $select={select}
       control={
         <StyledMaterialTextField
           value={value}

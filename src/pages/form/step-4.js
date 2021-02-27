@@ -14,6 +14,7 @@ import {
 } from "../../constants";
 import FormStep from "./form-step";
 import { FormSideBySideContainer } from "../../components/shared/styled-components";
+import { assetUrl } from "fusion-core";
 
 export const FormStep4 = () => {
   const {
@@ -37,12 +38,14 @@ export const FormStep4 = () => {
           label="How many beds?"
           value={numBeds}
           options={NumBedsOptions}
+          adornmentSrc={assetUrl("../../static/bed.svg")}
         />
         <Select
           fieldName="step4.numBaths"
           label="How many baths?"
           value={numBaths}
           options={NumBathsOptions}
+          adornmentSrc={assetUrl("../../static/bath.svg")}
         />
       </FormSideBySideContainer>
       <FormSideBySideContainer>
@@ -50,12 +53,14 @@ export const FormStep4 = () => {
           fieldName="step4.howLongOwned"
           label="How long have you owned the property?"
           value={howLongOwned}
+          adornmentSrc={assetUrl("../../static/watch.svg")}
         />
         <Select
           fieldName="step4.condition"
           label="What is the current condition?"
           value={condition}
           options={ConditionOptions}
+          adornmentSrc={assetUrl("../../static/tools.svg")}
         />
       </FormSideBySideContainer>
       <TextField
@@ -70,11 +75,13 @@ export const FormStep4 = () => {
           label="Is there anyone living in the house?"
           value={isOccupied}
           options={IsOccupiedOptions}
+          adornmentSrc={assetUrl("../../static/person.svg")}
         />
         <Select
           fieldName="step4.isListed"
           label="Is the house currently listed with a realtor?"
           value={isListed}
+          adornmentSrc={assetUrl("../../static/house.svg")}
           options={IsListedOptions}
         />
       </FormSideBySideContainer>

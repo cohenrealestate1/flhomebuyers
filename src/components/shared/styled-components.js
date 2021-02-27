@@ -8,12 +8,16 @@ export const StyledFormControlLabel = styled(FormControlLabel)`
     flex-direction: column;
     flex-direction: column-reverse;
     align-items: flex-start;
+    margin-left: 0px;
+    margin-right: 0px;
     width: 100%;
   }
   & .MuiFormControlLabel-label {
     font-weight: 700;
   }
 `;
+
+//width: ${(props) => (props.$select ? "100%" : "unset")};
 
 export const FormStepContainer = styled.div`
   padding: 32px;

@@ -31,14 +31,13 @@ function zipFormat(input) {
 
 export const ZipInput = (props: Props) => {
   const { setFieldValue } = useFormikContext();
-  const { fieldName, label, value } = props;
+  const { fieldName } = props;
   return (
     <TextField
-      label={label}
+      {...props}
       onChange={(event) =>
         setFieldValue(fieldName, zipFormat(event.target.value), false)
       }
-      value={value}
     />
   );
 };

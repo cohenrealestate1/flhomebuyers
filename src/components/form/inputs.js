@@ -1,7 +1,6 @@
 // @flow
 import React from "react";
 import { assetUrl } from "fusion-core";
-import { StyledAdornment } from "../shared/styled-components";
 import TextField from "../shared/text-field";
 import PhoneInput from "../shared/phone-input";
 
@@ -12,17 +11,29 @@ type Props = {
 };
 
 export const FirstNameInput = (props: Props) => {
-  return <TextField label="First name" {...props} />;
+  return (
+    <TextField
+      label="First name"
+      {...props}
+      adornmentSrc={assetUrl("../../static/person.svg")}
+    />
+  );
 };
 export const LastNameInput = (props: Props) => {
-  return <TextField label="Last name" {...props} />;
+  return (
+    <TextField
+      label="Last name"
+      {...props}
+      adornmentSrc={assetUrl("../../static/person.svg")}
+    />
+  );
 };
 export const EmailInput = (props: Props) => {
   return (
     <TextField
       {...props}
       label="Email address"
-      adornment={<StyledAdornment src={assetUrl("../../static/email.svg")} />}
+      adornmentSrc={assetUrl("../../static/email.svg")}
     />
   );
 };
@@ -31,7 +42,7 @@ export const PhoneNumberInput = (props: Props) => {
     <PhoneInput
       label="Phone number"
       {...props}
-      adornment={<StyledAdornment src={assetUrl("../../static/phone.svg")} />}
+      adornmentSrc={assetUrl("../../static/phone.svg")}
     />
   );
 };
