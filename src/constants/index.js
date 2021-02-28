@@ -9,6 +9,9 @@ export * from "./styles";
 export const PhoneNumber = "(954) 661-6317";
 export const PhoneNumberHref = "tel:954-661-6317";
 
+export const HeaderBackgroundImage =
+  "https://images.unsplash.com/photo-1509592149237-bc44977d96d0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80";
+
 export const CompanyName = "Florida Home Buyers";
 export const InTheAreas = "South Florida, Treasure Coast, and Gulf Coast";
 

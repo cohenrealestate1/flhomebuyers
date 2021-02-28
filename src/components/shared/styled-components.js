@@ -1,6 +1,7 @@
 // @flow
 import styled from "styled-components";
 import { FormControlLabel, Button } from "@material-ui/core";
+import { StyleConstants } from "../../constants";
 
 export const StyledFormControlLabel = styled(FormControlLabel)`
   &.MuiFormControlLabel-root {
@@ -63,4 +64,9 @@ export const StyledButton = styled(Button)`
   &.MuiButton-contained {
     background-color: ${(props) => props.$color || "unset"};
   }
+`;
+
+export const FullWidthCss = `
+  padding-left: calc((100% - ${StyleConstants.PageWidth}) / 2);
+  padding-right: calc((100% - ${StyleConstants.PageWidth}) / 2);
 `;

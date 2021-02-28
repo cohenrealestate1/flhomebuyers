@@ -5,6 +5,7 @@ import { assetUrl } from "fusion-core";
 import {
   FormSideBySideContainer,
   makeMediaQuery,
+  FullWidthCss,
 } from "../shared/styled-components";
 import {
   SocialMediaLinks,
@@ -18,8 +19,7 @@ const Container = styled(FormSideBySideContainer)`
   margin-top: auto;
   background-color: blue;
   color: white;
-  padding-left: calc((100% - ${StyleConstants.PageWidth}) / 2);
-  padding-right: calc((100% - ${StyleConstants.PageWidth}) / 2);
+  ${FullWidthCss}
   display: flex;
   justify-content: center;
   align-items: center;
