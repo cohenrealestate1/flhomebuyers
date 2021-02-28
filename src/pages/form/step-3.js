@@ -11,7 +11,7 @@ import {
   EmailInput,
   PhoneNumberInput,
 } from "../../components/form/inputs";
-import { FormSideBySideContainer } from "../../components/shared/styled-components";
+import { SideBySideContainer } from "../../components/shared/styled-components";
 
 export const FormStep3 = () => {
   const {
@@ -23,7 +23,7 @@ export const FormStep3 = () => {
   } = useFormikContext();
   return (
     <FormStep nextRoute={Routes.FormStep4} validate={validateStep3}>
-      <FormSideBySideContainer>
+      <SideBySideContainer>
         <FirstNameInput
           fieldName="step3.firstName"
           value={firstName}
@@ -34,8 +34,8 @@ export const FormStep3 = () => {
           value={lastName}
           error={errors.lastName}
         />
-      </FormSideBySideContainer>
-      <FormSideBySideContainer>
+      </SideBySideContainer>
+      <SideBySideContainer>
         <EmailInput
           fieldName="formWide.email"
           value={email}
@@ -46,7 +46,7 @@ export const FormStep3 = () => {
           value={phoneNumber}
           error={errors.phoneNumber}
         />
-      </FormSideBySideContainer>
+      </SideBySideContainer>
     </FormStep>
   );
 };

@@ -8,7 +8,7 @@ import Select from "../../components/shared/select";
 import { StatesOptions, Routes } from "../../constants";
 import FormStep from "./form-step";
 import { assetUrl } from "fusion-core";
-import { FormSideBySideContainer } from "../../components/shared/styled-components";
+import { SideBySideContainer } from "../../components/shared/styled-components";
 
 export const FormStep2 = () => {
   const {
@@ -20,7 +20,7 @@ export const FormStep2 = () => {
 
   return (
     <FormStep nextRoute={Routes.FormStep3}>
-      <FormSideBySideContainer>
+      <SideBySideContainer>
         <TextField
           fieldName="formWide.address"
           label="Street address"
@@ -33,8 +33,8 @@ export const FormStep2 = () => {
           value={city}
           adornmentSrc={assetUrl("../../static/city.svg")}
         />
-      </FormSideBySideContainer>
-      <FormSideBySideContainer>
+      </SideBySideContainer>
+      <SideBySideContainer>
         <Select
           fieldName="step2.state"
           label="State"
@@ -48,7 +48,7 @@ export const FormStep2 = () => {
           value={zip}
           adornmentSrc={assetUrl("../../static/hashtag.svg")}
         />
-      </FormSideBySideContainer>
+      </SideBySideContainer>
     </FormStep>
   );
 };

@@ -13,7 +13,7 @@ import {
   Routes,
 } from "../../constants";
 import FormStep from "./form-step";
-import { FormSideBySideContainer } from "../../components/shared/styled-components";
+import { SideBySideContainer } from "../../components/shared/styled-components";
 import { assetUrl } from "fusion-core";
 
 export const FormStep4 = () => {
@@ -32,7 +32,7 @@ export const FormStep4 = () => {
   } = useFormikContext();
   return (
     <FormStep nextRoute={Routes.FormStep5}>
-      <FormSideBySideContainer>
+      <SideBySideContainer>
         <Select
           fieldName="step4.numBeds"
           label="How many beds?"
@@ -47,8 +47,8 @@ export const FormStep4 = () => {
           options={NumBathsOptions}
           adornmentSrc={assetUrl("../../static/bath.svg")}
         />
-      </FormSideBySideContainer>
-      <FormSideBySideContainer>
+      </SideBySideContainer>
+      <SideBySideContainer>
         <TextField
           fieldName="step4.howLongOwned"
           label="How long have you owned the property?"
@@ -62,14 +62,14 @@ export const FormStep4 = () => {
           options={ConditionOptions}
           adornmentSrc={assetUrl("../../static/tools.svg")}
         />
-      </FormSideBySideContainer>
+      </SideBySideContainer>
       <TextField
         fieldName="step4.repairsNeeded"
         label="What kind of repairs and maintenance does the house need?"
         multiline={true}
         value={repairsNeeded}
       />
-      <FormSideBySideContainer>
+      <SideBySideContainer>
         <Select
           fieldName="step4.isOccupied"
           label="Is there anyone living in the house?"
@@ -84,7 +84,7 @@ export const FormStep4 = () => {
           adornmentSrc={assetUrl("../../static/house.svg")}
           options={IsListedOptions}
         />
-      </FormSideBySideContainer>
+      </SideBySideContainer>
     </FormStep>
   );
 };

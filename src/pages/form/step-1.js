@@ -7,7 +7,7 @@ import PhoneInput from "../../components/shared/phone-input";
 import FormStep from "./form-step";
 import styled from "styled-components";
 import { assetUrl } from "fusion-core";
-import { FormSideBySideContainer } from "../../components/shared/styled-components";
+import { SideBySideContainer } from "../../components/shared/styled-components";
 import { Routes } from "../../constants";
 import { validateStep1 } from "../../components/form/validate";
 
@@ -29,7 +29,7 @@ export const FormStep1 = () => {
         adornmentSrc={assetUrl("../../static/house.svg")}
         error={errors.address}
       />
-      <FormSideBySideContainer>
+      <SideBySideContainer>
         <PhoneInput
           fieldName="formWide.phoneNumber"
           label="Phone number"
@@ -44,7 +44,7 @@ export const FormStep1 = () => {
           adornmentSrc={assetUrl("../../static/email.svg")}
           error={errors.email}
         />
-      </FormSideBySideContainer>
+      </SideBySideContainer>
     </FormStep>
   );
 };

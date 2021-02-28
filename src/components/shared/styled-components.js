@@ -50,7 +50,7 @@ export const makeMediaQuery = (query: string) => {
   `;
 };
 
-export const FormSideBySideContainer = styled.div`
+export const SideBySideContainer = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 10px;

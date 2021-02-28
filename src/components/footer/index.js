@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { assetUrl } from "fusion-core";
 import {
-  FormSideBySideContainer,
+  SideBySideContainer,
   makeMediaQuery,
   FullWidthCss,
 } from "../shared/styled-components";
@@ -15,7 +15,7 @@ import {
 } from "../../constants";
 import PhoneLink from "../shared/phone-link";
 
-const Container = styled(FormSideBySideContainer)`
+const Container = styled(SideBySideContainer)`
   margin-top: auto;
   background-color: blue;
   color: white;
