@@ -13,6 +13,7 @@ const Container = styled.nav`
   height: calc(100vh);
   z-index: 1;
   color: white;
+  padding-top: 20px;
   ${FullWidthCss};
   ::before {
     z-index: -1;
@@ -41,6 +42,12 @@ const InsideContainer = styled.div`
   position: relative;
 `;
 
+const BottomContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const Header = () => {
   return (
     <Container>
@@ -48,7 +55,9 @@ export const Header = () => {
         <TopContainer>
           <Top />
         </TopContainer>
-        <Bottom />
+        <BottomContainer>
+          <Bottom />
+        </BottomContainer>
       </InsideContainer>
     </Container>
   );

@@ -18,8 +18,6 @@ export const StyledFormControlLabel = styled(FormControlLabel)`
   }
 `;
 
-//width: ${(props) => (props.$select ? "100%" : "unset")};
-
 export const FormStepContainer = styled.div`
   padding: 32px;
   border: 1px solid #e2e2e2;

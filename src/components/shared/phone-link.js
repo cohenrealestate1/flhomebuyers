@@ -8,6 +8,7 @@ const StyledLink = styled.a`
   cursor: pointer;
   color: ${(props) => props.$color};
   ${NoTextDecorationCss}
+  font-weight: 700;
 `;
 
 type Props = {

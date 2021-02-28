@@ -22,6 +22,7 @@ const Right = styled.div`
   ${Typography.HeadingXSmall}
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 `;
 
 export const Top = () => {
