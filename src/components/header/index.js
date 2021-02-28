@@ -25,8 +25,8 @@ const Container = styled.nav`
     background-image: url(${HeaderBackgroundImage});
     background-size: cover;
     filter: grayscale(50%);
-    transform: translateY(-100px);
-    min-height: calc(100% + 100px);
+    transform: translateY(-200px);
+    min-height: calc(100% + 200px);
   }
 `;
 

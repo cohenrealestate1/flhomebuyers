@@ -4,6 +4,14 @@ import styled from "styled-components";
 import Link from "../link";
 import { Routes, Typography } from "../../constants";
 import PhoneLink from "../shared/phone-link";
+import { makeMediaQuery } from "../shared/styled-components";
+
+const StyledSideBySideContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  ${makeMediaQuery("display: flex; flex-direction: column; gap: 0;")}
+`;
 
 const Left = styled.div`
   margin-right: auto;
@@ -12,6 +20,8 @@ const Left = styled.div`
 const Right = styled.div`
   margin-left: auto;
   ${Typography.HeadingXSmall}
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Top = () => {
@@ -19,9 +29,13 @@ export const Top = () => {
     <>
       <Left>Logo</Left>
       <Right>
-        CALL US! <PhoneLink color="chartreuse" />
-        <Link href={Routes.AboutUs} text="About us" color="white" />{" "}
-        <Link href={Routes.ContactUs} text="Contact us" color="white" />
+        <div>
+          CALL US! <PhoneLink color="chartreuse" />
+        </div>
+        <StyledSideBySideContainer>
+          <Link href={Routes.AboutUs} text="About us" color="white" />{" "}
+          <Link href={Routes.ContactUs} text="Contact us" color="white" />
+        </StyledSideBySideContainer>
       </Right>
     </>
   );
