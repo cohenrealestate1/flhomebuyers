@@ -2,14 +2,24 @@
 import React from "react";
 import { PhoneNumber, PhoneNumberHref } from "../../constants";
 import styled from "styled-components";
-import GenericLink from "../link";
+import { NoTextDecorationCss } from "./styled-components";
 
-const Link = styled(GenericLink)`
+const StyledLink = styled.a`
   cursor: pointer;
+  color: ${(props) => props.$color};
+  ${NoTextDecorationCss}
 `;
 
-export const PhoneLink = () => {
-  return <Link href={PhoneNumberHref} text={PhoneNumber} />;
+type Props = {
+  color: string,
+};
+export const PhoneLink = (props: Props) => {
+  const { color } = props;
+  return (
+    <StyledLink href={PhoneNumberHref} $color={color}>
+      {PhoneNumber}
+    </StyledLink>
+  );
 };
 
 export default PhoneLink;

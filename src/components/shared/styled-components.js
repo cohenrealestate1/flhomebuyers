@@ -70,3 +70,10 @@ export const FullWidthCss = `
   padding-left: calc((100% - ${StyleConstants.PageWidth}) / 2);
   padding-right: calc((100% - ${StyleConstants.PageWidth}) / 2);
 `;
+
+export const NoTextDecorationCss = `
+  text-decoration: none;
+  a:visited,hover,active,focus {
+    text-decoration: none;
+  }
+`;
