@@ -4,7 +4,7 @@ import React from "react";
 import { useFormikContext } from "formik";
 import TextField from "../../components/shared/text-field";
 import Select from "../../components/shared/select";
-import { NeedToSellFastOptions } from "../../constants";
+import { NeedToSellFastOptions, Routes } from "../../constants";
 import FormStep from "./form-step";
 
 export const FormStep5 = () => {
@@ -14,7 +14,7 @@ export const FormStep5 = () => {
     },
   } = useFormikContext();
   return (
-    <FormStep>
+    <FormStep nextRoute={Routes.FormThankYou} isLastStep={true}>
       <Select
         fieldName="step5.numBeds"
         label="Do you need to sell your home fast?"

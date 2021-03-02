@@ -3,8 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import { assetUrl } from "fusion-core";
 import {
-  SideBySideContainer,
   makeMediaQuery,
+  NonFormSideBySideContainer,
   FullWidthCss,
 } from "../shared/styled-components";
 import {
@@ -15,15 +15,11 @@ import {
 } from "../../constants";
 import PhoneLink from "../shared/phone-link";
 
-const Container = styled(SideBySideContainer)`
+const Container = styled(NonFormSideBySideContainer)`
+  ${FullWidthCss}
   margin-top: auto;
   background-color: blue;
   color: white;
-  ${FullWidthCss}
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ${makeMediaQuery("flex-direction: column;")}
 `;
 
 const Section = styled.div`

@@ -7,6 +7,7 @@ import Step2 from "./step-2";
 import Step3 from "./step-3";
 import Step4 from "./step-4";
 import Step5 from "./step-5";
+import FormThankYou from "./thank-you";
 import { FormContainer } from "../../components/shared/styled-components";
 import { Route, Switch } from "fusion-plugin-react-router";
 import { Routes } from "../../constants";
@@ -23,6 +24,7 @@ export const Form = () => {
             <Route path={Routes.FormStep3} component={Step3} />
             <Route path={Routes.FormStep4} component={Step4} />
             <Route path={Routes.FormStep5} component={Step5} />
+            <Route path={Routes.FormThankYou} component={FormThankYou} />
           </Switch>
         </FormContainer>
       }

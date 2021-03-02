@@ -75,3 +75,14 @@ export const NoTextDecorationCss = `
     text-decoration: none;
   }
 `;
+
+export const NonFormSideBySideContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${makeMediaQuery("flex-direction: column;")}
+`;
+
+export const InlineContainer = styled.div`
+  display: inline;
+`;

@@ -7,14 +7,19 @@ type Props = {
   children: ReactNode,
   nextRoute: string,
   validate: (values: any) => any,
+  isLastStep?: Boolean,
 };
 
 export const FormStep = (props: Props) => {
-  const { children, nextRoute, validate } = props;
+  const { children, nextRoute, validate, isLastStep } = props;
   return (
     <FormStepContainer>
       {children}
-      <BottomButton nextRoute={nextRoute} validate={validate} />
+      <BottomButton
+        nextRoute={nextRoute}
+        validate={validate}
+        isLastStep={isLastStep}
+      />
     </FormStepContainer>
   );
 };
