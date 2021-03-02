@@ -12,7 +12,7 @@ import {
   InlineContainer,
 } from "../../components/shared/styled-components";
 import ThankYouTile from "./thank-you-tile";
-import { Routes } from "../../constants";
+import { CompanyName, Routes } from "../../constants";
 import PhoneLink from "../../components/shared/phone-link";
 
 const StyledHeadingLarge = styled(HeadingLarge)`
@@ -55,6 +55,18 @@ export const ThankYou = () => {
           title="How It Works"
           href={Routes.HowItWorks}
           description="It's simple: You contact us. We give you an offer. We close whenever you choose."
+        />
+      </SideBySideContainer>
+      <SideBySideContainer>
+        <ThankYouTile
+          title="About Us"
+          href={Routes.AboutUs}
+          description={`Learn about ${CompanyName}'s history and values, and meet the team - Ben, Eli, and Nava.`}
+        />
+        <ThankYouTile
+          title="Contact Us"
+          href={Routes.ContactUs}
+          description={`Submit any questions or feedback. We're always looking to improve! Quick responses guaranteed.`}
         />
       </SideBySideContainer>
     </>
