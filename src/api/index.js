@@ -1,6 +1,6 @@
 // @flow
-import { type FormValuesType } from "../components/form/initial-values";
-import { type ContactUsFormValues } from "../pages/contact-us/initial-values";
+import { FormValuesType } from "../OLD/components/form/initial-values";
+import { ContactUsFormValues } from "../OLD/pages/contact-us/initial-values";
 
 const sendgrid = require("@sendgrid/mail");
 
