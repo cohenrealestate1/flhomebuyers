@@ -17,6 +17,7 @@ export const Nav = () => {
         <NavItem title="Testimonials" href={Routes.Testimonials} />
         <NavItem title="Covid-19" href={Routes.Covid19} />
         <NavItem title="About Us" href={Routes.AboutUs} />
+        <NavItem title="Contact Us" href={Routes.ContactUs} />
     </Container>
 }
 
