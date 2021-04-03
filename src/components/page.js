@@ -1,7 +1,6 @@
 // @flow
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
-import Form from "./form";
 import Header from "./header";
 
 const Container = styled.div`
@@ -10,8 +9,12 @@ const Container = styled.div`
     margin: -8px;
 `
 
-export const Page = () => {
-    return <Container><Header/><Form /></Container>
+type Props = {
+    children: ReactNode
+}
+
+export const Page = (props: Props) => {
+    return <Container><Header/>{props.children}</Container>
 }
 
 export default Page;

@@ -1,12 +1,15 @@
 // @flow
-import React from "react";
+import React, { ReactNode } from "react";
 import { Container, FormContainer, FormContentContainer, GreenContainer, OrangeContainer } from "./styled-components";
 
+type Props = {
+    children: ReactNode
+}
 
-export const Form = () => {
+export const Form = (props: Props) => {
     return <Container>
         <FormContainer>
-            <FormContentContainer>ABC</FormContentContainer>
+            <FormContentContainer>{props.children}</FormContentContainer>
             <OrangeContainer />
             <GreenContainer />
         </FormContainer>

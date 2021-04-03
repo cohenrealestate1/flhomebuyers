@@ -39,8 +39,10 @@ export const GreenContainer = styled.div`
 `
 export const FormContentContainer = styled.div`
     z-index: 1000;
-    background-color: ${Colors.Blue};
+    background-color: ${Colors.White};
     color: ${Colors.Gray3};
     min-height: 600px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 `
