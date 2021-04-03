@@ -13,6 +13,7 @@ const OrCallUs = styled.div`
 const Container = styled.div`
     display: flex;
     gap: 20px;
+    align-items: center;
 `
 const PhoneButtonContainer = styled.div`
     flex: 1;
@@ -21,7 +22,7 @@ const PhoneButtonContainer = styled.div`
 export const Bottom = () => {
     return <Container>
         <OrCallUs>Or Call Us Today</OrCallUs>
-        <PhoneButtonContainer><PhoneButton size={PhoneButtonSizes.Small} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} /></PhoneButtonContainer>
+        <PhoneButtonContainer><PhoneButton size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} /></PhoneButtonContainer>
     </Container>
 }
 

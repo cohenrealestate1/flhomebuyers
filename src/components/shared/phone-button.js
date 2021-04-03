@@ -1,8 +1,8 @@
 // @flow
-import { assetUrl } from "fusion-core";
 import React from "react";
 import styled from "styled-components";
 import { Colors, PhoneNumber, PhoneNumberHref, Typographies } from "../../constants";
+import PhoneOldFashioned from "../icons/phone-old-fashioned";
 
 export const PhoneButtonSizes = {
     Big: "Big",
@@ -11,13 +11,16 @@ export const PhoneButtonSizes = {
 
 type Props = {
     color: string,
-    size: string
+    size: string,
+    textColor?: string,
+    phoneColor?: boolean,
+    underlined?: boolean
 }
 
 const Container = styled.a`
     text-decoration: none;
     background-color: ${props => props.$color};
-    color: ${Colors.White};
+    color: ${props => props.$textColor || Colors.White};
     ${props => props.$size === PhoneButtonSizes.Big ? Typographies.ButtonBig : Typographies.ButtonMedium}
     height: ${props => props.$size === PhoneButtonSizes.Big ? "95px" : "53px"};
     padding: 6px 28px;
@@ -28,17 +31,17 @@ const Container = styled.a`
     box-sizing: border-box;
 `
 
-const PhoneContainer = styled.img`
-    height: ${props => props.$size === PhoneButtonSizes.Big ? "58px" : "35px"};
-    width: ${props => props.$size === PhoneButtonSizes.Big ? "54px" : "34px"};
-    margin-right: 22px;
+const StyledPhoneNumber = styled.div`
+    margin-left: 22px;
+    ${props => props.$underlined ? 'text-decoration: underline;' : ''}
+    text-decoration-skip-ink: none;
 `
 
 export const PhoneButton = (props: Props) => {
-    const {color, size} = props;
-    return <Container $color={color} $size={size} href={PhoneNumberHref}>
-        <PhoneContainer $size={size} src={assetUrl("../../static/phone.svg")}/>
-        <div>{PhoneNumber}</div>
+    const {color, size, textColor, phoneColor, underlined} = props;
+    return <Container $color={color} $size={size} $textColor={textColor} href={PhoneNumberHref} >
+        <PhoneOldFashioned color={phoneColor || Colors.White} size={size} />
+        <StyledPhoneNumber $underlined={underlined}>{PhoneNumber}</StyledPhoneNumber>
     </Container>
 }
 
