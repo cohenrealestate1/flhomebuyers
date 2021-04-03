@@ -11,6 +11,7 @@ const root = (
     <BaseProvider theme={LightTheme}>
     <Switch>
     <Route path={[Routes.ContactUs, Routes.Form, Routes.Covid19, Routes.AboutUs, Routes.Testimonials, Routes.Blog, Routes.HowItWorks]} component={unimplemented} />
+    <Route path={Routes.ThankYou} component={Pages.Home} />
     <Route exact path={Routes.Home} component={Pages.Home} />
     </Switch>
     </BaseProvider>

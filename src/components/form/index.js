@@ -34,25 +34,32 @@ const Line = styled.div`
     margin-bottom: 36px;
 `
 
+export const PaddingSizes = {
+    Small: "Small",
+    Big: "Big"
+}
+
 type Props = {
     children: ReactNode,
     buttonProps: {
         onClick: () => void,
         text: ReactNode
     },
-    additionalContent: ReactNode
+    additionalContent: ReactNode,
+    paddingSize?: $Values<typeof PaddingSizes>,
 }
 
 export const Form = (props: Props) => {
-    const {children, buttonProps: {onClick, text}, additionalContent} = props;
-    const {handleSubmit} = useFormikContext();
+    const {children, additionalContent, buttonProps, paddingSize} = props;
+    const formikContext = useFormikContext();
+    const handleSubmit = formikContext ? formikContext.handleSubmit : () => {};
     return <Container onSubmit={handleSubmit}>
         <FormContainer>
-            <FormContentContainer>
+            <FormContentContainer $paddingSize={paddingSize || PaddingSizes.Big}>
                 {children}
-                <ButtonContainer>
-                    <Button onClick={onClick} overrides={Overrides}>{text}</Button>
-                </ButtonContainer>
+                {buttonProps && <ButtonContainer>
+                    <Button onClick={buttonProps.onClick} overrides={Overrides}>{buttonProps.text}</Button>
+                </ButtonContainer>}
                 <Line />
                 {additionalContent}
             </FormContentContainer>
