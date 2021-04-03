@@ -10,6 +10,7 @@ import Input from "../shared/input";
 import PhoneInput from "../shared/phone-input";
 import Bottom from "./bottom";
 import getInitialValues from "./initial-values";
+import handleSubmit from "./on-submit";
 import validate from "./validate";
 
 const TopContainer = styled.div`
@@ -29,7 +30,11 @@ const Underline = styled.div`
     text-decoration: underline;
 `
 
-export const LeadIntakeForm = () => {
+type Props = {
+    sendEmailLead: Function
+};
+
+export const LeadIntakeForm = (props: Props) => {
     const {values: {email, phoneNumber, address}, errors} = useFormikContext();
     return <Form 
         buttonProps={{
@@ -76,8 +81,6 @@ export default withFormik({
     validateOnBlur: false,
     validateOnChange: false,
     mapPropsToValues: getInitialValues,
-    handleSubmit: () => {
-        console.log(10)
-    },
+    handleSubmit,
     validate
 })(LeadIntakeForm);
