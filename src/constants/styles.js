@@ -7,7 +7,8 @@ export const Colors = {
     Gray1: "#F7F7F7",
     Gray2: "#343434",
     Gray3: "#5C5C5C",
-    Red: "#EA121D"
+    Red1: "#FFEFED",
+    Red2: "#EA121D"
 }
 
 export const FontFamilies = {

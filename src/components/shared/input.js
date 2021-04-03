@@ -21,6 +21,21 @@ const BlueBorder = {
     borderLeftStyle: "solid",
 };
 
+const RedBorder = {
+    borderTopColor: Colors.Red2,
+    borderTopWidth: "2px",
+    borderTopStyle: "solid",
+    borderRightColor: Colors.Red2,
+    borderRightWidth: "2px",
+    borderRightStyle: "solid",
+    borderBottomColor: Colors.Red2,
+    borderBottomWidth: "2px",
+    borderBottomStyle: "solid",
+    borderLeftColor: Colors.Red2,
+    borderLeftWidth: "2px",
+    borderLeftStyle: "solid",
+};
+
 const NoBorder = {
     borderTopColor: 'none',
     borderTopWidth: "0px",
@@ -36,7 +51,7 @@ const NoBorder = {
     borderLeftStyle: "solid",
 }
 
-const InputOverrides = (active: boolean) => ({
+const InputOverrides = (active: boolean, error: boolean) => ({
     Root: {
         style: {
             height: "80px",
@@ -44,16 +59,13 @@ const InputOverrides = (active: boolean) => ({
             borderBottomLeftRadius: "10px",
             borderTopRightRadius: "10px",
             borderBottomRightRadius: "10px",
-            backgroundColor: Colors.Gray1,
-            ...(active ? BlueBorder : NoBorder)
+            backgroundColor: error ? Colors.Red1 : Colors.Gray1,
+            ...(error ? RedBorder : active ? BlueBorder : NoBorder)
         },
-        props: {
-            tabindex: 1
-        }
     },
     InputContainer: {
         style: {
-            backgroundColor: Colors.Gray1
+            backgroundColor: error ? Colors.Red1 : Colors.Gray1
         }
     },
     Input: {
@@ -67,7 +79,7 @@ const InputOverrides = (active: boolean) => ({
     },
     StartEnhancer: {
         style: {
-            backgroundColor: Colors.Gray1
+            backgroundColor: error ? Colors.Red1 : Colors.Gray1
         }
     }
 })
@@ -94,22 +106,24 @@ type Props = {
     label: string,
     onChangeMapper?: Function,
     required?: boolean,
-    flex?: boolean
+    flex?: boolean,
+    error?: string
 }
 
 export const Input = (props: Props) => {
-    const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value, label, required, flex} = props;
+    const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value, label, required, flex, error} = props;
     const {setFieldValue} = useFormikContext();
     const [active, setActive ] = useState(false);
-    return <Container $flex={flex}><FormControl label={<Label label={label} required={required} />} overrides={LabelOverrides}>
+    return <Container $flex={flex}><FormControl label={<Label label={label} required={required} />} overrides={LabelOverrides} error={Boolean(error)}>
         <BaseUIInput 
             value={value} 
             placeholder={placeholder}
-            overrides={InputOverrides(active)}
+            overrides={InputOverrides(active, error)}
             startEnhancer={renderStartEnhancer ? renderStartEnhancer(active) : null}
             onChange={newValue => setFieldValue(fieldName, onChangeMapper(newValue.target.value), false)}
             onFocus={() => setActive(true)}
             onBlur={() => setActive(false)} 
+            error={Boolean(error)}
         />
         </FormControl>
         </Container>
@@ -125,7 +139,7 @@ const LabelContainer = styled.div`
     display: flex;
 `
 const RequiredAsterisk = styled(LabelContainer)`
-    color: ${Colors.Red};
+    color: ${Colors.Red2};
     margin-left: 8px;
 `
 

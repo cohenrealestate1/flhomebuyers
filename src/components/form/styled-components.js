@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { Colors } from "../../constants";
 
-export const Container = styled.div`
+export const Container = styled.form`
     display: flex;
     align-items: center;
     justify-content: center;

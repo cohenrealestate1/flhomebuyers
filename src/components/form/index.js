@@ -1,5 +1,6 @@
 // @flow
 import { Button } from "baseui/button";
+import { useFormikContext } from "formik";
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Colors } from "../../constants";
@@ -36,7 +37,8 @@ type Props = {
 
 export const Form = (props: Props) => {
     const {children, buttonProps: {onClick, text}} = props;
-    return <Container>
+    const {handleSubmit} = useFormikContext();
+    return <Container onSubmit={handleSubmit}>
         <FormContainer>
             <FormContentContainer>
                 {children}

@@ -9,6 +9,7 @@ import Pin from "../icons/pin";
 import Input from "../shared/input";
 import PhoneInput from "../shared/phone-input";
 import getInitialValues from "./initial-values";
+import validate from "./validate";
 
 const TopContainer = styled.div`
     display: flex;
@@ -28,7 +29,7 @@ const Underline = styled.div`
 `
 
 export const LeadIntakeForm = () => {
-    const {values: {email, phoneNumber, address}} = useFormikContext();
+    const {values: {email, phoneNumber, address}, errors} = useFormikContext();
     return <Form buttonProps={{
         text: <ButtonText>Get your <Underline>cash offer</Underline> today!</ButtonText>,
         color: Colors.Blue,
@@ -43,6 +44,7 @@ export const LeadIntakeForm = () => {
             label="Email address"
             required={true}
             flex={true}
+            error={errors.email}
             />
         <PhoneInput 
             fieldName="phoneNumber"
@@ -51,6 +53,7 @@ export const LeadIntakeForm = () => {
             label="Phone Number"
             required={true}
             flex={true}
+            error={errors.phoneNumber}
             />
         </TopContainer>
         <Input 
@@ -60,6 +63,7 @@ export const LeadIntakeForm = () => {
             placeholder="Your property address"
             label="Property Address"
             required={true}
+            error={errors.address}
             />
         </Form>
 };
@@ -68,6 +72,8 @@ export default withFormik({
     validateOnBlur: false,
     validateOnChange: false,
     mapPropsToValues: getInitialValues,
-    handleSubmit: () => {},
-    validate: () => {}
+    handleSubmit: () => {
+        console.log(10)
+    },
+    validate
 })(LeadIntakeForm);
