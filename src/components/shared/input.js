@@ -1,126 +1,90 @@
 // @flow
-import {
-  InputAdornment, MenuItem, TextField as MaterialTextField
-} from "@material-ui/core";
+import { Input as BaseUIInput } from "baseui/input";
 import { useFormikContext } from "formik";
 import React, { ReactNode, useState } from "react";
-import styled from "styled-components";
 import { Colors } from "../../constants";
-import { StyledFormControlLabel } from "./styled-components";
 
-interface Props {
-  fieldName: string;
-  label: string;
-  value: any;
-  multiline?: boolean;
-  onChange?: Function;
-  select?: boolean;
-  options?: any[];
-  error?: string;
-  renderAdornment?: () => ReactNode;
+const Overrides = (active: boolean) => ({
+    Root: {
+        style: {
+            height: "80px",
+            borderTopLeftRadius: "10px",
+            borderBottomLeftRadius: "10px",
+            borderTopRightRadius: "10px",
+            borderBottomRightRadius: "10px",
+            backgroundColor: Colors.Gray1,
+            ...(active ? {
+                borderTopColor: Colors.Blue,
+                borderTopWidth: "2px",
+                borderTopStyle: "solid",
+                borderRightColor: Colors.Blue,
+                borderRightWidth: "2px",
+                borderRightStyle: "solid",
+                borderBottomColor: Colors.Blue,
+                borderBottomWidth: "2px",
+                borderBottomStyle: "solid",
+                borderLeftColor: Colors.Blue,
+                borderLeftWidth: "2px",
+                borderLeftStyle: "solid",
+            } : {
+                borderTopColor: 'none',
+                borderTopWidth: "0px",
+                borderTopStyle: "solid",
+                borderRightColor: 'none',
+                borderRightWidth: "0px",
+                borderRightStyle: "solid",
+                borderBottomColor: 'none',
+                borderBottomWidth: "0px",
+                borderBottomStyle: "solid",
+                borderLeftColor: 'none',
+                borderLeftWidth: "0px",
+                borderLeftStyle: "solid",
+                backgroundColor: Colors.Gray1
+            }
+            )
+        }
+    },
+    InputContainer: {
+        style: {
+            backgroundColor: Colors.Gray1
+        }
+    },
+    Input: {
+        style: {
+            color: Colors.Gray2,
+            fontSize: "25px",
+            lineHeight: "34px",
+            fontWeight: "normal",
+        }
+    },
+    StartEnhancer: {
+        style: {
+            backgroundColor: Colors.Gray1
+        }
+    }
+})
+
+type Props = {
+    renderStartEnhancer?: (active: boolean) => ReactNode,
+    fieldName: string,
+    value: any,
+    placeholder: string,
+    onChangeMapper?: Function
 }
 
-const StyledMaterialTextField = styled(MaterialTextField)`
-  & .MuiOutlinedInput-root {
-    background-color: ${Colors.Gray1};
-    border-radius: 10px;
-    height: ${(props) => (props.$multiline ? "unset" : "80px")};
-    :hover {
-      // border: 1px solid ${Colors.Blue};
-    }
-    border: 1px solid green;
-  }
-
-  & .MuiFormHelperText-contained {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  textarea {
-    height: calc(42px * 4);
-  }
-
-  &.MuiFormControl-root {
-    width: 100%;
-  }
-
-  & .MuiFormControl-root {
-    width: 100%;
-
-  }
-  &.MuiInputBase-root {
-    border: 3px solid green;
-  }
-
-  & .MuiInputBase-formControl {    
-    :hover {
-      // border: 5px solid blue;
-    }
-
-  }
-  
-  & .MuiTextField-root {
-    border: unset;
-  }
-`;
-
 export const Input = (props: Props) => {
-  const { setFieldValue } = useFormikContext();
-  const {
-    fieldName,    label,
-    value,
-    multiline = false,
-    select = false,
-    options = [],
-    error,
-    renderAdornment
-  } = props;
-
-  const [active, setActive] = useState(false);
-
-  const onChange = (event) =>
-    props.onChange
-      ? props.onChange(event)
-      : setFieldValue(fieldName, event.target.value, false);
-
-  const InputProps = renderAdornment
-    ? {
-        startAdornment: (
-          <InputAdornment position="start">
-            {renderAdornment(active)}
-          </InputAdornment>
-        ),
-      }
-    : {};
-
-  return (
-    <StyledFormControlLabel
-      $select={select}
-      control={
-        <StyledMaterialTextField
-          onBlur={() => setActive(false)}
-          onFocus={() => setActive(true)}
-          value={value}
-          variant="outlined"
-          select={select}
-          error={Boolean(error)}
-          helperText={error || ""}
-          multiline={multiline}
-          $multiline={multiline}
-          rows={4}
-          onChange={onChange}
-          InputProps={InputProps}
-        >
-          {options.map((option) => (
-            <MenuItem key={option} value={option}>
-              {option}
-            </MenuItem>
-          ))}
-        </StyledMaterialTextField>
-      }
-      label={label}
+    const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value} = props;
+    const {setFieldValue} = useFormikContext();
+    const [active, setActive ] = useState(false);
+    return <BaseUIInput 
+        value={value} 
+        placeholder={placeholder}
+        overrides={Overrides(active)}
+        startEnhancer={renderStartEnhancer ? renderStartEnhancer(active) : null}
+        onChange={newValue => setFieldValue(fieldName, onChangeMapper(newValue.target.value), false)}
+        onFocus={() => setActive(true)}
+        onBlur={() => setActive(false)} 
     />
-  );
-};
+}
 
 export default Input;
