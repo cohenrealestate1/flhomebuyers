@@ -1,4 +1,5 @@
 // @flow
+import { withRouter } from "fusion-plugin-react-router";
 import React from "react";
 import styled from "styled-components";
 import { Colors, FontFamilies, Routes, Typographies, Uppercase } from "../../constants";
@@ -27,15 +28,19 @@ type NavItemProps = {
 const StyledNavItem = styled.a`
     ${Uppercase}
     ${Typographies.TextXSmall}
-    text-decoration: none;
+    text-decoration: ${props => props.$active ? 'underline' : 'none'};
     line-height: 22px;
     font-weight: 700;
     color: ${Colors.Blue};
+    :hover {
+        color: ${Colors.Orange};
+    }
 `;
 
-const NavItem = (props: NavItemProps) => {
-    const {title, href} = props;
-    return <StyledNavItem href={href}>{title}</StyledNavItem>;
-}
+const NavItem = withRouter((props: NavItemProps) => {
+    const {title, href, location: {pathname}} = props;
+    const active = pathname === href;
+    return <StyledNavItem $active={active} href={href}>{title}</StyledNavItem>;
+})
 
 export default Nav;

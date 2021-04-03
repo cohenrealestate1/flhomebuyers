@@ -17,8 +17,16 @@ const Container = styled.a`
     box-sizing: border-box;
 `
 
-export const ContactUsButton = () => {
-    return <Container href={Routes.ContactUs}>Contact Us</Container>
+const Text = styled.div`
+    display: inline;
+`
+const Now = styled.div`
+    display: inline;
+    text-decoration: underline;
+`;
+
+export const LeadIntakeFormButton = () => {
+    return <Container href={Routes.Form}><Text>Get Your Cash Offer&nbsp;</Text><Now>Now!</Now></Container>
 }
 
-export default ContactUsButton;
+export default LeadIntakeFormButton;

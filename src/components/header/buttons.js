@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Colors } from "../../constants";
 import PhoneButton, { PhoneButtonSizes } from "../shared/phone-button";
-import ContactUsButton from "./contact-us-button";
+import LeadIntakeFormButton from "./lead-intake-form-button";
 
 const Container = styled.div`
     display: flex;
@@ -13,7 +13,7 @@ const Container = styled.div`
 `
 
 export const Buttons = () => {
-    return <Container><PhoneButton color={Colors.Green} size={PhoneButtonSizes.Small} /><ContactUsButton/></Container>
+    return <Container><LeadIntakeFormButton/><PhoneButton color={Colors.Green} size={PhoneButtonSizes.Small} /></Container>
 }
 
 export default Buttons;
