@@ -2,7 +2,7 @@
 import { useFormikContext, withFormik } from "formik";
 import React from "react";
 import styled from "styled-components";
-import { Colors, Typographies, Uppercase } from "../../constants";
+import { Colors, Inline, Typographies, Uppercase } from "../../constants";
 import Form from "../form";
 import Envelope from "../icons/envelope";
 import Pin from "../icons/pin";
@@ -20,13 +20,13 @@ const TopContainer = styled.div`
 `
 
 const ButtonText = styled.div`
-    display: inline;
+    ${Inline}
     ${Typographies.FormSubmitButton}
     color: ${Colors.White}
     ${Uppercase}
 `
 const Underline = styled.div`
-    display: inline;
+    ${Inline}
     text-decoration: underline;
 `
 

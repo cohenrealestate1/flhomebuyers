@@ -18,6 +18,9 @@ export const FontFamilies = {
 }
 export const LetterSpacing = `letter-spacing: 2px;`;
 export const Uppercase = `text-transform: uppercase;`
+export const Inline = `display: inline;`;
+export const Underline = `text-decoration: underline;`;
+export const Centered = `margin-left: auto; margin-right: auto;`
 
 export const Typographies = {
     LargeNumber: `

@@ -1,12 +1,13 @@
 // @flow
-import React from "react";
-import Tile from "./tile";
-import styled from "styled-components";
 import { assetUrl } from "fusion-core";
-import PhoneLink from "../shared/phone-link";
-import Link from "../link";
+import React from "react";
+import styled from "styled-components";
+import { Inline } from "../../../constants";
 import { CompanyName, Routes } from "../../constants";
+import Link from "../link";
+import PhoneLink from "../shared/phone-link";
 import { makeMediaQuery } from "../shared/styled-components";
+import Tile from "./tile";
 
 const Container = styled.div`
   display: flex;
@@ -25,14 +26,14 @@ const Icon = styled.img`
 const StyledLink = styled(Link)`
   color: blue;
   font-weight: 700;
-  display: inline;
+  ${Inline}
   cursor: pointer;
 `;
 
 const StyledPhoneLink = styled(PhoneLink)`
   color: blue;
   font-weight: 700;
-  display: inline;
+  ${Inline}
   cursor: pointer;
 `;
 

@@ -1,6 +1,7 @@
 // @flow
+import { Button, FormControlLabel } from "@material-ui/core";
 import styled from "styled-components";
-import { FormControlLabel, Button } from "@material-ui/core";
+import { Inline } from "../../../constants";
 import { StyleConstants } from "../../constants";
 
 export const StyledFormControlLabel = styled(FormControlLabel)`
@@ -84,5 +85,5 @@ export const NonFormSideBySideContainer = styled.div`
 `;
 
 export const InlineContainer = styled.div`
-  display: inline;
+  ${Inline}
 `;

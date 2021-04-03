@@ -1,19 +1,19 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Typographies, Uppercase } from "../../constants";
+import { Colors, Inline, Typographies, Uppercase } from "../../constants";
 import Form, { PaddingSizes } from "../form";
 import Bottom from "./bottom";
 
 const TopContainer = styled.div`
-    display: inline;
+    ${Inline}
     color: ${Colors.Blue};
     ${Typographies.PageHeader}
     margin-bottom: 21px;
     ${Uppercase}
 `
 const Cash = styled.div`
-    display: inline;
+    ${Inline}
     color: ${Colors.Green};
 `
 const BottomContainer = styled.div`

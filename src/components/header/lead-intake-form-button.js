@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Routes, Typographies } from "../../constants";
+import { Colors, Inline, Routes, Typographies } from "../../constants";
 
 const Container = styled.a`
     text-decoration: none;
@@ -18,10 +18,10 @@ const Container = styled.a`
 `
 
 const Text = styled.div`
-    display: inline;
+    ${Inline}
 `
 const Now = styled.div`
-    display: inline;
+    ${Inline}
     text-decoration: underline;
 `;
 

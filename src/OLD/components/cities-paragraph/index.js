@@ -1,13 +1,14 @@
 // @flow
 import React from "react";
-import { CompanyName, InTheAreas, CityObjects } from "../../constants";
-import Link from "../link";
 import styled from "styled-components";
+import { Inline } from "../../../constants";
+import { CityObjects, CompanyName, InTheAreas } from "../../constants";
+import Link from "../link";
 
 const StyledLink = styled(Link)`
   color: blue;
   font-weight: 700;
-  display: inline;
+  ${Inline}
   cursor: pointer;
 `;
 

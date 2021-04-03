@@ -1,7 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Colors, Typographies } from "../../constants";
+import { Colors, Inline, Typographies } from "../../constants";
 
 const Container = styled.div`
     background-color: ${Colors.Red2};
@@ -19,11 +19,11 @@ const Container = styled.div`
     box-sizing: border-box;
 `
 const Title = styled.div`
-    display: inline;
+    ${Inline}
     text-align: center;
 `
 const Title2 = styled.div`
-    display: inline;
+    ${Inline}
     color: ${Colors.Green};
 `
 const Subtitle = styled.div`
