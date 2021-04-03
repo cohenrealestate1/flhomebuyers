@@ -75,17 +75,16 @@ const InputOverrides = (active: boolean) => ({
 const LabelOverrides = {
     Label: {
         style: {
-            // fontFamily: "Montserrat",
-            // fontSize: "25px",
-            // fontWeight: 800,
-            // lineHeight: "30px",
-            // color: Colors.Gray2,
-            // textTransform: "uppercase",
             marginTop: 0,
-            marginBottom: '20px'
+            marginBottom: '20px',
+            marginLeft: '19px'
         }
-    }
+    },
 }
+
+const Container = styled.div`
+    flex: ${props => props.$flex ? 1 : 'unset'};
+`
 
 type Props = {
     renderStartEnhancer?: (active: boolean) => ReactNode,
@@ -94,14 +93,15 @@ type Props = {
     placeholder: string,
     label: string,
     onChangeMapper?: Function,
-    required?: boolean
+    required?: boolean,
+    flex?: boolean
 }
 
 export const Input = (props: Props) => {
-    const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value, label, required} = props;
+    const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value, label, required, flex} = props;
     const {setFieldValue} = useFormikContext();
     const [active, setActive ] = useState(false);
-    return <FormControl label={<Label label={label} required={required} />} overrides={LabelOverrides}>
+    return <Container $flex={flex}><FormControl label={<Label label={label} required={required} />} overrides={LabelOverrides}>
         <BaseUIInput 
             value={value} 
             placeholder={placeholder}
@@ -112,6 +112,7 @@ export const Input = (props: Props) => {
             onBlur={() => setActive(false)} 
         />
         </FormControl>
+        </Container>
 }
 
 const LabelContainer = styled.div`

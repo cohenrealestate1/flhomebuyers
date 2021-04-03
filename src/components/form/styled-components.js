@@ -6,6 +6,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: ${Colors.Blue};
 `
 
 export const FormContainer = styled.div`
@@ -45,4 +46,9 @@ export const FormContentContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    padding-left: 155px;
+    padding-right: 164px;
+    padding-top: 59px;
+
 `
