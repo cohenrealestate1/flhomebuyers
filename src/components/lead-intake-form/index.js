@@ -16,17 +16,23 @@ export const LeadIntakeForm = () => {
             fieldName="email"
             value={email}
             placeholder="Your email address"
+            label="Email address"
+            required={true}
             />
         <PhoneInput 
             fieldName="phoneNumber"
             value={phoneNumber}
             placeholder="Your phone number"
+            label="Phone Number"
+            required={true}
             />
         <Input 
             renderStartEnhancer={active => <Pin active={active} />}
             fieldName="address"
             value={address}
             placeholder="Your property address"
+            label="Property Address"
+            required={true}
             />
         </Form>
 };
