@@ -8,6 +8,8 @@ import ContactUsButton from "./contact-us-button";
 const Container = styled.div`
     display: flex;
     gap: 19px;
+    margin-left: auto;
+    margin-bottom: 28px;
 `
 
 export const Buttons = () => {

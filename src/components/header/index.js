@@ -5,11 +5,15 @@ import styled from "styled-components";
 import Buttons from "./buttons";
 import Nav from "./nav";
 
+const LogoLeftWhiteSpace = 28;
+const LogoBottomWhiteSpace = 25;
+
 const Container = styled.div`
     display: flex;
-    height: 282px;
-    align-items: center;
     box-sizing: border-box;
+    padding-left: calc(80px - ${LogoLeftWhiteSpace}px);
+    padding-right: 80px;
+    padding-right: calc(56px - ${LogoBottomWhiteSpace}px);
 `
 
 const Logo = styled.img`
@@ -18,17 +22,19 @@ const Logo = styled.img`
 `
 const RightContainer = styled.div`
     margin-left: auto;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 `;
-const NavContainer = styled.div`
-    margin-top: auto;
-`
 
 export const Header = () => {
     return <Container>
         <div><Logo src={assetUrl("../../static/logo.svg")} /></div>
-        <RightContainer><Buttons /><NavContainer><Nav /></NavContainer></RightContainer>
+        <RightContainer>
+            <Buttons />
+            <Nav />
+        </RightContainer>
     </Container>
 }
 

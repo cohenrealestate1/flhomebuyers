@@ -14,6 +14,7 @@ const Container = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 `
 
 export const ContactUsButton = () => {

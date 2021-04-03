@@ -5,8 +5,9 @@ import { Colors, FontFamilies, Routes, Typographies, Uppercase } from "../../con
 
 const Container = styled.div`
     display: flex;
-    gap: 8px;
+    gap: 22px;
     ${FontFamilies.M}
+    margin-left: auto;
 `
 
 export const Nav = () => {
