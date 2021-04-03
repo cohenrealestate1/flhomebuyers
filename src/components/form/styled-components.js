@@ -2,6 +2,8 @@
 import styled from "styled-components";
 import { Colors } from "../../constants";
 
+const FormHeight = 800;
+
 export const Container = styled.form`
     display: flex;
     align-items: center;
@@ -13,7 +15,7 @@ export const FormContainer = styled.div`
     position: relative;
     background-color: ${Colors.Blue};
     color: ${Colors.White};
-    min-height: 600px;
+    min-height: ${FormHeight}px;
     width: 78%;
     display: flex;
     align-items: center;
@@ -24,7 +26,7 @@ export const OrangeContainer = styled.div`
     background-color: ${Colors.Orange};
     z-index: 1;
     width: 100%;
-    min-height: 625px;
+    min-height: ${FormHeight + 25}px;
     position: absolute;
     top: -25px;
     right: 25px;
@@ -33,7 +35,7 @@ export const GreenContainer = styled.div`
     background-color: ${Colors.Green};
     z-index: 1;
     width: calc(100% + 25px);
-    min-height: 600px;
+    min-height: ${FormHeight}px;
     position: absolute;
     top: 25px;
     right: -25px;
@@ -42,7 +44,7 @@ export const FormContentContainer = styled.div`
     z-index: 1000;
     background-color: ${Colors.White};
     color: ${Colors.Gray3};
-    min-height: 600px;
+    min-height: ${FormHeight}px;
     width: 100%;
     display: flex;
     flex-direction: column;

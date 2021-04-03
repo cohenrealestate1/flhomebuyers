@@ -8,6 +8,7 @@ import Envelope from "../icons/envelope";
 import Pin from "../icons/pin";
 import Input from "../shared/input";
 import PhoneInput from "../shared/phone-input";
+import Bottom from "./bottom";
 import getInitialValues from "./initial-values";
 import validate from "./validate";
 
@@ -30,11 +31,14 @@ const Underline = styled.div`
 
 export const LeadIntakeForm = () => {
     const {values: {email, phoneNumber, address}, errors} = useFormikContext();
-    return <Form buttonProps={{
-        text: <ButtonText>Get your <Underline>cash offer</Underline> today!</ButtonText>,
-        color: Colors.Blue,
-        onClick: () => {}
-    }}>
+    return <Form 
+        buttonProps={{
+            text: <ButtonText>Get your <Underline>cash offer</Underline> today!</ButtonText>,
+            color: Colors.Blue,
+            onClick: () => {}
+        }}
+        additionalContent={<Bottom />}
+        >
         <TopContainer>
         <Input 
             renderStartEnhancer={active => <Envelope active={active} />}
