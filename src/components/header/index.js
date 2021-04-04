@@ -6,15 +6,13 @@ import { Routes } from "../../constants";
 import Buttons from "./buttons";
 import Nav from "./nav";
 
-const LogoLeftWhiteSpace = 28;
-const LogoBottomWhiteSpace = 25;
-
 const Container = styled.div`
     display: flex;
     box-sizing: border-box;
-    padding-left: calc(80px - ${LogoLeftWhiteSpace}px);
+    padding-left: 87px;
+    padding-top: 45px;
     padding-right: 80px;
-    padding-right: calc(56px - ${LogoBottomWhiteSpace}px);
+    padding-bottom: 54px;
 `
 const LogoContainer = styled.a`
     cursor: pointer;
