@@ -50,6 +50,7 @@ const Overrides = {
             backgroundColor: Colors.White,
             maxWidth: '571px',
             height: '100px',
+            marginBottom: "116px",
             ":hover": {
                 backgroundColor: Colors.Orange
             }

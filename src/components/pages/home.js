@@ -9,12 +9,16 @@ import LeadIntakeForm from "../lead-intake-form";
 import LeadIntakeFormThankYou from "../lead-intake-form/thank-you";
 import Page from "../page";
 import PageTitle from "../shared/page-title";
+import { BlueDivider } from "../shared/styled-components";
 import Text from "../text";
+import WeCanBeatHero from "../we-can-beat-hero";
 
 export const HomePage = (props) => {
     return <Page>
         <TitleAndForm {...props} />
         <HowItWorksHero />
+        <BlueDivider />
+        <WeCanBeatHero />
     </Page>
 }
 

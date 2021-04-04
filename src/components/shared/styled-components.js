@@ -23,3 +23,9 @@ export const StyledAdornment = styled.img`
   width: 40px;
   color: ${props => props.$active ? Colors.Blue : 'unset'}
 `;
+
+export const BlueDivider = styled.div`
+  width: 100%;
+  height: 11px;
+  background-color: ${Colors.Blue};
+`
