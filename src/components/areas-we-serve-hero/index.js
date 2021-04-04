@@ -6,10 +6,12 @@ import {
     Colors,
     HendryCities,
     LeeCities,
+    makeMediaQuery,
     MartinCities,
     MiamiCities,
     PalmBeachCities,
-    StLucieCities, Typographies
+    StLucieCities,
+    Typographies
 } from "../../constants";
 import Text from "../text";
 
@@ -21,6 +23,8 @@ const Container = styled.div`
 
 const CountiesAndCitiesContainer = styled.div`
     column-count: 3;
+    ${makeMediaQuery(1000, 'column-count: 2;')}
+    ${makeMediaQuery(600, 'column-count: 1;')}
 `
 
 export const AreasWeServeHero = () => {

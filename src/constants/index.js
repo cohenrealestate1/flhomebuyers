@@ -22,3 +22,10 @@ export const ExternalLinkProps = {
     rel: "noopener noreferrer",
 };
   
+export const makeMediaQuery = (maxWidth: number, query: string) => {
+    return `
+      @media only screen and (max-width: ${maxWidth}px) {
+        ${query}
+      }
+    `;
+  };
