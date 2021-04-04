@@ -7,6 +7,7 @@ import Text from "../text";
 
 export const PhoneButtonSizes = {
     Big: "Big",
+    Medium: "Medium",
     Small: "Small"
 }
 
@@ -23,7 +24,7 @@ const Container = styled.a`
     background-color: ${props => props.$color};
     color: ${props => props.$textColor || Colors.White};
     ${props => props.$size === PhoneButtonSizes.Big ? Typographies.ButtonBig : Typographies.ButtonMedium}
-    height: ${props => props.$size === PhoneButtonSizes.Big ? "95px" : "53px"};
+    height: ${props => props.$size === PhoneButtonSizes.Big ? "95px" : props.$size === PhoneButtonSizes.Medium ? "67px" : "53px"};
     padding: 6px 28px;
     border-radius: 5px;
     display: flex;
@@ -36,7 +37,7 @@ export const PhoneButton = (props: Props) => {
     const {color, size, textColor, phoneColor, underlined} = props;
     return <Container $color={color} $size={size} $textColor={textColor} href={PhoneNumberHref} >
         <PhoneOldFashioned color={phoneColor || Colors.White} size={size} />
-        <Text $margin="0 0 0 22px" $underline={underlined}>{PhoneNumber}</Text>
+        <Text $openSans $margin="0 0 0 22px" $underline={underlined}>{PhoneNumber}</Text>
     </Container>
 }
 

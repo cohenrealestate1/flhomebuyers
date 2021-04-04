@@ -88,6 +88,9 @@ export const Typographies = {
     TextMedium: `
         font-size: 25px;
     `,
+    EmailButton: `
+        font-size: 22px;
+    `,
     TextSmall: `
         font-size: 20px;
     `,

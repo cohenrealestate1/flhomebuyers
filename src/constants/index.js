@@ -5,6 +5,9 @@ export * from "./styles";
 export const PhoneNumber = "(954) 613-1230";
 export const PhoneNumberHref = "tel:954-613-1230";
 
+export const Email = "flhomecashbuyers1@gmail.com";
+export const EmailHref = `mailto:${Email}`;
+
 export const SocialMediaLinks = {
     Twitter: "https://twitter.com/flhomecashbuyrs",
     Facebook: "https://www.facebook.com/FL-Home-Cash-Buyers-110603414412760",

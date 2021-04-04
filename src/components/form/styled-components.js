@@ -49,8 +49,8 @@ export const FormContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding-left: ${props => props.$paddingSize === "Small" ? "61px" : "155px"};
-    padding-right: ${props => props.$paddingSize === "Small" ? "54px" : "164px"};
+    padding-left: ${props => props.$paddingSize === "Small" ? "61px" : "130px"};
+    padding-right: ${props => props.$paddingSize === "Small" ? "54px" : "130px"};
     padding-top: 59px;
 
 `

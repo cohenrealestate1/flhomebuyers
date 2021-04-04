@@ -9,5 +9,6 @@ export const Routes = {
     ThankYou: "/thank-you",
     Blog: "/blog",
     HowItWorks: "/how-it-works",
+    Locations: "/locations"
   };
   
