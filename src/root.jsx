@@ -9,6 +9,8 @@ const unimplemented = () => "Hello world";
 
 const root = (
     <BaseProvider theme={LightTheme}>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
     <Switch>
     <Route path={[Routes.ContactUs, Routes.Form, Routes.Covid19, Routes.AboutUs, Routes.Testimonials, Routes.Blog, Routes.HowItWorks]} component={unimplemented} />
     <Route path={Routes.ThankYou} component={Pages.Home} />
