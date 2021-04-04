@@ -17,18 +17,20 @@ type Props = {
     $lineHeight: string,
     $a: boolean,
     $margin: string,
-    $center: boolean
+    $center: boolean,
+    $href: string
 }
 
 export const Text = (props: Props) => {
     const {children, ...rest} = props;
-    const {$a} = props;
+    const {$a, $href} = props;
 
     const fn = $a ? styled.a : styled.div;
     const Container = fn`
         ${props => props.$hasSpacing ? `letter-spacing: 2px;` : ''}
         ${props => props.$uppercase ? `text-transform: uppercase;` : ''}
         ${props => props.$inline ? `display: inline;` : ''}
+        ${props => props.$a ? 'text-decoration: none; cursor: pointer;' : ''}
         ${props => props.$underline ? `text-decoration: underline; text-decoration-skip-ink: none;` : ''}
         ${props => props.$typography}
         ${props => props.$color ? `color: ${props.$color};` : ''}
@@ -37,12 +39,12 @@ export const Text = (props: Props) => {
         ${props => props.$openSans ? `font-family: Open sans;` : ''}
         ${props => props.$fontWeight ? `font-weight: ${props.$fontWeight};` : ''}
         ${props => props.$lineHeight ? `line-height: ${props.$lineHeight};` : ''}
-        ${props => props.$a ? 'text-decoration: none; cursor: pointer;' : ''}
         ${props => props.$margin ? `margin: ${props.$margin};` : ''}
         ${props => props.$center ? `text-align: center;` : ''}
         `
 
-    return <Container {...rest}>{children}</Container>
+    const aProps = $a ? {href: $href} : {};
+    return <Container {...aProps}  {...rest}>{children}</Container>
 }
 
 export default Text;
