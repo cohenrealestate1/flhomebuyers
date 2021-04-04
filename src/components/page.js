@@ -1,6 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import Footer from "./footer";
 import Header from "./header";
 
 const Container = styled.div`
@@ -14,7 +15,11 @@ type Props = {
 }
 
 export const Page = (props: Props) => {
-    return <Container><Header/>{props.children}</Container>
+    return <Container>
+        <Header/>
+        {props.children}
+        <Footer />
+    </Container>
 }
 
 export default Page;

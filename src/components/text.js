@@ -1,6 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { ExternalLinkProps } from "../constants";
 
 type Props = {
     children: ReactNode,
@@ -20,7 +21,8 @@ type Props = {
     $center: boolean,
     $href: string,
     $maxWidth: string,
-    $wrap: boolean
+    $wrap: boolean,
+    $external: boolean
 }
 
 const ContainerA = styled.a`
@@ -62,10 +64,10 @@ const ContainerDiv = styled.div`
 
 export const Text = (props: Props) => {
     const {children, ...rest} = props;
-    const {$a, $href} = props;
+    const {$a, $href, $external} = props;
 
     const aProps = $a ? {href: $href} : {};
-    return $a ? <ContainerA {...aProps} {...rest}>{children}</ContainerA> : <ContainerDiv {...rest}>{children}</ContainerDiv>;
+    return $a ? <ContainerA {...aProps} {...rest} {...$external ? ExternalLinkProps : {}}>{children}</ContainerA> : <ContainerDiv {...rest}>{children}</ContainerDiv>;
 }
 
 export default Text;
