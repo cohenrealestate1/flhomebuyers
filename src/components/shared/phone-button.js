@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Colors, PhoneNumber, PhoneNumberHref, Typographies } from "../../constants";
 import PhoneOldFashioned from "../icons/phone-old-fashioned";
+import Text from "../text";
 
 export const PhoneButtonSizes = {
     Big: "Big",
@@ -31,17 +32,11 @@ const Container = styled.a`
     box-sizing: border-box;
 `
 
-const StyledPhoneNumber = styled.div`
-    margin-left: 22px;
-    ${props => props.$underlined ? 'text-decoration: underline;' : ''}
-    text-decoration-skip-ink: none;
-`
-
 export const PhoneButton = (props: Props) => {
     const {color, size, textColor, phoneColor, underlined} = props;
     return <Container $color={color} $size={size} $textColor={textColor} href={PhoneNumberHref} >
         <PhoneOldFashioned color={phoneColor || Colors.White} size={size} />
-        <StyledPhoneNumber $underlined={underlined}>{PhoneNumber}</StyledPhoneNumber>
+        <Text $margin="0 0 0 22px" $underline={underlined}>{PhoneNumber}</Text>
     </Container>
 }
 

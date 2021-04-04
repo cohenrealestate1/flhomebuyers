@@ -1,5 +1,6 @@
 // @flow
 export const Colors = {
+    Yellow: "#FFFF00",
     Blue: "#1562AB",
     Green: "#2BB673",
     Orange: "#FAAD78",

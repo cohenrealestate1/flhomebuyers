@@ -2,7 +2,8 @@
 import { withRouter } from "fusion-plugin-react-router";
 import React from "react";
 import styled from "styled-components";
-import { Colors, FontFamilies, Routes, Typographies, Uppercase } from "../../constants";
+import { Colors, FontFamilies, Routes, Typographies } from "../../constants";
+import Text from "../text";
 
 const Container = styled.div`
     display: flex;
@@ -26,22 +27,10 @@ type NavItemProps = {
     href: string
 };
 
-const StyledNavItem = styled.a`
-    ${Uppercase}
-    ${Typographies.TextXSmall}
-    text-decoration: ${props => props.$active ? 'underline' : 'none'};
-    line-height: 22px;
-    font-weight: 700;
-    color: ${Colors.Blue};
-    :hover {
-        color: ${Colors.Orange};
-    }
-`;
-
 const NavItem = withRouter((props: NavItemProps) => {
     const {title, href, location: {pathname}} = props;
     const active = pathname === href;
-    return <StyledNavItem $active={active} href={href}>{title}</StyledNavItem>;
+    return <Text $a $uppercase $typography={Typographies.TextXSmall} $underline={active} $color={Colors.Blue} $hoverColor={Colors.Orange} $lineHeight="22px" $fontWeight={700}>{title}</Text>
 })
 
 export default Nav;

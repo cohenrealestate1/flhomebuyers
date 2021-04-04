@@ -1,15 +1,10 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, FontFamilies, Typographies, Uppercase } from "../../constants";
+import { Colors, Typographies } from "../../constants";
 import PhoneButton, { PhoneButtonSizes } from "../shared/phone-button";
+import Text from "../text";
 
-const OrCallUs = styled.div`
-    ${FontFamilies.M}
-    color: ${Colors.Blue};
-    ${Typographies.ButtonBig}
-    ${Uppercase}
-`;
 const Container = styled.div`
     display: flex;
     gap: 20px;
@@ -21,7 +16,7 @@ const PhoneButtonContainer = styled.div`
 
 export const Bottom = () => {
     return <Container>
-        <OrCallUs>Or Call Us Today</OrCallUs>
+        <Text $montserrat $color={Colors.Blue} $typography={Typographies.ButtonBig} $uppercase>Or Call Us Today</Text>
         <PhoneButtonContainer><PhoneButton size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} /></PhoneButtonContainer>
     </Container>
 }

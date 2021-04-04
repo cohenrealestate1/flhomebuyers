@@ -1,7 +1,8 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Inline, Routes, Typographies } from "../../constants";
+import { Colors, Routes, Typographies } from "../../constants";
+import Text from "../text";
 
 const Container = styled.a`
     text-decoration: none;
@@ -17,16 +18,11 @@ const Container = styled.a`
     box-sizing: border-box;
 `
 
-const Text = styled.div`
-    ${Inline}
-`
-const Now = styled.div`
-    ${Inline}
-    text-decoration: underline;
-`;
-
 export const LeadIntakeFormButton = () => {
-    return <Container href={Routes.Form}><Text>Get Your Cash Offer&nbsp;</Text><Now>Now!</Now></Container>
+    return <Container href={Routes.Form}>
+        <Text $inline $color={Colors.White} $typography={Typographies.ButtonMedium}>Get Your Cash Offer&nbsp;</Text>
+        <Text $inline $color={Colors.White} $typography={Typographies.ButtonMedium} $underline>Now!</Text>
+    </Container>
 }
 
 export default LeadIntakeFormButton;
