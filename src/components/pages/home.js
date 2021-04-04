@@ -4,6 +4,7 @@ import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import React from "react";
 import styled from "styled-components";
 import { Routes } from "../../constants";
+import AreasWeServeHero from "../areas-we-serve-hero";
 import HowItWorksHero from "../how-it-works-hero";
 import LeadIntakeForm from "../lead-intake-form";
 import LeadIntakeFormThankYou from "../lead-intake-form/thank-you";
@@ -19,6 +20,7 @@ export const HomePage = (props) => {
         <HowItWorksHero />
         <BlueDivider />
         <WeCanBeatHero />
+        <AreasWeServeHero />
     </Page>
 }
 
