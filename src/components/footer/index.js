@@ -11,7 +11,6 @@ import Text from "../text";
 
 const Container = styled.div`
     display: flex;
-    height: 108px;
     padding: 36px 143px 39px 141px;
     background-color: ${Colors.Green};
     box-sizing: border-box;
