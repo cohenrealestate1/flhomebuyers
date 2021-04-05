@@ -32,7 +32,7 @@ export const HowItWorksHero = () => {
         <Text $color={Colors.Blue} $fontWeight={700} $margin="0 0 4px 0" $center $uppercase $typography={Typographies.SubHeaderBig}>How It Works</Text>
         <Text $color={Colors.Gray3} $fontWeight={600} $margin="0 0 90px 0" $typography={Typographies.TextMedium} $center $inline>We provide a simple, 3-step process to get your house sold for <Text $inline $color={Colors.Green}>CASH</Text>.</Text>
         <ItemsContainer>
-            <Item number={1} text={<Text $uppercase $inline>Contact us by phone or on our&nbsp;<Text $underline $a href={Routes.Form} $color={Colors.Blue}>Online Form</Text></Text>} />
+            <Item number={1} text={<Text $uppercase $inline>Contact us by phone or on our&nbsp;<Text $underline $hoverColor={Colors.Orange} $a href={Routes.Form} $color={Colors.Blue}>Online Form</Text></Text>} />
             <Item number={2} text="GET A free CASH OFfeR on your home" />
             <Item number={3} text="CLOSE WHENEVER YOU’d LIKE" />
         </ItemsContainer>

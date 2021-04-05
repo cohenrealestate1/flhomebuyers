@@ -9,17 +9,17 @@ import Nav from "./nav";
 const Container = styled.div`
     display: flex;
     box-sizing: border-box;
-    padding-left: 87px;
-    padding-top: 45px;
-    padding-right: 80px;
+    padding-left: 86px;
+    padding-top: 44px;
+    padding-right: 70px;
     padding-bottom: 54px;
 `
 const LogoContainer = styled.a`
     cursor: pointer;
 `
 const Logo = styled.img`
-    width: 249px;
-    height: 231px;
+    width: 193px;
+    height: 184px;
 `
 const RightContainer = styled.div`
     margin-left: auto;
