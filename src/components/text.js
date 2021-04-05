@@ -22,7 +22,8 @@ type Props = {
     $href: string,
     $maxWidth: string,
     $wrap: boolean,
-    $external: boolean
+    $external: boolean,
+    $italic: boolean
 }
 
 const ContainerA = styled.a`
@@ -35,13 +36,14 @@ const ContainerA = styled.a`
     ${props => props.$color ? `color: ${props.$color};` : ''}
     ${props => props.$color || props.$hoverColor ? `:hover { color: ${props.$hoverColor || props.$color}; }` : '' }
     ${props => props.$montserrat ? `font-family: Montserrat;` : ''}
-    ${props => props.$openSans ? `font-family: Open sans;` : ''}
+    ${props => props.$openSans ? `font-family: Open sans;` : 'font-family: Montserrat;'}
     ${props => props.$fontWeight ? `font-weight: ${props.$fontWeight};` : ''}
     ${props => props.$lineHeight ? `line-height: ${props.$lineHeight};` : ''}
     ${props => props.$margin ? `margin: ${props.$margin};` : ''}
     ${props => props.$center ? `text-align: center;` : ''}
     ${props => props.$maxWidth ? `max-width: ${props.$maxWidth};` : ''}
     ${props => props.$wrap ? `word-wrap: break-word;` : ''}
+    ${props => props.$italic ? `font-style: italic;` : ''}
 `;
 const ContainerDiv = styled.div`
     ${props => props.$hasSpacing ? `letter-spacing: 2px;` : ''}
@@ -53,13 +55,14 @@ const ContainerDiv = styled.div`
     ${props => props.$color ? `color: ${props.$color};` : ''}
     ${props => props.$color || props.$hoverColor ? `:hover { color: ${props.$hoverColor || props.$color}; }` : '' }
     ${props => props.$montserrat ? `font-family: Montserrat;` : ''}
-    ${props => props.$openSans ? `font-family: Open sans;` : ''}
+    ${props => props.$openSans ? `font-family: Open sans;` : 'font-family: Montserrat;'}
     ${props => props.$fontWeight ? `font-weight: ${props.$fontWeight};` : ''}
     ${props => props.$lineHeight ? `line-height: ${props.$lineHeight};` : ''}
     ${props => props.$margin ? `margin: ${props.$margin};` : ''}
     ${props => props.$center ? `text-align: center;` : ''}
     ${props => props.$maxWidth ? `max-width: ${props.$maxWidth};` : ''}
     ${props => props.$wrap ? `word-wrap: break-word;` : ''}
+    ${props => props.$italic ? `font-style: italic;` : ''}
 `
 
 export const Text = (props: Props) => {
