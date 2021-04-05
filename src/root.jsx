@@ -7,10 +7,13 @@ import {LightTheme, BaseProvider} from 'baseui';
 
 const unimplemented = () => "Hello world";
 
+const numbers = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+const FontFamilySuffix = [numbers.join(","), numbers.join("italic,")].join(",");
+
 const root = (
     <BaseProvider theme={LightTheme}>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
+        <link href={`https://fonts.googleapis.com/css?family=Montserrat:${FontFamilySuffix}`} rel="stylesheet"/>
+        <link href={`https://fonts.googleapis.com/css?family=Open+Sans:${FontFamilySuffix}`} rel="stylesheet"/>
     <Switch>
     <Route path={[Routes.ContactUs, Routes.Form, Routes.Covid19, Routes.AboutUs, Routes.Testimonials, Routes.Blog, Routes.HowItWorks, Routes.Locations]} component={unimplemented} />
     <Route path={Routes.ThankYou} component={Pages.Home} />
