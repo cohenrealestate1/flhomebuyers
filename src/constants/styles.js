@@ -35,7 +35,7 @@ export const Typographies = {
         ${LetterSpacing}
         font-size: 90px;
         line-height: 90px;
-        font-weight: 800;
+        font-weight: 600;
     `,
     SubHeaderBig: `
         ${FontFamilies.M}

@@ -46,13 +46,13 @@ const FormContainer = styled.div`
 `
 
 const Subtitle =  <>
-    <Text>ARE YOU...</Text> 
-    <Text>Unable to keep up with your mortgage payments?</Text>
-    <Text>Tired of maintaining your property?</Text>
-    <Text>Out of time or money to renovate before selling?</Text>
-    <Divider>Do you need to sell quickly to relocate?</Divider>
-    <Text $fontWeight={800} $margin="0 0 45px 0">WE ARE HERE TO HELP IN ANY SITUATION!</Text>
-    <Text $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
+    <Text $lineHeight="34px" $margin="38px 0 10px 0">ARE YOU...</Text> 
+    <Text $lineHeight="34px" $margin="0 0 10px 0">Unable to keep up with your mortgage payments?</Text>
+    <Text $lineHeight="34px" $margin="0 0 10px 0">Tired of maintaining your property?</Text>
+    <Text $lineHeight="34px" $margin="0 0 10px 0">Out of time or money to renovate before selling?</Text>
+    <Text $lineHeight="34px" $margin="0 0 10px 0">Do you need to sell quickly to relocate?</Text>
+    <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={800} $margin="0 0 45px 0">WE ARE HERE TO HELP IN ANY SITUATION!</Text>
+    <Text $lineHeight="34px" $margin="0 0 10px 0" $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
 </>
 
 const TitleAndForm = (props) => {

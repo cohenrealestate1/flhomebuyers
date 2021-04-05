@@ -17,6 +17,8 @@ export const SocialMediaLinks = {
     LinkedIn: "https://www.linkedin.com/company/fl-home-cash-buyers/",
 };
 
+export const HouseImageHref = 'https://infinitepest.com/wp-content/uploads/2021/03/green-grass-in-the-front-yard-of-a-florida-home-KLEDP5E-scaled.jpg';
+
 export const ExternalLinkProps = {
     target: "_blank",
     rel: "noopener noreferrer",
@@ -29,3 +31,5 @@ export const makeMediaQuery = (maxWidth: number, query: string) => {
       }
     `;
   };
+
+  
