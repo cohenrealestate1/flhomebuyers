@@ -56,7 +56,7 @@ const CountyAndCities = (props) => {
 const City = (props) => {
     const {cityObject} = props;
     const {city, url} = cityObject;
-    return <Text $lineHeight="28px" $color={Colors.Gray3} $montserrat $fontWeight={500} $a $typography={Typographies.TextXSmall} $href={url}>{city}</Text>
+    return <Text $lineHeight="28px" $hoverColor={Colors.Orange} $color={Colors.Gray3} $montserrat $fontWeight={500} $a $typography={Typographies.TextXSmall} $href={url}>{city}</Text>
 }
 const County = (props) => {
     const {name} = props;
