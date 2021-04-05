@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { Routes } from "../../constants";
 import AreasWeServeHero from "../areas-we-serve-hero";
 import CallFormHero from "../call-form-hero";
+import { AboutUsHero, BlogHero, Covid19Hero } from "../generic-hero/heros";
 import HowItWorksHero from "../how-it-works-hero";
 import LeadIntakeForm from "../lead-intake-form";
 import LeadIntakeFormThankYou from "../lead-intake-form/thank-you";
@@ -15,12 +16,23 @@ import { BlueDivider } from "../shared/styled-components";
 import Text from "../text";
 import WeCanBeatHero from "../we-can-beat-hero";
 
+const HerosContainer = styled.div`
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+`
+
 export const HomePage = (props) => {
     return <Page>
         <TitleAndForm {...props} />
         <HowItWorksHero />
         <BlueDivider />
         <WeCanBeatHero />
+        <HerosContainer>
+            <AboutUsHero/>
+            <Covid19Hero/>
+        </HerosContainer>
+        <BlogHero />
         <CallFormHero />
         <AreasWeServeHero />
     </Page>

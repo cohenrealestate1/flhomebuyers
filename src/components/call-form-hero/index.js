@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Colors, PhoneNumber, PhoneNumberHref, Routes, Typographies } from "../../constants";
 import PhoneOldFashioned from "../icons/phone-old-fashioned";
+import { ButtonContainer } from "../shared/styled-components";
 import Text from "../text";
 
 const Container = styled.div`
@@ -33,21 +34,9 @@ export const CallFormHero = () => {
     </Container>
 }
 
-const ButtonContainer = styled.a`
-    text-decoration: none;
-    background-color: ${Colors.White};
-    color: ${Colors.Blue};
-    ${Typographies.ButtonBig}
+const StyledButtonContainer = styled(ButtonContainer)`
     height: 95px;
-    padding: 18px 21px 13px 23px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
     margin-bottom: 14px;
-    cursor: pointer;
-    font-weight: 700;
 `
 const ButtonAndSubtextContainer = styled.div`
     display: flex;
@@ -64,10 +53,10 @@ type ButtonProps = {
 const Button = (props: ButtonProps) => {
     const {text, endEnhancer, subtext, href} = props;
     return <ButtonAndSubtextContainer>
-        <ButtonContainer href={href}>
+        <StyledButtonContainer href={href}>
             {text}
             {endEnhancer && <StyledEndEnhancer>{endEnhancer}</StyledEndEnhancer>}
-        </ButtonContainer>
+        </StyledButtonContainer>
         <Text $color={Colors.White} $center $typography={Typographies.TextXSmall}>{subtext}</Text>
     </ButtonAndSubtextContainer>
 }

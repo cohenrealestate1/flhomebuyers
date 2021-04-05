@@ -1,7 +1,7 @@
 // @flow
 import { FormControlLabel } from "@material-ui/core";
 import styled from "styled-components";
-import { Colors } from "../../constants";
+import { Colors, Typographies } from "../../constants";
 
 export const StyledFormControlLabel = styled(FormControlLabel)`
   &.MuiFormControlLabel-root {
@@ -28,4 +28,19 @@ export const BlueDivider = styled.div`
   width: 100%;
   height: 11px;
   background-color: ${Colors.Blue};
-`
+`;
+
+export const ButtonContainer = styled.a`
+    text-decoration: none;
+    background-color: ${Colors.White};
+    color: ${Colors.Blue};
+    ${Typographies.ButtonBig}
+    padding: 18px 21px 13px 23px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 700;
+`;

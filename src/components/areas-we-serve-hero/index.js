@@ -19,6 +19,7 @@ const Container = styled.div`
     padding: 82px 186px 117px 141px;
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
 `;
 
 const CountiesAndCitiesContainer = styled.div`
