@@ -7,17 +7,15 @@ import Text from "../text";
 
 const Container = styled.div`
     display: flex;
-    gap: 20px;
+    gap: 10%;
     align-items: center;
-`
-const PhoneButtonContainer = styled.div`
-    flex: 1;
+    justify-content: center;
 `
 
 export const Bottom = () => {
     return <Container>
         <Text $montserrat $color={Colors.Blue} $typography={Typographies.ButtonBig} $uppercase>Or Call Us Today</Text>
-        <PhoneButtonContainer><PhoneButton size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} /></PhoneButtonContainer>
+        <PhoneButton size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} />
     </Container>
 }
 

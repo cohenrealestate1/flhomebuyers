@@ -92,6 +92,12 @@ const LabelOverrides = {
             marginLeft: '19px'
         }
     },
+    Caption: {
+        style: {
+            fontSize: "25px",
+            fontFamily: "Montserrat"
+        }
+    }
 }
 
 const Container = styled.div`
@@ -114,7 +120,7 @@ export const Input = (props: Props) => {
     const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value, label, required, flex, error} = props;
     const {setFieldValue} = useFormikContext();
     const [active, setActive ] = useState(false);
-    return <Container $flex={flex}><FormControl label={<Label label={label} required={required} />} overrides={LabelOverrides} error={Boolean(error)}>
+    return <Container $flex={flex}><FormControl label={<Label label={label} required={required} />} overrides={LabelOverrides} error={error}>
         <BaseUIInput 
             value={value} 
             placeholder={placeholder}
