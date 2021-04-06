@@ -6,8 +6,8 @@ export const Routes = {
     Covid19: "/covid-19",
     AboutUs: "/about-us",
     Testimonials: "/testimonials",
-    ThankYouLeadIntakeForm: "/thank-you-cash-offer",
-    ThankYouContactUs: "/thank-you-contact-us",
+    ThankYouLeadIntakeForm: "/get-cash-offer-thank-you",
+    ThankYouContactUs: "/contact-us-thank-you",
     Blog: "/blog",
     HowItWorks: "/how-it-works",
     Locations: "/locations"

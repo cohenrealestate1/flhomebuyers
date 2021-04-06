@@ -69,7 +69,7 @@ type Props = {
     onChangeMapper?: Function,
     required?: boolean,
     flex?: boolean,
-    error?: string
+    error?: string,
     type?: string
 }
 
