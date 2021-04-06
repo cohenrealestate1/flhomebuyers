@@ -1,5 +1,5 @@
 // @flow
-import { withRouter } from "fusion-plugin-react-router";
+import { Route, Switch, withRouter } from "fusion-plugin-react-router";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import React from "react";
 import styled from "styled-components";
@@ -28,13 +28,18 @@ export const HomePage = (props) => {
         <HowItWorksHero />
         <BlueDivider />
         <WeCanBeatHero />
-        <HerosContainer>
-            <AboutUsHero/>
-            <Covid19Hero/>
-        </HerosContainer>
-        <BlogHero />
-        <CallFormHero />
-        <AreasWeServeHero />
+        <Switch>
+            <Route exact path={[Routes.ThankYouLeadIntakeForm, Routes.Home]} component={() => 
+            <>
+                <HerosContainer>
+                    <AboutUsHero/>
+                    <Covid19Hero/>
+                </HerosContainer>
+                <BlogHero />
+                <CallFormHero />
+                <AreasWeServeHero />
+            </>} />
+        </Switch>
     </Page>
 }
 
@@ -57,14 +62,17 @@ const Subtitle =  <SubtitleContainer>
 
 const TitleAndForm = (props) => {
     const sendEmailLead = useRPCRedux("sendEmailLead");
-    const {location: {pathname}} = props;
-    const isThankYouPage = pathname === Routes.ThankYouLeadIntakeForm;
-    const title = isThankYouPage ? "Sent!" : "WE BUY HOUSES FOR";
-    const title2 = isThankYouPage ? undefined : "CASH";
-    const subtitle = isThankYouPage ? undefined : Subtitle;
     return <>
-        <PageTitle title={title} title2={title2} subtitle={subtitle} hasForm={true}/>
-        <FormContainer>{isThankYouPage ? <LeadIntakeFormThankYou /> : <LeadIntakeForm sendEmailLead={sendEmailLead} {...props}/>}</FormContainer>
+        <Switch>
+            <Route path={Routes.ThankYouLeadIntakeForm} component={() => <PageTitle title="Sent!" />} />
+            <Route path={[Routes.GetCashOffer, Routes.Home]} component={() => <PageTitle title="WE BUY HOUSES FOR" title2="CASH" subtitle={Subtitle} hasForm={true} />} />
+        </Switch>
+        <FormContainer>
+            <Switch>
+                <Route path={Routes.ThankYouLeadIntakeForm} component={() => <LeadIntakeFormThankYou />} />
+                <Route path={[Routes.GetCashOffer, Routes.Home]} component={() => <LeadIntakeForm sendEmailLead={sendEmailLead} {...props} />} />
+            </Switch>
+        </FormContainer>
     </>
 }
 
