@@ -21,15 +21,21 @@ const ItemsContainer = styled.div`
     margin-bottom: 44px;
 `
 
-export const HowItWorksHero = () => {
+type Props = {
+    hideWeAreHereToHelp: boolean
+}
+export const HowItWorksHero = (props: Props) => {
+    const {hideWeAreHereToHelp} = props;
     return <Container>
-        <Text $inline $uppercase $color={Colors.Blue} $typography={Typographies.TextLarge} $center $margin="0 0 75px 0">
+        {!hideWeAreHereToHelp && 
+            <Text $inline $uppercase $color={Colors.Blue} $typography={Typographies.TextLarge} $center $margin="0 0 75px 0">
             We ARE HERE TO HELP IN
             &nbsp;
             <Text $inline $uppercase $underline $color={Colors.Green}>Any</Text>
             &nbsp;
             Situation!
-        </Text>
+            </Text>
+        }
         <Text $color={Colors.Blue} $fontWeight={700} $margin="0 0 4px 0" $center $uppercase $typography={Typographies.SubHeaderBig}>How It Works</Text>
         <Text $color={Colors.Gray3} $fontWeight={600} $margin="0 0 44px 0" $typography={Typographies.TextMedium} $center $inline>We provide a simple, 3-step process to get your house sold for <Text $inline $color={Colors.Green}>CASH</Text>.</Text>
         <ItemsContainer>

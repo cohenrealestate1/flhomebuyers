@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Colors, Routes, TestimonialImageHref, Typographies } from "../../constants";
 import Caret from "../icons/caret";
-import { ButtonContainer, ButtonEndEnhancer } from "../shared/styled-components";
+import { ButtonContainer, ButtonEndEnhancer, GrayDivider } from "../shared/styled-components";
 import TestimonialCard from "../shared/testimonial-card";
 import Text from "../text";
 
@@ -20,12 +20,6 @@ const Container = styled.div`
     padding-bottom: 80px;
     box-sizing: border-box;
 `
-const Line = styled.div`
-    width: 77%;
-    height: 2px;
-    background-color: ${Colors.Gray4};
-    margin-bottom: 61px;
-`
 const StyledButton = styled(ButtonContainer)`
     ${Typographies.TextMedium}
     line-height: 30px;
@@ -34,10 +28,13 @@ const StyledButton = styled(ButtonContainer)`
         background-color: ${Colors.Orange};
     }
 `
+const StyledGrayDivider = styled(GrayDivider)`
+    margin-bottom: 61px;
+`
 
 export const TestimonailsHero = () => {
     return <Container>
-        <Line />
+        <StyledGrayDivider />
         <Text $margin="0 0 46px 0" $typography={Typographies.SubHeaderMedium} $color={Colors.Green} $openSans>Read what our past sellers have to say</Text>
         <TestimonialCard 
             imgHref={TestimonialImageHref} 

@@ -26,11 +26,16 @@ const TestimonialSection = styled.div`
     justify-content: center;
     gap: 43px;
 `;
+const HereToHelpCotnainer = styled.div`
+    padding-top: 103px;
+`
 
 export const TestimonialsPage = (props) => {
     return <Page>
         <PageTitle title="TESTIMONIALS"/>
-        <HereToHelpHero />
+        <HereToHelpCotnainer>
+            <HereToHelpHero />
+        </HereToHelpCotnainer>
         <CallFormHero />
         <TestimonialSection>
             <TestimonialCard {...testimonialProps} color={Colors.Blue} />

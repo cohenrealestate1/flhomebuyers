@@ -29,6 +29,13 @@ export const BlueDivider = styled.div`
   height: 11px;
   background-color: ${Colors.Blue};
 `;
+export const GrayDivider = styled.div`
+  width: 77%;
+  height: 2px;
+  background-color: ${Colors.Gray4};
+  margin-left: auto;
+  margin-right: auto;
+`
 
 export const ButtonContainer = styled.a`
     text-decoration: none;
@@ -56,4 +63,19 @@ export const FormFlexContainer = styled.div`
     display: flex;
     gap: 24px;
     margin-bottom: 37px;
+`
+
+export const CardContainer = styled.div`
+  display: flex;
+  box-sizing: border-box;
+`
+export const CardImg = styled.img`
+    flex: 1;
+`
+export const CardRightContainer = styled.div`
+    background-color: ${props => props.$color};
+    padding: 64px 28px 64px 64px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 `

@@ -10,7 +10,6 @@ const Container = styled.div`
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 103px;
     padding-bottom: 80px;
     box-sizing: border-box;
 `;
