@@ -25,7 +25,7 @@ export const OrangeContainer = styled.div`
     background-color: ${Colors.Orange};
     z-index: 1;
     width: 100%;
-    min-height: ${FormHeight + 25}px;
+    height: calc(100% + 25px);
     position: absolute;
     top: -25px;
     right: 25px;
@@ -34,7 +34,7 @@ export const GreenContainer = styled.div`
     background-color: ${Colors.Green};
     z-index: 1;
     width: calc(100% + 25px);
-    min-height: ${FormHeight}px;
+    height: 100%;
     position: absolute;
     top: 25px;
     right: -25px;
