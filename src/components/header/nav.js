@@ -27,20 +27,25 @@ type NavItemProps = {
     href: string
 };
 
+const NavItemContainer = styled.div`
+    ${props => props.$active ? `border-bottom: 5px solid ${Colors.Blue}` : ''};
+`
+
 const NavItem = withRouter((props: NavItemProps) => {
     const {title, href, location: {pathname}} = props;
     const active = pathname === href;
-    return <Text 
+    return <NavItemContainer $active={active}>
+        <Text 
         $a 
         $uppercase 
         $typography={Typographies.TextXSmall} 
-        $underline={active} 
         $color={Colors.Blue} 
         $hoverColor={Colors.Orange} 
         $lineHeight="22px" 
         $fontWeight={700}
         $href={href}
-    >{title}</Text>
+        >{title}</Text>
+    </NavItemContainer>
 })
 
 export default Nav;
