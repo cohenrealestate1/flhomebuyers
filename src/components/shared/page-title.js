@@ -18,6 +18,7 @@ const Container = styled.div`
     padding-bottom: ${props => props.$hasForm ? '40px' : '0px'};
     box-sizing: border-box;
     z-index: 1;
+    font-weight: 800;
     position: relative;
     ::before {
         z-index: -1;
@@ -25,7 +26,7 @@ const Container = styled.div`
         top: 0;
         left: -200px;
         width: calc(100% + 200px);
-        height: 100%;
+        height: calc(100% + 139px);
         position: absolute;
         background-image: url('${HouseImageHref}');
         background-size: cover;
