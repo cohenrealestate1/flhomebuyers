@@ -58,7 +58,7 @@ const Subtitle =  <SubtitleContainer>
 const TitleAndForm = (props) => {
     const sendEmailLead = useRPCRedux("sendEmailLead");
     const {location: {pathname}} = props;
-    const isThankYouPage = pathname === Routes.ThankYou;
+    const isThankYouPage = pathname === Routes.ThankYouLeadIntakeForm;
     const title = isThankYouPage ? "Sent!" : "WE BUY HOUSES FOR";
     const title2 = isThankYouPage ? undefined : "CASH";
     const subtitle = isThankYouPage ? undefined : Subtitle;

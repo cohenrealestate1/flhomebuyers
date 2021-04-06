@@ -39,6 +39,10 @@ function phoneFormat(input) {
 export const PhoneInput = (props: Props) => {
   return (
     <Input
+        fieldName="phoneNumber"
+        placeholder="Your phone number"
+        label="Phone Number"
+        required={true}
         renderStartEnhancer={active => <Phone active={active} />}
        onChangeMapper={phoneFormat}
       {...props}

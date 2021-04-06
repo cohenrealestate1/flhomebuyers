@@ -51,3 +51,9 @@ export const ButtonEndEnhancer = styled.div`
   align-items: center;
   justify-content: center;
 `
+
+export const FormFlexContainer = styled.div`
+    display: flex;
+    gap: 24px;
+    margin-bottom: 37px;
+`

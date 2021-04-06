@@ -4,9 +4,9 @@ import React from "react";
 import styled from "styled-components";
 import { Colors, Typographies } from "../../constants";
 import Form from "../form";
-import Envelope from "../icons/envelope";
 import Pin from "../icons/pin";
 import Input from "../shared/input";
+import { EmailInput } from "../shared/inputs";
 import PhoneInput from "../shared/phone-input";
 import Text from "../text";
 import Bottom from "./bottom";
@@ -35,22 +35,12 @@ export const LeadIntakeForm = (props: Props) => {
         additionalContent={<Bottom />}
         >
         <TopContainer>
-        <Input 
-            renderStartEnhancer={active => <Envelope active={active} />}
-            fieldName="email"
-            value={email}
-            placeholder="Your email address"
-            label="Email address"
-            required={true}
-            flex={true}
-            error={errors.email}
+            <EmailInput 
+                value={email}
+                error={errors.email}
             />
         <PhoneInput 
-            fieldName="phoneNumber"
             value={phoneNumber}
-            placeholder="Your phone number"
-            label="Phone Number"
-            required={true}
             flex={true}
             error={errors.phoneNumber}
             />

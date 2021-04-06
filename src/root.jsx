@@ -17,7 +17,7 @@ const root = (
     <Switch>
     <Route path={[Routes.Form, Routes.Covid19, Routes.AboutUs, Routes.Testimonials, Routes.Blog, Routes.HowItWorks, Routes.Locations]} component={unimplemented} />
     <Route path={Routes.ContactUs} component={Pages.ContactUs} />
-    <Route path={Routes.ThankYou} component={Pages.Home} />
+    <Route path={Routes.ThankYouLeadIntakeForm} component={Pages.Home} />
     <Route exact path={Routes.Home} component={Pages.Home} />
     </Switch>
     </BaseProvider>
