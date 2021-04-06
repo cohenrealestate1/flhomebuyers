@@ -19,7 +19,7 @@ export const CallFormHero = () => {
     return <Container>
         <Button 
             text={<Text $color={Colors.Blue} $inline $fontWeight={700} $typography={Typographies.ButtonBig}>Get Your Cash Offer&nbsp;<Text $inline $underline>Now!</Text></Text>}
-            href={Routes.Form}
+            href={Routes.GetCashOffer}
             subtext={<Text $italic>Click to receive a cash offer in 30 Minutes.</Text>} />
         <Button 
             text={<Text $color={Colors.Blue} $inline $fontWeight={700} $typography={Typographies.ButtonBig}>or Call {PhoneNumber}</Text>}

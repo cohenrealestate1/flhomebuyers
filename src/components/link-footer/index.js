@@ -63,7 +63,7 @@ export const Footer = () => {
                 </LinksColumn>
                 <LinksColumn>
                     <Link href={Routes.ContactUs} text="Contact us" />
-                    <Link href={Routes.Form} text="Get Cash Offer Now!" />
+                    <Link href={Routes.GetCashOffer} text="Get Cash Offer Now!" />
                     <Link href={Routes.Covid19} text="COVID-19" />
                     <Link href={Routes.Blog} text="Blog" />
                 </LinksColumn>

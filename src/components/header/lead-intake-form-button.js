@@ -19,7 +19,7 @@ const Container = styled.a`
 `
 
 export const LeadIntakeFormButton = () => {
-    return <Container href={Routes.Form}>
+    return <Container href={Routes.GetCashOffer}>
         <Text $inline $color={Colors.White} $typography={Typographies.ButtonMedium}>Get Your Cash Offer&nbsp;</Text>
         <Text $inline $color={Colors.White} $typography={Typographies.ButtonMedium} $underline>Now!</Text>
     </Container>
