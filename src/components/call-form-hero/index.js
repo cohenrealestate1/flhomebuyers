@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Colors, PhoneNumber, PhoneNumberHref, Routes, Typographies } from "../../constants";
 import PhoneOldFashioned from "../icons/phone-old-fashioned";
-import { ButtonContainer } from "../shared/styled-components";
+import { ButtonContainer, ButtonEndEnhancer } from "../shared/styled-components";
 import Text from "../text";
 
 const Container = styled.div`
@@ -15,14 +15,6 @@ const Container = styled.div`
     justify-content: center;
     width: 100%;
 `
-
-const StyledEndEnhancer = styled.div`
-    margin-left: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
 export const CallFormHero = () => {
     return <Container>
         <Button 
@@ -58,7 +50,7 @@ const Button = (props: ButtonProps) => {
     return <ButtonAndSubtextContainer>
         <StyledButtonContainer href={href}>
             {text}
-            {endEnhancer && <StyledEndEnhancer>{endEnhancer}</StyledEndEnhancer>}
+            {endEnhancer && <ButtonEndEnhancer>{endEnhancer}</ButtonEndEnhancer>}
         </StyledButtonContainer>
         <Text $color={Colors.White} $center $typography={Typographies.TextXSmall}>{subtext}</Text>
     </ButtonAndSubtextContainer>

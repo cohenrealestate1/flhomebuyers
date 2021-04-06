@@ -44,3 +44,10 @@ export const ButtonContainer = styled.a`
     cursor: pointer;
     font-weight: 700;
 `;
+
+export const ButtonEndEnhancer = styled.div`
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
