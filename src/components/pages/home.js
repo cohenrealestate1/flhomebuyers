@@ -51,7 +51,7 @@ const SubtitleContainer = styled.div`
 `
 
 const Subtitle =  <SubtitleContainer>
-    <Text $lineHeight="34px" $margin="38px 0 10px 0">ARE YOU...</Text> 
+    <Text $lineHeight="34px" $margin="38px 0 10px 0">ARE YOU . . .</Text> 
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Unable to keep up with your mortgage payments?</Text>
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Tired of maintaining your property?</Text>
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Out of time or money to renovate before selling?</Text>

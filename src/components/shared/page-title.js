@@ -12,7 +12,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: ${props => props.$hasForm ? '80px' : '47px'};
     padding-left: 20%;
     padding-right: 20%;
     padding-bottom: ${props => props.$hasForm ? '40px' : '0px'};
@@ -26,7 +26,7 @@ const Container = styled.div`
         top: 0;
         left: -200px;
         width: calc(100% + 200px);
-        height: calc(100% + 139px);
+        height: calc(100% + ${props => props.$hasForm ? '139px' : '47px'});
         position: absolute;
         background-image: url('${HouseImageHref}');
         background-size: cover;
