@@ -1,31 +1,25 @@
 // @flow
 import { useFormikContext, withFormik } from "formik";
 import React from "react";
-import styled from "styled-components";
 import { Colors, Typographies } from "../../constants";
 import Form from "../form";
 import Input from "../shared/input";
 import { EmailInput } from "../shared/inputs";
 import PhoneInput from "../shared/phone-input";
 import { FormFlexContainer } from "../shared/styled-components";
+import { Textarea } from "../shared/textarea";
 import Text from "../text";
 // import Bottom from "./bottom";
 import getInitialValues from "./initial-values";
 import handleSubmit from "./on-submit";
 import validate from "./validate";
 
-const TopContainer = styled.div`
-    display: flex;
-    gap: 24px;
-    margin-bottom: 37px;
-`
-
 type Props = {
     sendEmailContactUs: Function
 };
 
 export const ContactUsForm = (props: Props) => {
-    const {values: {email, phoneNumber, firstName, lastName}, errors} = useFormikContext();
+    const {values: {email, phoneNumber, firstName, lastName, freeFormText}, errors} = useFormikContext();
     return <Form 
         buttonProps={{
             text: <Text $typography={Typographies.FormSubmitButton} $color={Colors.White} $uppercase>Submit</Text>,
@@ -63,6 +57,12 @@ export const ContactUsForm = (props: Props) => {
                 error={errors.phoneNumber}
             />
         </FormFlexContainer>
+        <Textarea 
+            fieldName="freeFormText" 
+            value={freeFormText} 
+            placeholder="Leave any questions or comments here"
+            label="Questions / Comments"
+        />
     </Form>
 };
 

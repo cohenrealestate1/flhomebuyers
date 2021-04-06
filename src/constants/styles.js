@@ -98,3 +98,48 @@ export const Typographies = {
         font-size: 18px;
     `
 };
+
+export const BlueBorder = {
+    borderTopColor: Colors.Blue,
+    borderTopWidth: "2px",
+    borderTopStyle: "solid",
+    borderRightColor: Colors.Blue,
+    borderRightWidth: "2px",
+    borderRightStyle: "solid",
+    borderBottomColor: Colors.Blue,
+    borderBottomWidth: "2px",
+    borderBottomStyle: "solid",
+    borderLeftColor: Colors.Blue,
+    borderLeftWidth: "2px",
+    borderLeftStyle: "solid",
+};
+
+export const RedBorder = {
+    borderTopColor: Colors.Red2,
+    borderTopWidth: "2px",
+    borderTopStyle: "solid",
+    borderRightColor: Colors.Red2,
+    borderRightWidth: "2px",
+    borderRightStyle: "solid",
+    borderBottomColor: Colors.Red2,
+    borderBottomWidth: "2px",
+    borderBottomStyle: "solid",
+    borderLeftColor: Colors.Red2,
+    borderLeftWidth: "2px",
+    borderLeftStyle: "solid",
+};
+
+export const NoBorder = {
+    borderTopColor: 'none',
+    borderTopWidth: "0px",
+    borderTopStyle: "solid",
+    borderRightColor: 'none',
+    borderRightWidth: "0px",
+    borderRightStyle: "solid",
+    borderBottomColor: 'none',
+    borderBottomWidth: "0px",
+    borderBottomStyle: "solid",
+    borderLeftColor: 'none',
+    borderLeftWidth: "0px",
+    borderLeftStyle: "solid",
+}

@@ -1,24 +1,18 @@
 // @flow
 import { useFormikContext, withFormik } from "formik";
 import React from "react";
-import styled from "styled-components";
 import { Colors, Typographies } from "../../constants";
 import Form from "../form";
 import Pin from "../icons/pin";
 import Input from "../shared/input";
 import { EmailInput } from "../shared/inputs";
 import PhoneInput from "../shared/phone-input";
+import { FormFlexContainer } from "../shared/styled-components";
 import Text from "../text";
 import Bottom from "./bottom";
 import getInitialValues from "./initial-values";
 import handleSubmit from "./on-submit";
 import validate from "./validate";
-
-const TopContainer = styled.div`
-    display: flex;
-    gap: 24px;
-    margin-bottom: 37px;
-`
 
 type Props = {
     sendEmailLead: Function
@@ -34,7 +28,7 @@ export const LeadIntakeForm = (props: Props) => {
         }}
         additionalContent={<Bottom />}
         >
-        <TopContainer>
+        <FormFlexContainer>
             <EmailInput 
                 value={email}
                 error={errors.email}
@@ -44,7 +38,7 @@ export const LeadIntakeForm = (props: Props) => {
             flex={true}
             error={errors.phoneNumber}
             />
-        </TopContainer>
+        </FormFlexContainer>
         <Input 
             renderStartEnhancer={active => <Pin active={active} />}
             fieldName="address"

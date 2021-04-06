@@ -3,7 +3,7 @@
 export type ContactUsFormValues = {
     email: string,
     phoneNumber: string,
-    address: string,
+    freeFormText: string,
     firstName: string,
     lastName: string,
   };
@@ -12,7 +12,7 @@ export type ContactUsFormValues = {
     return {
         email: "",
         phoneNumber: "",
-        address: "",
+        freeFormText: "",
         firstName: "",
         lastName: ""
     }

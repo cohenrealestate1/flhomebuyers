@@ -4,52 +4,8 @@ import { Input as BaseUIInput } from "baseui/input";
 import { useFormikContext } from "formik";
 import React, { ReactNode, useState } from "react";
 import styled from "styled-components";
-import { Colors, FontFamilies, Typographies, Uppercase } from "../../constants";
-
-const BlueBorder = {
-    borderTopColor: Colors.Blue,
-    borderTopWidth: "2px",
-    borderTopStyle: "solid",
-    borderRightColor: Colors.Blue,
-    borderRightWidth: "2px",
-    borderRightStyle: "solid",
-    borderBottomColor: Colors.Blue,
-    borderBottomWidth: "2px",
-    borderBottomStyle: "solid",
-    borderLeftColor: Colors.Blue,
-    borderLeftWidth: "2px",
-    borderLeftStyle: "solid",
-};
-
-const RedBorder = {
-    borderTopColor: Colors.Red2,
-    borderTopWidth: "2px",
-    borderTopStyle: "solid",
-    borderRightColor: Colors.Red2,
-    borderRightWidth: "2px",
-    borderRightStyle: "solid",
-    borderBottomColor: Colors.Red2,
-    borderBottomWidth: "2px",
-    borderBottomStyle: "solid",
-    borderLeftColor: Colors.Red2,
-    borderLeftWidth: "2px",
-    borderLeftStyle: "solid",
-};
-
-const NoBorder = {
-    borderTopColor: 'none',
-    borderTopWidth: "0px",
-    borderTopStyle: "solid",
-    borderRightColor: 'none',
-    borderRightWidth: "0px",
-    borderRightStyle: "solid",
-    borderBottomColor: 'none',
-    borderBottomWidth: "0px",
-    borderBottomStyle: "solid",
-    borderLeftColor: 'none',
-    borderLeftWidth: "0px",
-    borderLeftStyle: "solid",
-}
+import { BlueBorder, Colors, NoBorder, RedBorder } from "../../constants";
+import Label from "./label";
 
 const InputOverrides = (active: boolean, error: boolean) => ({
     Root: {
@@ -133,32 +89,6 @@ export const Input = (props: Props) => {
         />
         </FormControl>
         </Container>
-}
-
-const LabelContainer = styled.div`
-    ${FontFamilies.M}
-    ${Typographies.TextMedium}
-    font-weight: 800;
-    line-height: 30px;
-    color: ${Colors.Gray2};
-    ${Uppercase}
-    display: flex;
-`
-const RequiredAsterisk = styled(LabelContainer)`
-    color: ${Colors.Red2};
-    margin-left: 8px;
-`
-
-type LabelProps = {
-    label: string,
-    required: boolean
-}
-const Label = (props: LabelProps) => {
-    const {label, required} = props;
-    return <LabelContainer>
-        <div>{label}</div>
-        {required && <RequiredAsterisk>*</RequiredAsterisk>}
-        </LabelContainer>
 }
 
 export default Input;
