@@ -44,7 +44,8 @@ export const PhoneInput = (props: Props) => {
         label="Phone Number"
         required={true}
         renderStartEnhancer={active => <Phone active={active} />}
-       onChangeMapper={phoneFormat}
+        onChangeMapper={phoneFormat}
+        type="tel"
       {...props}
     />
   );
