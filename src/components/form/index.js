@@ -30,7 +30,7 @@ const Line = styled.div`
     width: 100%;
     height: 1px;
     background-color: ${Colors.Gray4};
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 36px;
 `
 
