@@ -10,7 +10,8 @@ const Overrides = {
     BaseButton: {
         style: {
             backgroundColor: Colors.Blue,
-            width: '66%',
+            padding: '34px 60px',
+            width: 'fit-content',
             borderRadius: '5px',
             height: '100px',
             ':hover': {
