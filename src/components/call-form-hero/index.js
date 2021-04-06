@@ -8,9 +8,12 @@ import Text from "../text";
 
 const Container = styled.div`
     background-color: ${Colors.Green};
-    padding: 85px 141px 61px 139px;
+    padding: 85px 0 61px 0;
     display: flex;
     gap: 42px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 `
 
 const StyledEndEnhancer = styled.div`
