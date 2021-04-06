@@ -9,7 +9,7 @@ import PhoneInput from "../shared/phone-input";
 import { FormFlexContainer } from "../shared/styled-components";
 import { Textarea } from "../shared/textarea";
 import Text from "../text";
-// import Bottom from "./bottom";
+import Bottom from "./bottom";
 import getInitialValues from "./initial-values";
 import handleSubmit from "./on-submit";
 import validate from "./validate";
@@ -26,7 +26,7 @@ export const ContactUsForm = (props: Props) => {
             color: Colors.Blue,
             onClick: () => {}
         }}
-        additionalContent={<></>}
+        additionalContent={<Bottom />}
         >
         <FormFlexContainer>
             <Input 
