@@ -26,6 +26,9 @@ const Container = styled.div`
     font-weight: 800;
     position: relative;
     margin-top: -${TopOffset};
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
     ::before {
         z-index: -1;
         content: "";
