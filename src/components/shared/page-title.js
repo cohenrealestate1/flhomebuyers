@@ -13,12 +13,12 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding-top: ${props => props.$hasForm ? '80px' : '47px'};
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-bottom: ${props => props.$hasForm ? '40px' : '0px'};
     box-sizing: border-box;
     z-index: 1;
-    font-weight: 800;
+    font-weight: ${props => props.$titleFontWeight || 800};
     position: relative;
     ::before {
         z-index: -1;
@@ -42,13 +42,14 @@ const SubtitleContainer = styled.div`
 type Props = {
     title: string,
     title2?: string,
+    titleFontWeight?: string;
     subtitle?: ReactNode,
     hasForm?: boolean
 }
 
 export const PageTitle = (props: Props) => {
-    const {title, title2, subtitle, hasForm} = props;
-    return <Container $hasForm={hasForm}>
+    const {title, title2, subtitle, hasForm, titleFontWeight} = props;
+    return <Container $hasForm={hasForm} $titleFontWeight={titleFontWeight}>
         <Text $inline $center>
             {title}
             {title2 && <>&nbsp;<Text $inline $color={Colors.Green}>{title2}</Text></>}

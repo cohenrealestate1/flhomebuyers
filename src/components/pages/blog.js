@@ -31,13 +31,13 @@ const BlogSection = styled.div`
 const CallFormContainer = styled.div`
     padding-top: 30px;
 `
-const HereToHelpCotnainer = styled.div`
+const HereToHelpContainer = styled.div`
     padding-top: 83px;
 `
 
-export const TestimonialsPage = (props) => {
+export const BlogPage = (props) => {
     return <Page>
-        <PageTitle title="THE BLOG"/>
+        <PageTitle title="THE BLOG" titleFontWeight={700}/>
         <CallFormContainer>
             <CallFormHero />
         </CallFormContainer>
@@ -50,9 +50,9 @@ export const TestimonialsPage = (props) => {
             <BlogCard {...blogProps} color={Colors.Green} />
         </BlogSection>
         <GrayDivider />
-        <HereToHelpCotnainer>
+        <HereToHelpContainer>
             <HereToHelpHero />
-        </HereToHelpCotnainer>
+        </HereToHelpContainer>
         <HowItWorksHero hideWeAreHereToHelp={true} />
         <BlueDivider />
         <WeCanBeatHero />
@@ -60,4 +60,4 @@ export const TestimonialsPage = (props) => {
 }
 
 
-export default TestimonialsPage;
+export default BlogPage;

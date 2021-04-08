@@ -17,7 +17,7 @@ export const ContactUsPage = (props) => {
     const {location: {pathname}} = props;
     const isThankYouPage = pathname === Routes.ThankYouContactUs;
     return <Page>
-        <PageTitle title="CONTACT US" hasForm={true}/>
+        <PageTitle title="CONTACT US" hasForm={true} titleFontWeight={700} />
         <FormContainer>
             {isThankYouPage ? <ContactUsFormThankYou /> : <ContactUsForm sendEmailContactUs={sendEmailContactUs} {...props} />}
         </FormContainer>

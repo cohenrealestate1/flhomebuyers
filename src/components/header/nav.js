@@ -15,6 +15,7 @@ const Container = styled.div`
 export const Nav = () => {
     return <Container>
         <NavItem title="How it works" href={Routes.HowItWorks} />
+        <NavItem title="Locations" href={Routes.Locations} />
         <NavItem title="Testimonials" href={Routes.Testimonials} />
         <NavItem title="Covid-19" href={Routes.Covid19} />
         <NavItem title="About Us" href={Routes.AboutUs} />
