@@ -2,7 +2,7 @@
 import { assetUrl } from "fusion-core";
 import React from "react";
 import styled from "styled-components";
-import { Routes } from "../../constants";
+import { Colors, Routes } from "../../constants";
 import Buttons from "./buttons";
 import Nav from "./nav";
 
@@ -13,6 +13,8 @@ const Container = styled.div`
     padding-top: 44px;
     padding-right: 70px;
     padding-bottom: 54px;
+    background-color: ${Colors.White};
+    z-index: 100;
 `
 const LogoContainer = styled.a`
     cursor: pointer;

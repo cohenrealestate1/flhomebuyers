@@ -15,7 +15,8 @@ const root = (
         <link href={`https://fonts.googleapis.com/css?family=Montserrat:${FontFamilySuffix}`} rel="stylesheet"/>
         <link href={`https://fonts.googleapis.com/css?family=Open+Sans:${FontFamilySuffix}`} rel="stylesheet"/>
     <Switch>
-    <Route path={[Routes.Covid19, Routes.AboutUs, Routes.HowItWorks, Routes.Locations]} component={unimplemented} />
+    <Route path={[Routes.AboutUs, Routes.HowItWorks, Routes.Locations]} component={unimplemented} />
+    <Route path={Routes.Covid19} component={Pages.Covid19} />
     <Route path={Routes.Blog} component={Pages.Blog} />
     <Route path={Routes.Testimonials} component={Pages.Testimonials} />
     <Route path={Routes.ThankYouContactUs} component={Pages.ContactUs} />

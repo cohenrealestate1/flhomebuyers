@@ -28,7 +28,7 @@ type NavItemProps = {
 };
 
 const NavItemContainer = styled.div`
-    ${props => props.$active ? `border-bottom: 5px solid ${Colors.Blue}` : ''};
+    ${props => props.$active ? `border-bottom: 5px solid ${Colors.Blue}; :hover {border-bottom: 5px solid ${Colors.Orange}}` : ''}
 `
 
 const NavItem = withRouter((props: NavItemProps) => {

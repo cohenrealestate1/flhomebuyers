@@ -12,12 +12,12 @@ const Container = styled.div`
 `
 
 type Props = {
-    children: ReactNode
+    children: ReactNode,
 }
 
 export const Page = (props: Props) => {
     return <Container>
-        <Header/>
+        <Header />
         {props.children}
         <LinkFooter />
         <Footer />

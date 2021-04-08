@@ -44,7 +44,7 @@ export const HowItWorksHero = (props: Props) => {
             <Item number={3} text="CLOSE WHENEVER YOU’d LIKE" />
         </ItemsContainer>
         <Button endEnhancer={<Text $color={Colors.Blue}>{'>'}</Text>} overrides={Overrides}>
-            <Text $color={Colors.Blue} $uppercase $typography={Typographies.TextMedium} $fontWeight={700}>More about selling with us</Text>
+            <Text $color={Colors.Blue} $a $href={Routes.HowItWorks} $uppercase $typography={Typographies.TextMedium} $fontWeight={700}>More about selling with us</Text>
         </Button>
     </Container>
 }
