@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import AreasWeServeHero from "../areas-we-serve-hero";
 import CallFormHero from "../call-form-hero";
+import CashVsRealtorHero from "../cash-vs-realtor-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import HowItWorksSection from "../how-it-works-section";
 import Page from "../page";
@@ -25,6 +26,7 @@ export const HowItWorksPage = (props) => {
             <HowItWorksSection />
         </HowItWorksSectionContainer>
         <CallFormHero />
+        <CashVsRealtorHero />
         <HereToHelpContainer>
             <HereToHelpHero />
         </HereToHelpContainer>
