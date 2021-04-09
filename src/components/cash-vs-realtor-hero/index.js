@@ -10,6 +10,14 @@ const Container = styled.div`
     padding-left: 12%;
     padding-right: 12%;
     background-color: ${Colors.Orange};
+    box-sizing: border-box;
+`
+
+const TableContainer = styled.div`
+    background-color: white;
+    box-sizing: border-box;
+    padding-left: 86px;
+    padding-right: 86px;
 `
 
 const data = CashVsRealtorItems.map((item, index) => [
@@ -25,6 +33,11 @@ const data = CashVsRealtorItems.map((item, index) => [
 ]);
 
 const Overrides = {
+    Table: {
+        style: {
+            borderColor: 'red'
+        }
+    },
     TableBodyCell: {
         style: 
         {
@@ -42,16 +55,37 @@ const Overrides = {
             },
             height: '1px'
         }
+    },
+    TableHeadCell: {
+        style: {
+            position: '',
+            textAlign: '',
+            '::before': {
+                borderLeftColor: 'yellow',
+                borderLeftStyle: 'yellow',
+                borderLeftWidth: 'yellow',
+            },
+            '::after': {
+                backgroundImage: `
+                    linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.00),
+                    rgba(0, 0, 0, 0)
+                )`,
+            }
+        }
     }
 }
 
 export const CashVsRealtorHero = () => {
     return <Container>
+        <TableContainer>
         <Table 
             overrides={Overrides}
             columns={["", "Selling to Us", "Selling to an Agent"]}
             data={data}
-        />
+            />
+        </TableContainer>
     </Container>
 }
 
