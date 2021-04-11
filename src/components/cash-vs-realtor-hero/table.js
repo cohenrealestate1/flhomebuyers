@@ -7,8 +7,19 @@ import Text from "../text";
 import { AgentHeaderCell, CashCell, CashHeaderCell, Overrides, RealtorCell, RowTitle } from "./table-cells";
 
 const TableContainer = styled.div`
-    background-color: ${Colors.White};
-    padding: 57px 81px 79px 88px;
+    position: relative;
+    background-color: ${Colors.Red1};
+    display: flex;
+    z-index: 100;
+`
+const GreenContainer = styled.div`
+    background-color: ${Colors.Green};
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
 `
 
 const data = CashVsRealtorItems.map((item, index) => [
@@ -23,6 +34,14 @@ const data = CashVsRealtorItems.map((item, index) => [
     </RealtorCell>,
 ]);
 
+const TableContentContainer = styled.div`
+    z-index: 100;
+    background-color: ${Colors.White};
+    width: 100%;
+    height: 100%;
+    padding: 57px 81px 79px 88px;
+`
+
 const columns = [
     "",
     <CashHeaderCell key="cash_heder">Selling to Us</CashHeaderCell>, 
@@ -31,12 +50,15 @@ const columns = [
 
 export const CashVsRealtorTable = () => {
     return <TableContainer>
-        <Text $center $margin="0 0 40px 0" $uppercase $color={Colors.Green} $fontWeight="bold" $typography={Typographies.SubHeaderBig}>Why Sell To Us</Text>
-        <Table 
-            overrides={Overrides}
-            columns={columns}
-            data={data}
-            />
+        <TableContentContainer>
+            <Text $center $margin="0 0 40px 0" $uppercase $color={Colors.Green} $fontWeight="bold" $typography={Typographies.SubHeaderBig}>Why Sell To Us</Text>
+            <Table 
+                overrides={Overrides}
+                columns={columns}
+                data={data}
+                />
+        </TableContentContainer>
+        <GreenContainer />
         </TableContainer>
 }
 
