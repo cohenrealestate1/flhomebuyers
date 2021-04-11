@@ -6,24 +6,19 @@ import { Routes } from "./routes";
 export const BlogParentDeath: BlogType = {
     imgHref: Covid19Href,
     title: "Landlording In 2021",
-    quote: "We inherited a property and didn't know what to do with it",
+    quote: "If you thought being a landlord was hard, get ready for even bigger challenges.",
     date: "April 2021",
     author: "Ben",
     url: Routes.BlogDetail("landlording-2021-sell-house-cash"),
     paragraphs: [
-        `After the passing of both of our parents, my sister and I inherited the house. We were living out of state, and the thought of becoming landlords felt too daunting and time-intensive.`,
-        `The situation was really emotional for us, especially because this was the house we grew up in all of our childhoods.`,
-        `We called Ben, and he came over and explained how the process would work, and to our delight he was able to give us a cash offer later that day. We were able to officially close and get our money 4 weeks later. The best part for us was that we didn't have to waste money fixing it up before selling, and we got to keep all of the value of the house because there was no realtor commission.`,
-        `On the closing day Ben surprised us with a video call from our house to let us say our goodbyes and let go.`,
-        `If you are considering selling your house, don't waste your time. Call Ben from ${SiteName}.`
+        `2021 has been a challenging year, to say the least. The pandemic has made all facets of our lives more difficult in ways that we never thought possible. Owning an investment property is no exception.`,
+        `At the start of the pandemic, the Federal US government put in place an eviction moratorium, making it much more difficult to evict tenants, even if they are not paying rent. While many large rental property businesses have enough cash on hand to weather the storm, many small- and mid-size landlords have not been so lucky. Countless landlords all across the country are defaulting on their mortgages because they have problematic tenants who are not paying rent, and they simply do not have enough money to pay the mortgage on their investment properties.`,
+        `Prior to the start of the COVID-19 pandemic, evictions could typically be done within 30-45 days. Now, the wait is a minimum 6 months, meaning that the landlord has to pay the mortgage and all other property expenses for half of a year before they are able to once again see income.`,
+        `Those who wish to enter the real estate market in 2021 should make sure they have enough reserves to be able to go 6-9 months without any rental income.`,
+        `For landlords in tough situations, here at ${SiteName} we are able to help you get your financial freedom back by relieving you of problematic properties. We are experts at buying properties as-is, whether they have liens, code violations, open permits, delinquent taxes, unpaid utility bills, overdue HOA fees, or other tough situations.`,
+        `If landlording has become a nightmare that's ruining your life - give us a call!`
     ]
 };
-
-// const blogProps = {
-//     imgHref: TestimonialImageHref,
-//     title: "Biden's Eviction Moratorium and its Effect on the Housing Market",
-//     quote: "If you thought being a landlord was hard, get ready for even bigger challenges."
-// }
 
 export const BlogPosts = [
     BlogParentDeath,
