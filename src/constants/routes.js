@@ -6,6 +6,7 @@ export const Routes = {
     Covid19: "/covid-19",
     AboutUs: "/about-us",
     Testimonials: "/testimonials",
+    TestimonialDetail: (param) => `/testimonials/${param}`,
     ThankYouLeadIntakeForm: "/get-cash-offer-thank-you",
     ThankYouContactUs: "/contact-us-thank-you",
     Blog: "/blog",

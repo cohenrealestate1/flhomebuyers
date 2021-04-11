@@ -16,7 +16,7 @@ type Props = {
 }
 
 export const TestimonialCard = (props: Props) => {
-    const {testimonial: {imgHref, quote, name, city}, color} = props;
+    const {testimonial: {imgHref, quote, name, city, url}, color} = props;
     const nameCityStr = `${name}, ${city}`;
     const readStoryStr = `Read ${name}'s Story`;
     return <CardContainer>
@@ -25,7 +25,7 @@ export const TestimonialCard = (props: Props) => {
             <Text $color={Colors.White} $margin="0 0 20px 0" $fontWeight="bold" $typography={Typographies.SubHeaderSmall} $openSans>{"\""}{quote}{"\""}</Text>
             <Text $color={Colors.White} $margin="0 0 0 0" $uppercase $fontWeight="bold" $typography={Typographies.TextSmall} $openSans>{nameCityStr}</Text>
             <LinkContainer>
-            <Text $color={Colors.White} $lineHeight="40px"   $underline $typography={Typographies.TextMedium} $openSans>{readStoryStr}</Text>
+            <Text $color={Colors.White} $lineHeight="40px" $a $href={url} $underline $typography={Typographies.TextMedium} $openSans>{readStoryStr}</Text>
             </LinkContainer>
         </CardRightContainer>
     </CardContainer>

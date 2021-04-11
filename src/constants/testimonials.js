@@ -1,6 +1,7 @@
 // @flow
 import { TestimonialType } from "../types";
 import { Covid19Href, SiteName } from "./constants";
+import { Routes } from "./routes";
 
 export const TestimonialParentDeath: TestimonialType = {
     imgHref: Covid19Href,
@@ -45,8 +46,24 @@ export const TestimonialMoving: TestimonialType = {
     ]
 };
 
+export const generateTestimonialUrl = (testimonial: TestimonialType) => {
+    const params = [
+        testimonial.name.toLowerCase(),
+        ...testimonial.city.toLowerCase().split(" "),
+    ]
+    const param = params.join("-")
+    return `${Routes.TestimonialDetail(param)}`
+}
+
 export const Testimonials = [
     TestimonialParentDeath,
     TestimonialTaxLien,
     TestimonialMoving
-]
+].map(testimonial => ({
+    ...testimonial,
+    url: generateTestimonialUrl(testimonial)
+}))
+
+export const getTestimonialFromUrl = (url: string) => {
+    return Testimonials.find(t => t.url === url)
+}

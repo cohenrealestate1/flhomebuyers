@@ -6,6 +6,7 @@ import Covid19 from "./covid-19";
 import Home from "./home";
 import HowItWorks from "./how-it-works";
 import Locations from "./locations";
+import TestimonialDetail from "./testimonial-detail";
 import Testimonials from "./testimonials";
 
 export default {
@@ -16,5 +17,6 @@ export default {
     Home,
     HowItWorks,
     Locations,
+    TestimonialDetail,
     Testimonials,
 }

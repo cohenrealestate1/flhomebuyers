@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { Route, Switch } from "fusion-plugin-react-router";
-import {Routes} from "./constants";
+import {Routes, Testimonials} from "./constants";
 import Pages from "./components/pages";
 import {LightTheme, BaseProvider} from 'baseui';
 import {makeCityRoutes} from "./components/city-route";
@@ -14,6 +14,7 @@ const root = (
         <link href={`https://fonts.googleapis.com/css?family=Montserrat:${FontFamilySuffix}`} rel="stylesheet"/>
         <link href={`https://fonts.googleapis.com/css?family=Open+Sans:${FontFamilySuffix}`} rel="stylesheet"/>
     <Switch>
+    {Testimonials.map(testimonial => <Route key={testimonial.url} exact path={testimonial.url} component={Pages.TestimonialDetail} />)}
     {makeCityRoutes(Pages.Home)}
     <Route path={Routes.AboutUs} component={Pages.AboutUs} />
     <Route path={Routes.HowItWorks} component={Pages.HowItWorks} />

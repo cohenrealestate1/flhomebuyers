@@ -72,7 +72,6 @@ export const CardContainer = styled.div`
 `
 export const CardImg = styled.img`
     max-width: 561px;
-    // max-height: 382px;
     flex: 1;
 `
 export const CardRightContainer = styled.div`
