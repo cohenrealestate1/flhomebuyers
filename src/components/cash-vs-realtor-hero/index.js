@@ -1,53 +1,23 @@
 // @flow
-import { Table } from "baseui/table-semantic";
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import { CashVsRealtorItems, Colors } from "../../constants";
-import { AgentHeaderCell, CashCell, CashHeaderCell, Overrides, RealtorCell, RowTitle } from "./table-cells";
-
-const Container = styled.div`
-    padding-top: 125px;
-    padding-left: 12%;
-    padding-right: 12%;
-    background-color: ${Colors.Orange};
-    box-sizing: border-box;
-`
+import { Colors } from "../../constants";
+import Table from "./table";
 
 const TableContainer = styled.div`
-    background-color: white;
-    box-sizing: border-box;
-    padding-left: 86px;
-    padding-right: 86px;
-`
-
-const data = CashVsRealtorItems.map((item, index) => [
-    <RowTitle isFirst={index === 0} key={`${index}_row`}>
-        {item.title}
-    </RowTitle>,
-    <CashCell isFirst={index === 0} key={`${index}_cash`}>
-        {item.cash}
-    </CashCell>,
-    <RealtorCell isFirst={index === 0} key={`${index}_realtor`}>
-        {item.realtor}
-    </RealtorCell>,
-]);
-
-const columns = [
-    "",
-    <CashHeaderCell key="cash_heder">Selling to Us</CashHeaderCell>, 
-    <AgentHeaderCell key="agent_header">Selling to an Agent</AgentHeaderCell>
-]
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: ${Colors.Orange};
+    padding-top: 115px;
+    padding-bottom: 327px;
+    padding-left: 175px;
+    padding-right: 175px;
+`;
 
 export const CashVsRealtorHero = () => {
-    return <Container>
-        <TableContainer>
-        <Table 
-            overrides={Overrides}
-            columns={columns}
-            data={data}
-            />
-        </TableContainer>
-    </Container>
+    return <TableContainer><Table /></TableContainer>
 }
 
-export default CashVsRealtorHero
+export default CashVsRealtorHero;

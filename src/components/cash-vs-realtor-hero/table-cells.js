@@ -34,7 +34,7 @@ const CashCellContainer = styled.div`
     background: rgba(43,182,115,0.23);
     width: 100%;
     height: 100%;
-    padding: 37px 0px;
+    padding: 37px 38px;
     box-sizing: border-box;
 `
 export const CashCell = (props: Props) => {
@@ -50,7 +50,7 @@ const RealtorCellContainer = styled.div`
     ${props => props.$isFirst ? '' : `border-top: 3px solid ${Colors.Green};`}
     width: 100%;
     height: 100%;
-    padding: 37px 0px;
+    padding: 37px 55px;
     box-sizing: border-box;
 `
 
