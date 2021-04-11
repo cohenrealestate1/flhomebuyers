@@ -3,7 +3,7 @@ import { Table } from "baseui/table-semantic";
 import React from 'react';
 import styled from "styled-components";
 import { CashVsRealtorItems, Colors } from "../../constants";
-import { CashCell, RealtorCell, RowTitle } from "./table-cells";
+import { AgentHeaderCell, CashCell, CashHeaderCell, Overrides, RealtorCell, RowTitle } from "./table-cells";
 
 const Container = styled.div`
     padding-top: 125px;
@@ -32,57 +32,18 @@ const data = CashVsRealtorItems.map((item, index) => [
     </RealtorCell>,
 ]);
 
-const Overrides = {
-    Table: {
-        style: {
-            borderColor: 'red'
-        }
-    },
-    TableBodyCell: {
-        style: 
-        {
-            paddingTop: '0',
-            paddingRight: '0',
-            paddingBottom: '0',
-            paddingLeft: '0',
-            height: 'inherit'
-        }
-    },
-    TableBodyRow: {
-        style: {
-            ':hover': {
-                backgroundColor: ''
-            },
-            height: '1px'
-        }
-    },
-    TableHeadCell: {
-        style: {
-            position: '',
-            textAlign: '',
-            '::before': {
-                borderLeftColor: 'yellow',
-                borderLeftStyle: 'yellow',
-                borderLeftWidth: 'yellow',
-            },
-            '::after': {
-                backgroundImage: `
-                    linear-gradient(
-                    to bottom,
-                    rgba(0, 0, 0, 0.00),
-                    rgba(0, 0, 0, 0)
-                )`,
-            }
-        }
-    }
-}
+const columns = [
+    "",
+    <CashHeaderCell key="cash_heder">Selling to Us</CashHeaderCell>, 
+    <AgentHeaderCell key="agent_header">Selling to an Agent</AgentHeaderCell>
+]
 
 export const CashVsRealtorHero = () => {
     return <Container>
         <TableContainer>
         <Table 
             overrides={Overrides}
-            columns={["", "Selling to Us", "Selling to an Agent"]}
+            columns={columns}
             data={data}
             />
         </TableContainer>

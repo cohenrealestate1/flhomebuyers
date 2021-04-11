@@ -1,7 +1,7 @@
 // @flow
 import React, { ReactNode } from 'react';
 import styled from "styled-components";
-import { Colors, Typographies } from "../../constants";
+import { Colors, FontFamilies, Typographies, Uppercase } from "../../constants";
 import Text from "../text";
 
 type Props = {
@@ -15,7 +15,7 @@ const RowTitleContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 31px 0px;
+    padding: 31px 39px 31px 0px;
     box-sizing: border-box;
     margin: auto 0;
 `
@@ -61,4 +61,92 @@ export const RealtorCell = (props: Props) => {
             {children}
         </Text>
     </RealtorCellContainer>;
+}
+
+export const CashHeaderCell = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 23px 0;
+    background-color: ${Colors.Green};
+    ${Typographies.TextSmall};
+    color: ${Colors.White};
+    ${FontFamilies.M}
+    font-weight: 800;
+    line-height: 24px;
+    ${Uppercase}
+    border-top-left-radius: 10px;
+    border-top-radius-radius: 10px;
+`
+
+export const AgentHeaderCell = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 23px 0;
+    background: rgba(21, 98, 171, 0.08);
+    ${Typographies.TextSmall};
+    color: ${Colors.Blue};
+    ${FontFamilies.M}
+    font-weight: 800;
+    line-height: 24px;
+    ${Uppercase}
+    border-top-left-radius: 10px;
+    border-top-radius-radius: 10px;
+`
+
+export const Overrides = {
+    Root: {
+        style: {
+            overflow: '',
+            borderRightColor: '',
+            borderRightStyle: '',
+            borderRightWidth: '',
+            borderLeftColor: '',
+            borderLeftStyle: '',
+            borderLeftWidth: '',
+            borderTopColor: '',
+            borderTopStyle: '',
+            borderTopWidth: '',
+            borderBottomColor: '',
+            borderBottomStyle: '',
+            borderBottomWidth: '',
+            position: '',
+            transform: ''
+        }
+    },
+    TableBodyCell: {
+        style: 
+        {
+            paddingTop: '0',
+            paddingRight: '0',
+            paddingBottom: '0',
+            paddingLeft: '0',
+            height: 'inherit'
+        }
+    },
+    TableBodyRow: {
+        style: {
+            ':hover': {
+                backgroundColor: ''
+            },
+            height: '1px'
+        }
+    },
+    TableHeadCell: {
+        style: {
+            position: '',
+            textAlign: '',
+            paddingLeft: 0,
+            paddingTop: 0,
+            paddingRight: 0,
+            paddingBottom: 0,
+            '::after': {
+                backgroundImage: `
+                    linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.00),
+                    rgba(0, 0, 0, 0)
+                )`,
+            }
+        }
+    }
 }
