@@ -1,13 +1,17 @@
 // @flow
 
 const generateUrl = (cityName: string) =>
-  `/get-cash-offer-${cityName
+  `/get-cash-offer/${cityName
     .split(" ")
     .join("-")
     .toLowerCase()}`;
 
 export const getCityNameFromUrl = (url: string) => {
-  const cityUrl = url.split("/get-cash-offer-")[1];
+  const cityWordsSplit = url.split("/get-cash-offer/");
+  if (cityWordsSplit.length === 1) {
+    return "";
+  }
+  const cityUrl = cityWordsSplit[1];
   const cityWords = cityUrl.split("-");
   const cityWordsCapitalCase = cityWords.map(
     (cityWord) => `${cityWord[0].toUpperCase()}${cityWord.substring(1)}`

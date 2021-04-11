@@ -3,10 +3,12 @@ import { Route, Switch, withRouter } from "fusion-plugin-react-router";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import React from "react";
 import styled from "styled-components";
-import { Routes } from "../../constants";
+import { getCityNameFromUrl, Routes } from "../../constants";
 import AreasWeServeHero from "../areas-we-serve-hero";
 import CallFormHero from "../call-form-hero";
+import { makeCityRoutes } from "../city-route";
 import { AboutUsHero, BlogHero, Covid19Hero } from "../generic-hero/heros";
+import HereToHelpHero from "../here-to-help-hero";
 import HowItWorksHero from "../how-it-works-hero";
 import LeadIntakeForm from "../lead-intake-form";
 import LeadIntakeFormThankYou from "../lead-intake-form/thank-you";
@@ -15,6 +17,7 @@ import PageTitle from "../shared/page-title";
 import { BlueDivider } from "../shared/styled-components";
 import Text from "../text";
 import WeCanBeatHero from "../we-can-beat-hero";
+
 
 const HerosContainer = styled.div`
     display: flex;
@@ -25,7 +28,15 @@ const HerosContainer = styled.div`
 export const HomePage = (props) => {
     return <Page>
         <TitleAndForm {...props} />
-        <HowItWorksHero />
+        <Switch>
+            {makeCityRoutes(() => <>
+                <HereToHelpHero />
+            </>)}
+        </Switch>
+        <Switch>
+            {makeCityRoutes(() => <HowItWorksHero hideWeAreHereToHelp />)}
+            <Route component={() => <HowItWorksHero />} />
+        </Switch>
         <BlueDivider />
         <WeCanBeatHero />
         <Switch>
@@ -48,9 +59,14 @@ const FormContainer = styled.div`
 `
 const SubtitleContainer = styled.div`
     padding-bottom: 30px;
+    max-width: 67%;
+    margin: ${props => props.$topMargin || '0'} auto 0;
+`
+const ThankYouContainer = styled.div`
+    margin-top: 38px;
 `
 
-const Subtitle =  <SubtitleContainer>
+const SubtitleLong =  <SubtitleContainer>
     <Text $lineHeight="34px" $margin="38px 0 10px 0">ARE YOU . . .</Text> 
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Unable to keep up with your mortgage payments?</Text>
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Tired of maintaining your property?</Text>
@@ -60,16 +76,22 @@ const Subtitle =  <SubtitleContainer>
     <Text $lineHeight="34px" $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
 </SubtitleContainer>
 
+const SubtitleShort = <SubtitleContainer $topMargin="18px">
+    <Text $lineHeight="34px" $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
+</SubtitleContainer>
+
 const TitleAndForm = (props) => {
     const sendEmailLead = useRPCRedux("sendEmailLead");
+    const cityName = getCityNameFromUrl(props.history.location.pathname);
     return <>
         <Switch>
             <Route path={Routes.ThankYouLeadIntakeForm} component={() => <PageTitle title="Sent!" />} />
-            <Route path={[Routes.GetCashOffer, Routes.Home]} component={() => <PageTitle title="WE BUY HOUSES FOR" title2="CASH" subtitle={Subtitle} hasForm={true} />} />
+            {makeCityRoutes(() => <PageTitle title="WE BUY HOUSES FOR" title2="CASH" title3={` IN ${cityName.toUpperCase()}`} subtitle={SubtitleShort} hasForm={true} />)}
+            <Route exact path={[Routes.GetCashOffer, Routes.Home]} component={() => <PageTitle title="WE BUY HOUSES FOR" title2="CASH" subtitle={SubtitleLong} hasForm={true} />} />
         </Switch>
         <FormContainer>
             <Switch>
-                <Route path={Routes.ThankYouLeadIntakeForm} component={() => <LeadIntakeFormThankYou />} />
+                <Route path={Routes.ThankYouLeadIntakeForm} component={() => <ThankYouContainer><LeadIntakeFormThankYou /></ThankYouContainer>} />
                 <Route path={[Routes.GetCashOffer, Routes.Home]} component={() => <LeadIntakeForm sendEmailLead={sendEmailLead} {...props} />} />
             </Switch>
         </FormContainer>

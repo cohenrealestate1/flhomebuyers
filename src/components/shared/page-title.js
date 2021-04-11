@@ -42,17 +42,19 @@ const SubtitleContainer = styled.div`
 type Props = {
     title: string,
     title2?: string,
+    title3?: string,
     titleFontWeight?: string;
     subtitle?: ReactNode,
     hasForm?: boolean
 }
 
 export const PageTitle = (props: Props) => {
-    const {title, title2, subtitle, hasForm, titleFontWeight} = props;
+    const {title, title2, title3, subtitle, hasForm, titleFontWeight} = props;
     return <Container $hasForm={hasForm} $titleFontWeight={titleFontWeight}>
         <Text $inline $center>
             {title}
             {title2 && <>&nbsp;<Text $inline $color={Colors.Green}>{title2}</Text></>}
+            {title3}
         </Text>
         {subtitle && <SubtitleContainer><Text $typography={Typographies.TextLarge} $color={Colors.White} $center $fontWeight={700}>{subtitle}</Text></SubtitleContainer>}
     </Container>
