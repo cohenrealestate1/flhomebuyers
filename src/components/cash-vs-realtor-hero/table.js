@@ -8,7 +8,6 @@ import { AgentHeaderCell, CashCell, CashHeaderCell, Overrides, RealtorCell, RowT
 
 const TableContainer = styled.div`
     position: relative;
-    background-color: ${Colors.Red1};
     display: flex;
     z-index: 100;
 `
