@@ -13,6 +13,12 @@ export const Colors = {
     Red2: "#EA121D"
 }
 
+export const CardColors = [
+    Colors.Blue,
+    Colors.Orange,
+    Colors.Green
+]
+
 export const FontFamilies = {
     M: 'font-family: Montserrat;',
     OS: 'font-family: Open Sans;'

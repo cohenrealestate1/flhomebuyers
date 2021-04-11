@@ -68,8 +68,11 @@ export const FormFlexContainer = styled.div`
 export const CardContainer = styled.div`
   display: flex;
   box-sizing: border-box;
+  width: 100%;
 `
 export const CardImg = styled.img`
+    max-width: 561px;
+    // max-height: 382px;
     flex: 1;
 `
 export const CardRightContainer = styled.div`

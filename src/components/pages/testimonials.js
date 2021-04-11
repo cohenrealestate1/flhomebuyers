@@ -1,19 +1,13 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, TestimonialImageHref } from "../../constants";
+import { CardColors, Testimonials } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import Page from "../page";
 import PageTitle from "../shared/page-title";
 import TestimonialCard from "../shared/testimonial-card";
 
-const testimonialProps = {
-    imgHref: TestimonialImageHref,
-    quote: "\"They helped me sell my house fast and I couldn't be happier!\"",
-    name: "Ben",
-    city: "Deerfield Beach",
-}
 const TestimonialSection = styled.div`
     padding-top: 100px;
     padding-bottom: 166px;
@@ -30,6 +24,8 @@ const HereToHelpContainer = styled.div`
     padding-top: 103px;
 `
 
+const getColor = index => CardColors[index % 3];
+
 export const TestimonialsPage = (props) => {
     return <Page>
         <PageTitle title="TESTIMONIALS" titleFontWeight={700} />
@@ -38,12 +34,7 @@ export const TestimonialsPage = (props) => {
         </HereToHelpContainer>
         <CallFormHero />
         <TestimonialSection>
-            <TestimonialCard {...testimonialProps} color={Colors.Blue} />
-            <TestimonialCard {...testimonialProps} color={Colors.Orange} />
-            <TestimonialCard {...testimonialProps} color={Colors.Green} />
-            <TestimonialCard {...testimonialProps} color={Colors.Blue} />
-            <TestimonialCard {...testimonialProps} color={Colors.Orange} />
-            <TestimonialCard {...testimonialProps} color={Colors.Green} />
+            {Testimonials.map((testimonial, index) => <TestimonialCard key={`testimonial_card_${index}`} testimonial={testimonial} color={getColor(index)} />)}
         </TestimonialSection>
     </Page>
 }
