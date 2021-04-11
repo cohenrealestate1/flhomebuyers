@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, TestimonialImageHref } from "../../constants";
+import { BlogPosts, getCardColor } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import HowItWorksHero from "../how-it-works-hero";
@@ -11,11 +11,6 @@ import PageTitle from "../shared/page-title";
 import { BlueDivider, GrayDivider } from "../shared/styled-components";
 import WeCanBeatHero from "../we-can-beat-hero";
 
-const blogProps = {
-    imgHref: TestimonialImageHref,
-    title: "Biden's Eviction Moratorium and its Effect on the Housing Market",
-    quote: "If you thought being a landlord was hard, get ready for even bigger challenges."
-}
 const BlogSection = styled.div`
     padding-top: 93px;
     padding-bottom: 113px;
@@ -42,12 +37,7 @@ export const BlogPage = (props) => {
             <CallFormHero />
         </CallFormContainer>
         <BlogSection>
-            <BlogCard {...blogProps} color={Colors.Blue} />
-            <BlogCard {...blogProps} color={Colors.Orange} />
-            <BlogCard {...blogProps} color={Colors.Green} />
-            <BlogCard {...blogProps} color={Colors.Blue} />
-            <BlogCard {...blogProps} color={Colors.Orange} />
-            <BlogCard {...blogProps} color={Colors.Green} />
+            {BlogPosts.map((blog, index) => <BlogCard key={`testimonial_card_${index}`} blog={blog} color={getCardColor(index)} />)}
         </BlogSection>
         <GrayDivider />
         <HereToHelpContainer>

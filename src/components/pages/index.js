@@ -1,6 +1,7 @@
 // @flow
 import AboutUs from "./about-us";
 import Blog from "./blog";
+import BlogDetail from "./blog-detail";
 import ContactUs from "./contact-us";
 import Covid19 from "./covid-19";
 import Home from "./home";
@@ -12,6 +13,7 @@ import Testimonials from "./testimonials";
 export default {
     AboutUs,
     Blog,
+    BlogDetail,
     ContactUs,
     Covid19,
     Home,

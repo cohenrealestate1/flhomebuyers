@@ -7,3 +7,13 @@ export type TestimonialType = {
     city: string,
     county: string,
 }
+
+export type BlogType = {
+    imgHref: string,
+    title: string,
+    quote: string,
+    date: string,
+    author: string,
+    url: string,
+    paragraphs: string[]
+}

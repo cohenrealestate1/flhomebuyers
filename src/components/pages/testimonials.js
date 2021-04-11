@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { CardColors, Testimonials } from "../../constants";
+import { getCardColor, Testimonials } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import Page from "../page";
@@ -24,8 +24,6 @@ const HereToHelpContainer = styled.div`
     padding-top: 103px;
 `
 
-const getColor = index => CardColors[index % 3];
-
 export const TestimonialsPage = (props) => {
     return <Page>
         <PageTitle title="TESTIMONIALS" titleFontWeight={700} />
@@ -34,7 +32,7 @@ export const TestimonialsPage = (props) => {
         </HereToHelpContainer>
         <CallFormHero />
         <TestimonialSection>
-            {Testimonials.map((testimonial, index) => <TestimonialCard key={`testimonial_card_${index}`} testimonial={testimonial} color={getColor(index)} />)}
+            {Testimonials.map((testimonial, index) => <TestimonialCard key={`testimonial_card_${index}`} testimonial={testimonial} color={getCardColor(index)} />)}
         </TestimonialSection>
     </Page>
 }

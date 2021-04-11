@@ -81,3 +81,10 @@ export const CardRightContainer = styled.div`
     flex-direction: column;
     flex: 1;
 `
+
+export const ParagraphsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 30px;
+`

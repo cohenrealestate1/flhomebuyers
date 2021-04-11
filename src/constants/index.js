@@ -1,4 +1,5 @@
 // @flow
+export * from "./blog";
 export * from "./cities";
 export * from "./constants";
 export * from "./routes";
@@ -70,3 +71,4 @@ export const CashVsRealtorItems = [
       "You will need to show 10+ times on average to find the right buyer",
   },
 ];
+

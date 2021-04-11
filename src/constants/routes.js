@@ -1,16 +1,17 @@
 // @flow
 export const Routes = {
-    Home: "/",
-    ContactUs: "/contact-us",
-    GetCashOffer: "/get-cash-offer",
-    Covid19: "/covid-19",
     AboutUs: "/about-us",
-    Testimonials: "/testimonials",
-    TestimonialDetail: (param) => `/testimonials/${param}`,
-    ThankYouLeadIntakeForm: "/get-cash-offer-thank-you",
-    ThankYouContactUs: "/contact-us-thank-you",
     Blog: "/blog",
+    BlogDetail: (param) => `/blog/${param}`,
+    ContactUs: "/contact-us",
+    Covid19: "/covid-19",
+    GetCashOffer: "/get-cash-offer",
+    Home: "/",
     HowItWorks: "/how-it-works",
-    Locations: "/locations"
+    Locations: "/locations",
+    TestimonialDetail: (param) => `/testimonials/${param}`,
+    Testimonials: "/testimonials",
+    ThankYouContactUs: "/contact-us-thank-you",
+    ThankYouLeadIntakeForm: "/get-cash-offer-thank-you",
   };
   

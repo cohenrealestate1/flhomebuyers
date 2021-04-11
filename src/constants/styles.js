@@ -19,6 +19,8 @@ export const CardColors = [
     Colors.Green
 ]
 
+export const getCardColor = index => CardColors[index % 3];
+
 export const FontFamilies = {
     M: 'font-family: Montserrat;',
     OS: 'font-family: Open Sans;'
