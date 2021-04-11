@@ -20,7 +20,7 @@ export const sendEmailLead = (values, pathname) => {
 
   // construct an email
   const email = {
-    to: "cohenrealestate1@gmail.com",
+    to: "flhomecashbuyers1@gmail.com",
     from: "bencohen0806@gmail.com",
     subject: "New lead",
     html,
