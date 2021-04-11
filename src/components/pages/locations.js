@@ -17,7 +17,7 @@ const HereToHelpContainer = styled.div`
 export const LocationsPage = (props) => {
     return <Page>
         <PageTitle title="AREAS WE SERVE" titleFontWeight={700} />
-        <AreasWeServeHero />
+        <AreasWeServeHero hideTitle />
         <CallFormHero />
         <HereToHelpContainer>
             <HereToHelpHero />

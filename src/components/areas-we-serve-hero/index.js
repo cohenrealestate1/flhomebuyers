@@ -28,9 +28,14 @@ const CountiesAndCitiesContainer = styled.div`
     ${makeMediaQuery(600, 'column-count: 1;')}
 `
 
-export const AreasWeServeHero = () => {
+type Props = {
+    hideTitle: boolean
+}
+
+export const AreasWeServeHero = (props: Props) => {
+    const {hideTitle} = props;
     return <Container>
-        <Text $uppercase $margin="0 0 67px 0" $color={Colors.Blue} $hasSpacing $montserrat $typography={Typographies.SubHeaderBig}>Areas We Serve</Text>
+        {!hideTitle && <Text $uppercase $margin="0 0 67px 0" $color={Colors.Blue} $hasSpacing $montserrat $typography={Typographies.SubHeaderBig}>Areas We Serve</Text>}
         <CountiesAndCitiesContainer>
             <CountyAndCities countyName="Miami-Dade County" cityObjects={MiamiCities} $noMargin />
             <CountyAndCities countyName="Broward County" cityObjects={BrowardCities} />
