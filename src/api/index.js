@@ -1,7 +1,7 @@
 // @flow
 const sendgrid = require("@sendgrid/mail");
 
-export const sendEmailLead = (values) => {
+export const sendEmailLead = (values, pathname) => {
   sendgrid.setApiKey(
     "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"
   );
@@ -14,6 +14,7 @@ export const sendEmailLead = (values) => {
       <p><b>Email:</b> ${emailAddress}</p>
       <p><b>Phone Number:</b> ${phoneNumber}</p>
       <p><b>Property Address:</b> ${address}</p>
+      <p><b>Url:</b> ${pathname}</p>
     </div>
   `;
 
