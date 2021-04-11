@@ -5,8 +5,6 @@ import {Routes} from "./constants";
 import Pages from "./components/pages";
 import {LightTheme, BaseProvider} from 'baseui';
 
-const unimplemented = () => "Hello world";
-
 const numbers = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
 const FontFamilySuffix = [numbers.join(","), numbers.join("italic,")].join(",");
 
@@ -15,7 +13,7 @@ const root = (
         <link href={`https://fonts.googleapis.com/css?family=Montserrat:${FontFamilySuffix}`} rel="stylesheet"/>
         <link href={`https://fonts.googleapis.com/css?family=Open+Sans:${FontFamilySuffix}`} rel="stylesheet"/>
     <Switch>
-    <Route path={[Routes.AboutUs]} component={unimplemented} />
+    <Route path={Routes.AboutUs} component={Pages.AboutUs} />
     <Route path={Routes.HowItWorks} component={Pages.HowItWorks} />
     <Route path={Routes.Locations} component={Pages.Locations} />
     <Route path={Routes.Covid19} component={Pages.Covid19} />
