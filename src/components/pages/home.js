@@ -48,8 +48,11 @@ export const HomePage = (props) => {
                 </HerosContainer>
                 <BlogHero />
                 <CallFormHero />
-                <AreasWeServeHero />
             </>} />
+        </Switch>
+        <Switch>
+            <Route exact path ={[Routes.ThankYouLeadIntakeForm, Routes.Home]} component={AreasWeServeHero} />
+            {makeCityRoutes(() => <AreasWeServeHero />)}
         </Switch>
     </Page>
 }
