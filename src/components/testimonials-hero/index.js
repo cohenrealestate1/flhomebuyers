@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Routes, TestimonialImageHref, Typographies } from "../../constants";
+import { Colors, Routes, Testimonials, Typographies } from "../../constants";
 import Caret from "../icons/caret";
 import { ButtonContainer, ButtonEndEnhancer, GrayDivider } from "../shared/styled-components";
 import TestimonialCard from "../shared/testimonial-card";
@@ -37,10 +37,7 @@ export const TestimonailsHero = () => {
         <StyledGrayDivider />
         <Text $margin="0 0 46px 0" $typography={Typographies.SubHeaderMedium} $color={Colors.Green} $openSans>Read what our past sellers have to say</Text>
         <TestimonialCard 
-            imgHref={TestimonialImageHref} 
-            quote={"\"They helped me sell my house fast and I couldn't be happier!\""} 
-            name="Ben"
-            city="Deerfield Beach"
+            testimonial={Testimonials[0]}
             color={Colors.Blue}
         />
         <StyledButton href={Routes.Testimonials}>

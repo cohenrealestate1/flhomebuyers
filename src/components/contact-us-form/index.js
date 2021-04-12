@@ -20,7 +20,6 @@ type Props = {
 
 export const ContactUsForm = (props: Props) => {
     const {values: {email, phoneNumber, firstName, lastName, freeFormText}, errors} = useFormikContext();
-    console.log(errors);
     return <Form 
         buttonProps={{
             text: <Text $typography={Typographies.FormSubmitButton} $color={Colors.White} $uppercase>Submit</Text>,

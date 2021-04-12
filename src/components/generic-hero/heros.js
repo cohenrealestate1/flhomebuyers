@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { Colors, Routes } from "../../constants";
+import { BlogPosts, Colors, Routes } from "../../constants";
 import GenericHero from "./index";
 
 export const AboutUsHero = () => <GenericHero 
@@ -21,12 +21,14 @@ export const Covid19Hero = () => <GenericHero
     href={Routes.Covid19} 
     buttonText="Learn More" 
     />
+
+const firstBlog = BlogPosts[0];
 export const BlogHero = () => <GenericHero 
     buttonBackgroundColor={Colors.White} 
     buttonTextColor={Colors.Orange}
     backgroundColor={Colors.Orange}
-    title="Post Title Here" 
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    title={firstBlog.title}
+    description={firstBlog.quote}
     href={Routes.Blog} 
     buttonText="Read Full Post" 
     pretitle="From the Blog"
