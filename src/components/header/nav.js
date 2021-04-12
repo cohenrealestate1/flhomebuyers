@@ -34,7 +34,7 @@ const NavItemContainer = styled.div`
 
 const NavItem = withRouter((props: NavItemProps) => {
     const {title, href, location: {pathname}} = props;
-    const active = pathname === href;
+    const active = pathname.includes(href);
     return <NavItemContainer $active={active}>
         <Text 
         $a 
