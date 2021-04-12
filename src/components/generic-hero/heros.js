@@ -29,7 +29,7 @@ export const BlogHero = () => <GenericHero
     backgroundColor={Colors.Orange}
     title={firstBlog.title}
     description={firstBlog.quote}
-    href={Routes.Blog} 
+    href={firstBlog.url} 
     buttonText="Read Full Post" 
     pretitle="From the Blog"
     />
