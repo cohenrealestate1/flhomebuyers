@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "4.11.3",
     "@sendgrid/mail": "^7.4.2",
     "baseui": "^9.112.0",
     "formik": "2.2.6",
