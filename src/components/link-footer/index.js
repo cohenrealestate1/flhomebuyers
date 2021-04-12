@@ -58,13 +58,13 @@ export const Footer = () => {
                 <LinksColumn>
                     <Link href={Routes.HowItWorks} text="How it works" />
                     <Link href={Routes.Locations} text="Locations" />
-                    <Link href={Routes.AboutUs} text="About us" />
                     <Link href={Routes.Testimonials} text="Testimonials" />
+                    <Link href={Routes.Covid19} text="COVID-19" />
                 </LinksColumn>
                 <LinksColumn>
+                    <Link href={Routes.AboutUs} text="About us" />
                     <Link href={Routes.ContactUs} text="Contact us" />
                     <Link href={Routes.GetCashOffer} text="Get Cash Offer Now!" />
-                    <Link href={Routes.Covid19} text="COVID-19" />
                     <Link href={Routes.Blog} text="Blog" />
                 </LinksColumn>
             </LinksContainer>
