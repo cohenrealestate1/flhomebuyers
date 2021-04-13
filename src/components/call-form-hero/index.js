@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, PhoneNumber, PhoneNumberHref, Routes, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, PhoneNumber, PhoneNumberHref, Routes, Typographies } from "../../constants";
 import PhoneOldFashioned from "../icons/phone-old-fashioned";
 import { ButtonContainer, ButtonEndEnhancer } from "../shared/styled-components";
 import Text from "../text";
@@ -14,15 +14,28 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    box-sizing: border-box;
+    ${makeMediaQueryMax(1000, `
+        flex-direction: column; 
+        gap: 25px;
+        padding: 20px;
+    `)}
 `
 export const CallFormHero = () => {
+    const buttonProps = {
+        $color: Colors.Blue,
+        $inline: true,
+        $fontWeight: 700,
+        $typography: Typographies.ButtonBig,
+        $style: makeMediaQueryMax(1000, Typographies.FormSubmitButton)
+    }
     return <Container>
         <Button 
-            text={<Text $color={Colors.Blue} $inline $fontWeight={700} $typography={Typographies.ButtonBig}>Get Your Cash Offer&nbsp;<Text $inline $underline>Now!</Text></Text>}
+            text={<Text {...buttonProps}>Get Your Cash Offer&nbsp;<Text $inline $underline>Now!</Text></Text>}
             href={Routes.GetCashOffer}
             subtext={<Text $italic>Click to receive a cash offer in 30 Minutes.</Text>} />
         <Button 
-            text={<Text $color={Colors.Blue} $inline $fontWeight={700} $typography={Typographies.ButtonBig}>or Call {PhoneNumber}</Text>}
+            text={<Text {...buttonProps}>or Call {PhoneNumber}</Text>}
             href={PhoneNumberHref}
             endEnhancer={<PhoneOldFashioned size="Big" color={Colors.Blue}/>}
             subtext={<><Text $inline $italic>We Speak Spanish</Text><Text $inline>&nbsp;&nbsp;|&nbsp;&nbsp;</Text><Text $inline $italic>Hablamos Español</Text></>}/>
