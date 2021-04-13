@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors } from "../../constants";
+import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import PhoneButton, { PhoneButtonSizes } from "../shared/phone-button";
 import LeadIntakeFormButton from "./lead-intake-form-button";
 
@@ -10,10 +10,14 @@ const Container = styled.div`
     gap: 19px;
     margin-left: auto;
     margin-bottom: 28px;
+    ${makeMediaQueryMax(1175, 'flex-direction: column;')}
 `
 
 export const Buttons = () => {
-    return <Container><LeadIntakeFormButton/><PhoneButton color={Colors.Green} size={PhoneButtonSizes.Small} /></Container>
+    return <Container>
+        <LeadIntakeFormButton/>
+        <PhoneButton color={Colors.Green} size={PhoneButtonSizes.Small} style={makeMediaQueryMax(875, Typographies.TextSmall)} />
+    </Container>
 }
 
 export default Buttons;

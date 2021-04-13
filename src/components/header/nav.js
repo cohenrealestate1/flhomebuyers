@@ -2,7 +2,7 @@
 import { withRouter } from "fusion-plugin-react-router";
 import React from "react";
 import styled from "styled-components";
-import { Colors, FontFamilies, Routes, Typographies } from "../../constants";
+import { Colors, FontFamilies, makeMediaQueryMax, Routes, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.div`
@@ -10,6 +10,8 @@ const Container = styled.div`
     gap: 22px;
     ${FontFamilies.M}
     margin-left: auto;
+    flex-wrap: wrap;
+    ${makeMediaQueryMax(500, 'flex-direction: column;')}
 `
 
 export const Nav = () => {

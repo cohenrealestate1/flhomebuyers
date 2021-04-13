@@ -24,7 +24,8 @@ type Props = {
     $wrap: boolean,
     $external: boolean,
     $italic: boolean,
-    $padding: string
+    $padding: string,
+    $style: string
 }
 
 const ContainerA = styled.a`
@@ -46,6 +47,7 @@ const ContainerA = styled.a`
     ${props => props.$wrap ? `word-wrap: break-word;` : ''}
     ${props => props.$italic ? `font-style: italic;` : ''}
     ${props => props.$padding ? `padding: ${props.$padding};` : ''}
+    ${props => props.$style || ''}
 `;
 const ContainerDiv = styled.div`
     ${props => props.$hasSpacing ? `letter-spacing: 2px;` : ''}
@@ -66,6 +68,7 @@ const ContainerDiv = styled.div`
     ${props => props.$wrap ? `word-wrap: break-word;` : ''}
     ${props => props.$italic ? `font-style: italic;` : ''}
     ${props => props.$padding ? `padding: ${props.$padding};` : ''}
+    ${props => props.$style || ''}
 `
 
 export const Text = (props: Props) => {

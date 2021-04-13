@@ -6,7 +6,7 @@ import {
     Colors,
     HendryCities,
     LeeCities,
-    makeMediaQuery,
+    makeMediaQueryMax,
     MartinCities,
     MiamiCities,
     PalmBeachCities,
@@ -24,8 +24,8 @@ const Container = styled.div`
 
 const CountiesAndCitiesContainer = styled.div`
     column-count: 3;
-    ${makeMediaQuery(1000, 'column-count: 2;')}
-    ${makeMediaQuery(600, 'column-count: 1;')}
+    ${makeMediaQueryMax(1000, 'column-count: 2;')}
+    ${makeMediaQueryMax(600, 'column-count: 1;')}
 `
 
 type Props = {

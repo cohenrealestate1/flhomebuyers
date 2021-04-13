@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Routes, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Routes, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.a`
@@ -10,7 +10,6 @@ const Container = styled.a`
     ${Typographies.ButtonMedium}
     color: ${Colors.White};
     padding: 6px 28px;
-    height: 53px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -19,9 +18,17 @@ const Container = styled.a`
 `
 
 export const LeadIntakeFormButton = () => {
+    const textProps = {
+        $typography: Typographies.ButtonMedium,
+        $style: makeMediaQueryMax(875, Typographies.TextSmall),
+        $inline: true,
+        $color: Colors.White
+    };
     return <Container href={Routes.GetCashOffer}>
-        <Text $inline $color={Colors.White} $typography={Typographies.ButtonMedium}>Get Your Cash Offer&nbsp;</Text>
-        <Text $inline $color={Colors.White} $typography={Typographies.ButtonMedium} $underline>Now!</Text>
+        <Text {...textProps}>
+            <Text {...textProps}>Get Your Cash Offer&nbsp;</Text>
+            <Text {...textProps} $underline>Now!</Text>
+        </Text>
     </Container>
 }
 

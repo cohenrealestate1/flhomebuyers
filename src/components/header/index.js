@@ -2,7 +2,7 @@
 import { assetUrl } from "fusion-core";
 import React from "react";
 import styled from "styled-components";
-import { Colors, Routes } from "../../constants";
+import { Colors, makeMediaQueryMax, makeMediaQueryMin, Routes } from "../../constants";
 import Buttons from "./buttons";
 import Nav from "./nav";
 
@@ -15,6 +15,7 @@ const Container = styled.div`
     padding-bottom: 54px;
     background-color: ${Colors.White};
     z-index: 100;
+    ${makeMediaQueryMax(1195, 'gap: 50px;')}
 `
 const LogoContainer = styled.a`
     cursor: pointer;
@@ -23,21 +24,28 @@ const Logo = styled.img`
     width: 193px;
     height: 184px;
 `
-const RightContainer = styled.div`
+const RightContainerDesktop = styled.div`
     margin-left: auto;
     margin-top: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    `;
+    // ${makeMediaQueryMax(800, 'display none')}
+
+const RightContainerMobile = styled.div`
+    margin-left: auto;
+    margin-bottom: auto;
+    ${makeMediaQueryMin(800, 'display: none;')}
 `;
 
 export const Header = () => {
-    return <Container>
+    return<Container>
         <LogoContainer href={Routes.Home}><Logo src={assetUrl("../../static/logo.svg")} /></LogoContainer>
-        <RightContainer>
+        <RightContainerDesktop>
             <Buttons />
             <Nav />
-        </RightContainer>
+        </RightContainerDesktop>
     </Container>
 }
 

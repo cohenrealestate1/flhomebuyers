@@ -25,9 +25,17 @@ export const ExternalLinkProps = {
     rel: "noopener noreferrer",
 };
   
-export const makeMediaQuery = (maxWidth: number, query: string) => {
+export const makeMediaQueryMax = (maxWidth: number, query: string) => {
     return `
       @media only screen and (max-width: ${maxWidth}px) {
+        ${query}
+      }
+    `;
+  };
+
+  export const makeMediaQueryMin = (minWidth: number, query: string) => {
+    return `
+      @media only screen and (min-width: ${minWidth}px) {
         ${query}
       }
     `;
