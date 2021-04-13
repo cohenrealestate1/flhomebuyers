@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Typographies } from "../../constants";
+import { makeMediaQueryMax, Typographies } from "../../constants";
 import Caret from "../icons/caret";
 import Text from "../text";
 import { ButtonContainer } from "./styled-components";
@@ -13,6 +13,12 @@ const StyledButtonContainer = styled(ButtonContainer)`
     ${props => props.$noLeftPadding ? `padding-left: 0px;` : `padding-left: 52px;`}
     ${props => props.$buttonColor ? `background-color: ${props.$buttonBackgroundColor};` : ''}
     width: fit-content;
+    ${makeMediaQueryMax(1000, `
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        ${props => props.$noLeftPadding ? `padding-left: 0px;` : `padding-left: 10px;`}
+    `)}
 `
 
 type Props = {

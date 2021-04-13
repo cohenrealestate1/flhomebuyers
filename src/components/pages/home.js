@@ -23,6 +23,7 @@ const HerosContainer = styled.div`
     display: flex;
     width: 100%;
     box-sizing: border-box;
+    ${makeMediaQueryMax(1000, 'flex-direction: column;')}
 `
 
 export const HomePage = (props) => {
