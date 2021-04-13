@@ -1,7 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Colors, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.div`
@@ -20,6 +20,7 @@ const Number = styled.div`
     justify-content: center;
     height: 103px;
     width: 103px;
+    ${makeMediaQueryMax(1000, `height: 60px; width: 60px;`)}
 `
 
 type Props = {
@@ -30,8 +31,8 @@ type Props = {
 export const Item = (props: Props) => {
     const {number, text} = props;
     return <Container>
-        <Number><Text $typography={Typographies.SubHeaderBig} $color={Colors.Blue} $uppercase>{number}</Text></Number>
-        <Text $center $typography={Typographies.TextSmall} $uppercase $color={Colors.Blue} $fontWeight={800}>{text}</Text>
+        <Number><Text $typography={Typographies.SubHeaderBig} $style={makeMediaQueryMax(1000, Typographies.ButtonBig)} $color={Colors.Blue} $uppercase>{number}</Text></Number>
+        <Text $center $typography={Typographies.TextSmall} $style={makeMediaQueryMax(1000, Typographies.TextXSmall)} $uppercase $color={Colors.Blue} $fontWeight={800}>{text}</Text>
     </Container>
 }
 
