@@ -18,8 +18,9 @@ const StyledButtonContainer = styled(ButtonContainer)`
         padding-right: 10px;
         padding-bottom: 10px;
         ${props => props.$noLeftPadding ? `padding-left: 0px;` : `padding-left: 10px;`}
+        width: fit-content;
     `)}
-`
+    `
 
 type Props = {
     buttonBackgroundColor: string,
