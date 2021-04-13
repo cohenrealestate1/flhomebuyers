@@ -3,7 +3,7 @@ import { withRouter } from "fusion-plugin-react-router";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import React from "react";
 import styled from "styled-components";
-import { Routes } from "../../constants";
+import { makeMediaQueryMax, Routes } from "../../constants";
 import AreasWeServeHero from "../areas-we-serve-hero";
 import CallFormHero from "../call-form-hero";
 import ContactUsForm from "../contact-us-form";
@@ -29,6 +29,9 @@ export const ContactUsPage = (props) => {
 
 const FormContainer = styled.div`
     margin-bottom: 101px;
+    ${makeMediaQueryMax(1000, `
+        margin-bottom: 0px;
+    `)}
 `
 
 export default withRouter(ContactUsPage);
