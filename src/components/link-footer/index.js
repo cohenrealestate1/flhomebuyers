@@ -2,7 +2,7 @@
 import { assetUrl } from "fusion-core";
 import React from "react";
 import styled from "styled-components";
-import { Colors, FontFamilies, Routes, Typographies } from "../../constants";
+import { Colors, FontFamilies, makeMediaQueryMax, makeMediaQueryMin, Routes, Typographies } from "../../constants";
 import EmailButton from "../shared/email-button";
 import PhoneButton, { PhoneButtonSizes } from "../shared/phone-button";
 import Text from "../text";
@@ -12,15 +12,16 @@ const Container = styled.div`
     padding: 50px 143px 65px 141px;
     background-color: ${Colors.Blue};
     box-sizing: border-box;
+    ${makeMediaQueryMax(1350, `padding: 20px; flex-direction: column; gap: 20px; align-items: center; justify-content: center;`)}
 `;
 const LeftContainer = styled.div`
-    margin-right: auto;
+    ${makeMediaQueryMin(1350, 'margin-right: auto;')}
     display: flex;
     flex-direction: column;
     margin-top: 23px;
 `;
 const RightContainer = styled.div`
-    margin-left: auto;
+    ${makeMediaQueryMin(1350, 'margin-left: auto;')}
     display: flex;
     gap: 56px;
     align-items: center;
@@ -34,6 +35,7 @@ const Logo = styled.img`
     height: 184px;
     width: 184px;
     padding-bottom: 10px;
+    ${makeMediaQueryMax(1350, 'display: none;')}
 `
 const LinksContainer = styled.div`
     display: flex;

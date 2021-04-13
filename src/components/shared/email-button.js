@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Email, EmailHref, Typographies } from "../../constants";
+import { Colors, Email, EmailHref, makeMediaQueryMax, Typographies } from "../../constants";
 import Envelope from "../icons/envelope";
 import Text from "../text";
 
@@ -22,7 +22,7 @@ const Container = styled.a`
 export const EmailButton = () => {
     return <Container href={EmailHref} >
         <Envelope color={Colors.White}/>
-        <Text $openSans $margin="0 0 0 22px" $color={Colors.White} $typography={Typographies.EmailButton}>{Email}</Text>
+        <Text $openSans $margin="0 0 0 22px" $color={Colors.White} $typography={Typographies.EmailButton} $style={makeMediaQueryMax(1000, Typographies.TextXSmall)}>{Email}</Text>
     </Container>
 }
 

@@ -25,7 +25,7 @@ type Props = {
     $external: boolean,
     $italic: boolean,
     $padding: string,
-    $style: string
+    $style: string,
 }
 
 const ContainerA = styled.a`
