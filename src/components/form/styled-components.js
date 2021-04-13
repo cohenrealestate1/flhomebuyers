@@ -42,6 +42,9 @@ export const GreenContainer = styled.div`
     right: -25px;
     ${makeMediaQueryMax(1000, 'display: none;')}
 `
+
+const orangeBorder = `25px solid ${Colors.Orange}`;
+const greenBorder = `25px solid ${Colors.Green}`;
 export const FormContentContainer = styled.div`
     z-index: 1000;
     background-color: ${Colors.White};
@@ -54,5 +57,6 @@ export const FormContentContainer = styled.div`
     padding-left: ${props => props.$paddingSize === "Small" ? "61px" : "8%"};
     padding-right: ${props => props.$paddingSize === "Small" ? "54px" : "8%"};
     padding-top: 59px;
+    ${makeMediaQueryMax(1000, `border-left: ${orangeBorder}; border-top: ${orangeBorder}; border-right: ${greenBorder}; border-bottom: ${greenBorder};`)}
 
 `
