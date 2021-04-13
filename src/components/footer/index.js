@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, SocialMediaLinks, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, makeMediaQueryMin, SocialMediaLinks, Typographies } from "../../constants";
 import Facebook from "../icons/facebook";
 import Instagram from "../icons/instagram";
 import LinkedIn from "../icons/linkedin";
@@ -14,15 +14,18 @@ const Container = styled.div`
     padding: 36px 143px 39px 141px;
     background-color: ${Colors.Green};
     box-sizing: border-box;
+    ${makeMediaQueryMax(1000, 'padding: 20px;')}
+    ${makeMediaQueryMax(500, 'flex-direction: column; align-items: center;')}
 `;
 const Copyright = styled.div`
     margin-right: auto;
     padding: 6px 0;
+    ${makeMediaQueryMax(500, 'text-align: center;')}
 `
 const LogosContainer = styled.div`
     display: flex;
     gap: 11px;
-    margin-left: auto;
+    ${makeMediaQueryMin(500, 'margin-left: auto;')}
     align-items: center;
 `
 
