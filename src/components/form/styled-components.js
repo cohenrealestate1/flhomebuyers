@@ -58,5 +58,5 @@ export const FormContentContainer = styled.div`
     padding-right: ${props => props.$paddingSize === "Small" ? "54px" : "8%"};
     padding-top: 59px;
     ${makeMediaQueryMax(1000, `border-left: ${orangeBorder}; border-top: ${orangeBorder}; border-right: ${greenBorder}; border-bottom: ${greenBorder};`)}
-
+    ${makeMediaQueryMax(700, `padding-left: 5px; padding-right: 5px;;`)}
 `

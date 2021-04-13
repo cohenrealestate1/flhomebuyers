@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import PhoneButton, { PhoneButtonSizes } from "../shared/phone-button";
 import Text from "../text";
 
@@ -10,12 +10,13 @@ const Container = styled.div`
     gap: 10%;
     align-items: center;
     justify-content: center;
+    ${makeMediaQueryMax(600, 'flex-direction: column;')}
 `
 
 export const Bottom = () => {
     return <Container>
-        <Text $montserrat $color={Colors.Blue} $typography={Typographies.ButtonBig} $uppercase>Or Call Us Today</Text>
-        <PhoneButton size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} />
+        <Text $style={makeMediaQueryMax(1000, Typographies.TextSmall)} $montserrat $color={Colors.Blue} $typography={Typographies.ButtonBig} $uppercase>Or Call Us Today</Text>
+        <PhoneButton style={makeMediaQueryMax(1000, Typographies.TextSmall)} size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} />
     </Container>
 }
 
