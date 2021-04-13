@@ -2,8 +2,6 @@
 import styled from "styled-components";
 import { Colors, makeMediaQueryMax } from "../../constants";
 
-const FormHeight = 800;
-
 export const Container = styled.form`
     display: flex;
     align-items: center;
@@ -14,7 +12,7 @@ export const FormContainer = styled.div`
     position: relative;
     background-color: ${Colors.Blue};
     color: ${Colors.White};
-    min-height: ${FormHeight}px;
+    
     width: 78%;
     display: flex;
     align-items: center;
@@ -49,7 +47,6 @@ export const FormContentContainer = styled.div`
     z-index: 1000;
     background-color: ${Colors.White};
     color: ${Colors.Gray3};
-    min-height: ${FormHeight}px;
     width: 100%;
     display: flex;
     flex-direction: column;
