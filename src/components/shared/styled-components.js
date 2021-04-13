@@ -1,6 +1,6 @@
 // @flow
 import styled from "styled-components";
-import { Colors, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 
 export const StyledAdornment = styled.img`
   height: 40px;
@@ -47,6 +47,7 @@ export const FormFlexContainer = styled.div`
     display: flex;
     gap: 24px;
     margin-bottom: 37px;
+    ${makeMediaQueryMax(1000, 'flex-direction: column;')}
 `
 
 export const CardContainer = styled.div`

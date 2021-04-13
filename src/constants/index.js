@@ -2,6 +2,7 @@
 export * from "./blog";
 export * from "./cities";
 export * from "./constants";
+export * from "./page-breaks";
 export * from "./routes";
 export * from "./styles";
 export * from "./testimonials";

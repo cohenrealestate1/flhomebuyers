@@ -1,6 +1,6 @@
 // @flow
 import styled from "styled-components";
-import { Colors } from "../../constants";
+import { Colors, makeMediaQueryMax } from "../../constants";
 
 const FormHeight = 800;
 
@@ -20,6 +20,7 @@ export const FormContainer = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 100;
+    ${makeMediaQueryMax(1000, 'width: 100%;')}
 `
 export const OrangeContainer = styled.div`
     background-color: ${Colors.Orange};
@@ -29,6 +30,7 @@ export const OrangeContainer = styled.div`
     position: absolute;
     top: -25px;
     right: 25px;
+    ${makeMediaQueryMax(1000, 'display: none;')}
 `
 export const GreenContainer = styled.div`
     background-color: ${Colors.Green};
@@ -38,6 +40,7 @@ export const GreenContainer = styled.div`
     position: absolute;
     top: 25px;
     right: -25px;
+    ${makeMediaQueryMax(1000, 'display: none;')}
 `
 export const FormContentContainer = styled.div`
     z-index: 1000;

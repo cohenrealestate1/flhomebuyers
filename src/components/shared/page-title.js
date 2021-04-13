@@ -1,11 +1,12 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Colors, HouseImageHref, Typographies } from "../../constants";
+import { Colors, HouseImageHref, makeMediaQueryMax, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.div`
     ${Typographies.PageHeader}
+    ${makeMediaQueryMax(1000, Typographies.SubHeaderBig)}
     color: ${Colors.White};
     width: 100%;
     display: flex;
@@ -15,6 +16,7 @@ const Container = styled.div`
     padding-top: ${props => props.$hasForm ? '80px' : '47px'};
     padding-left: 15%;
     padding-right: 15%;
+    ${makeMediaQueryMax(1000, `padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 10px;`)}
     padding-bottom: ${props => props.$hasForm ? '40px' : '0px'};
     box-sizing: border-box;
     z-index: 1;
@@ -56,7 +58,7 @@ export const PageTitle = (props: Props) => {
             {title2 && <>&nbsp;<Text $inline $color={Colors.Green}>{title2}</Text></>}
             {title3}
         </Text>
-        {subtitle && <SubtitleContainer><Text $typography={Typographies.TextLarge} $color={Colors.White} $center $fontWeight={700}>{subtitle}</Text></SubtitleContainer>}
+        {subtitle && <SubtitleContainer><Text $typography={Typographies.TextLarge} $style={makeMediaQueryMax(1000, Typographies.TextSmall)} $color={Colors.White} $center $fontWeight={700}>{subtitle}</Text></SubtitleContainer>}
     </Container>
 }
 

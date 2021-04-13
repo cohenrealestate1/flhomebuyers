@@ -3,7 +3,7 @@ import { Route, Switch, withRouter } from "fusion-plugin-react-router";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import React from "react";
 import styled from "styled-components";
-import { getCityNameFromUrl, Routes } from "../../constants";
+import { getCityNameFromUrl, makeMediaQueryMax, Routes } from "../../constants";
 import AreasWeServeHero from "../areas-we-serve-hero";
 import CallFormHero from "../call-form-hero";
 import { makeCityRoutes } from "../city-route";
@@ -74,7 +74,7 @@ const SubtitleLong =  <SubtitleContainer>
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Unable to keep up with your mortgage payments?</Text>
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Tired of maintaining your property?</Text>
     <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Out of time or money to renovate before selling?</Text>
-    <Text $lineHeight="34px" $margin="0 0 110px 0" $fontWeight={600}>Do you need to sell quickly to relocate?</Text>
+    <Text $lineHeight="34px" $margin="0 0 110px 0" $style={makeMediaQueryMax(1000, 'margin: 0 0 20px 0;')} $fontWeight={600}>Do you need to sell quickly to relocate?</Text>
     <Text $lineHeight="34px" $margin="0 0 30px 0" $fontWeight={800} >WE ARE HERE TO HELP IN ANY SITUATION!</Text>
     <Text $lineHeight="34px" $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
 </SubtitleContainer>
