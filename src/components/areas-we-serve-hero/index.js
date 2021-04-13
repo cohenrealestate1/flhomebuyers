@@ -20,6 +20,9 @@ const Container = styled.div`
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    ${makeMediaQueryMax(1000, `
+        padding: 20px;
+    `)}
 `;
 
 const CountiesAndCitiesContainer = styled.div`
@@ -49,7 +52,7 @@ export const AreasWeServeHero = (props: Props) => {
 }
 
 const CountyAndCitiesContainer = styled.div`
-    ${props => !props.$noMargin ? `margin-top: 37px;` : ''}
+    ${props => !props.$noMargin ? `margin-top: 37px; ${makeMediaQueryMax(1000, 'margin-top: 10px')}` : ''}
 `;
 const CountyAndCities = (props) => {
     const {countyName, cityObjects, $noMargin} = props;
