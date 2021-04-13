@@ -2,8 +2,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Colors, Routes, Testimonials, Typographies } from "../../constants";
-import Caret from "../icons/caret";
-import { ButtonContainer, ButtonEndEnhancer, GrayDivider } from "../shared/styled-components";
+import { ButtonWithCaret } from "../shared/button-with-caret";
+import { ButtonContainer, GrayDivider } from "../shared/styled-components";
 import TestimonialCard from "../shared/testimonial-card";
 import Text from "../text";
 
@@ -35,15 +35,12 @@ const StyledGrayDivider = styled(GrayDivider)`
 export const TestimonailsHero = () => {
     return <Container>
         <StyledGrayDivider />
-        <Text $margin="0 0 46px 0" $typography={Typographies.SubHeaderMedium} $color={Colors.Green} $openSans>Read what our past sellers have to say</Text>
+        <Text $center $margin="0 0 46px 0" $typography={Typographies.SubHeaderMedium} $color={Colors.Green} $openSans>Read what our past sellers have to say</Text>
         <TestimonialCard 
             testimonial={Testimonials[0]}
             color={Colors.Blue}
         />
-        <StyledButton href={Routes.Testimonials}>
-            <Text $uppercase $typography={Typographies.TextMedium} $lineHeight="30px" $fontWeight="bold">View More Testimonials</Text>
-            <ButtonEndEnhancer><Caret color={Colors.Blue} /></ButtonEndEnhancer>
-        </StyledButton>
+        <ButtonWithCaret buttonBackgroundColor={Colors.White} buttonTextColor={Colors.Blue} href={Routes.Testimonials} buttonText="View More Testimonials" />
     </Container>
 }
 

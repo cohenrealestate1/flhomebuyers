@@ -54,14 +54,17 @@ export const CardContainer = styled.div`
   display: flex;
   box-sizing: border-box;
   width: 100%;
+  ${makeMediaQueryMax(1200, 'flex-direction: column;')}
 `
 export const CardImg = styled.img`
     max-width: 561px;
     flex: 1;
+    ${makeMediaQueryMax(1200, 'width: 100%; max-width: 100%;')}
 `
 export const CardRightContainer = styled.div`
     background-color: ${props => props.$color};
     padding: 64px 28px 64px 64px;
+    ${makeMediaQueryMax(1200, 'padding: 30px')}
     display: flex;
     flex-direction: column;
     flex: 1;
