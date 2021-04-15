@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.div`
@@ -19,6 +19,7 @@ export const HereToHelpHero = () => {
         $color: Colors.Gray3,
         $typography: Typographies.TextLarge,
         lineHeight: "45px",
+        $style: makeMediaQueryMax(1000, Typographies.TextSmall)
     }
     return <Container>
         <Text {...props} $margin="0 0 10px 0" $fontWeight={800}>ARE YOU . . .</Text> 

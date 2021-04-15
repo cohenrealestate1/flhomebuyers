@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
+import { makeMediaQueryMax } from "../../constants";
 import AreasWeServeHero from "../areas-we-serve-hero";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
@@ -12,12 +13,18 @@ import WeCanBeatHero from "../we-can-beat-hero";
 
 const HereToHelpContainer = styled.div`
     margin-top: 109px;
+    ${makeMediaQueryMax(1000, 'margin-top: 20px;')}
 `;
+const AreasWeServeContainer = styled.div`
+    ${makeMediaQueryMax(1000, `padding-top: 40px;`)}
+`
 
 export const LocationsPage = (props) => {
     return <Page>
         <PageTitle title="AREAS WE SERVE" titleFontWeight={700} />
-        <AreasWeServeHero hideTitle />
+        <AreasWeServeContainer>
+            <AreasWeServeHero hideTitle />
+        </AreasWeServeContainer>
         <CallFormHero />
         <HereToHelpContainer>
             <HereToHelpHero />

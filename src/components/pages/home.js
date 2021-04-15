@@ -65,6 +65,7 @@ const SubtitleContainer = styled.div`
     padding-bottom: 30px;
     max-width: 67%;
     margin: ${props => props.$topMargin || '0'} auto 0;
+    ${makeMediaQueryMax(1000, `margin: 0 auto auto; max-width: 90%;`)}
 `
 const ThankYouContainer = styled.div`
     margin-top: 38px;
