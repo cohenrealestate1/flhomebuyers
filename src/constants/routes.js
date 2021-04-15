@@ -10,8 +10,8 @@ export const Routes = {
     HowItWorks: "/how-it-works",
     Locations: "/locations", // done
     TestimonialDetail: (param) => `/testimonials/${param}`,
-    Testimonials: "/testimonials",
-    ThankYouContactUs: "/contact-us-thank-you",
-    ThankYouLeadIntakeForm: "/get-cash-offer-thank-you",
+    Testimonials: "/testimonials", // done
+    ThankYouContactUs: "/contact-us-thank-you", // done
+    ThankYouLeadIntakeForm: "/get-cash-offer-thank-you", // done
   };
   

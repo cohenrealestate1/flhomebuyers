@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { getCardColor, Testimonials } from "../../constants";
+import { getCardColor, makeMediaQueryMax, Testimonials } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import Page from "../page";
@@ -19,9 +19,16 @@ const TestimonialSection = styled.div`
     align-items: center;
     justify-content: center;
     gap: 43px;
+    ${makeMediaQueryMax(1000, `
+        padding-top: 20px;
+        padding-right: 10%;
+        padding-bottom: 20px;
+        padding-left: 10%;
+    `)}
 `;
 const HereToHelpContainer = styled.div`
     padding-top: 103px;
+    ${makeMediaQueryMax(1000, 'padding-top: 50px;')}
 `
 
 export const TestimonialsPage = (props) => {
