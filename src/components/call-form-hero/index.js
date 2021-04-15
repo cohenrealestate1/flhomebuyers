@@ -44,6 +44,7 @@ export const CallFormHero = () => {
 
 const StyledButtonContainer = styled(ButtonContainer)`
     height: 95px;
+    ${makeMediaQueryMax(1000, 'height: 50px; margin-bottom: 6px;')}
     margin-bottom: 14px;
 `
 const ButtonAndSubtextContainer = styled.div`

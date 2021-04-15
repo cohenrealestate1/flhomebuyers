@@ -1,10 +1,10 @@
 // @flow
 export const Routes = {
     AboutUs: "/about-us",
-    Blog: "/blog",
+    Blog: "/blog", // done
     BlogDetail: (param) => `/blog/${param}`,
     ContactUs: "/contact-us", // done
-    Covid19: "/covid-19",
+    Covid19: "/covid-19", // done
     GetCashOffer: "/get-cash-offer", // done
     Home: "/", // done
     HowItWorks: "/how-it-works",

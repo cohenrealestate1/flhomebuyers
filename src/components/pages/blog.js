@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { BlogPosts, getCardColor } from "../../constants";
+import { BlogPosts, getCardColor, makeMediaQueryMax } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import HowItWorksHero from "../how-it-works-hero";
@@ -16,6 +16,7 @@ const BlogSection = styled.div`
     padding-bottom: 113px;
     padding-left: 10%;
     padding-right: 10%;
+    ${makeMediaQueryMax(1000, 'padding-top: 20px; padding-bottom: 20px;')}
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -25,9 +26,11 @@ const BlogSection = styled.div`
 `;
 const CallFormContainer = styled.div`
     padding-top: 30px;
+    ${makeMediaQueryMax(1000, 'padding-top: 47px;')}
 `
 const HereToHelpContainer = styled.div`
     padding-top: 83px;
+    ${makeMediaQueryMax(1000, 'padding-top: 20px;')}
 `
 
 export const BlogPage = (props) => {
