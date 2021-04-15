@@ -1,7 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Colors } from "../../constants";
+import { Colors, makeMediaQueryMax } from "../../constants";
 
 const TopOffset = '60px';
 
@@ -13,6 +13,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding-top: calc(422px + ${TopOffset});
+    ${makeMediaQueryMax(1000, `padding-top: 0;);`)}
     padding-bottom: 0px;
     box-sizing: border-box;
     z-index: 1;
@@ -32,10 +33,11 @@ const Container = styled.div`
         background-image: url('${props => props.$imgHref}');
         background-size: cover;
         transform: translateY(-${TopOffset});
+        // ${makeMediaQueryMax(1000, `display: none; transform: translateY(0);`)}
     }
 `
 
-const Covid19Info = styled.div`
+const Info = styled.div`
     background-color: ${props => props.$backgroundColor};
     padding-top: 77px;
     padding-right: 10%;
@@ -44,6 +46,14 @@ const Covid19Info = styled.div`
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 20px;
+    ${makeMediaQueryMax(1000, `
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    `)}
 `
 
 type Props = {
@@ -54,9 +64,9 @@ type Props = {
 export const PageTitleImage = (props: Props) => {
     const {imgHref, backgroundColor, children} = props;
     return <Container $imgHref={imgHref} >
-        <Covid19Info $backgroundColor={backgroundColor}>
+        <Info $backgroundColor={backgroundColor}>
             {children}
-        </Covid19Info>
+        </Info>
     </Container>
 }
 

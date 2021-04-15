@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Covid19Href } from "../../constants";
+import { Colors, Covid19Href, makeMediaQueryMax } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import HowItWorksHero from "../how-it-works-hero";
@@ -13,9 +13,10 @@ import WeCanBeatHero from "../we-can-beat-hero";
 
 const HereToHelpContainer = styled.div`
     margin-top: 103px;
+    ${makeMediaQueryMax(1000, 'margin-top: 20px;')}
 `;
 const HowItWorksContainer = styled.div`
-    margin-top: 90px;
+    margin-top: 20px;
 `
 
 export const Covid19Page = (props) => {
