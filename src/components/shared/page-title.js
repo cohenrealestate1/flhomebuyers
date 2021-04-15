@@ -39,6 +39,7 @@ const Container = styled.div`
 const SubtitleContainer = styled.div`
     margin-left: -20%;
     margin-right: -20%;
+    ${makeMediaQueryMax(1000, `margin-left: 10px; margin-right: 10px;`)}
 `
 
 type Props = {
