@@ -1,7 +1,7 @@
 // @flow
 import { useFormikContext, withFormik } from "formik";
 import React from "react";
-import { Colors, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import Form from "../form";
 import Input from "../shared/input";
 import { EmailInput } from "../shared/inputs";
@@ -22,7 +22,7 @@ export const ContactUsForm = (props: Props) => {
     const {values: {email, phoneNumber, firstName, lastName, freeFormText}, errors} = useFormikContext();
     return <Form 
         buttonProps={{
-            text: <Text $typography={Typographies.FormSubmitButton} $color={Colors.White} $uppercase>Submit</Text>,
+            text: <Text $typography={Typographies.FormSubmitButton} $color={Colors.White} $uppercase $style={makeMediaQueryMax(1000, Typographies.SubHeaderMedium)}>Submit</Text>,
             color: Colors.Blue,
             onClick: () => {}
         }}

@@ -26,9 +26,12 @@ export const ExternalLinkProps = {
     rel: "noopener noreferrer",
 };
   
+export const makeMediaQueryMaxStr = (maxWidth: number) => `@media only screen and (max-width: ${maxWidth}px)`;
+export const makeMediaQueryMinStr = (minWidth: number) => `@media only screen and (mi-width: ${minWidth}px)`;
+
 export const makeMediaQueryMax = (maxWidth: number, query: string) => {
     return `
-      @media only screen and (max-width: ${maxWidth}px) {
+      ${makeMediaQueryMaxStr(maxWidth)} {
         ${query}
       }
     `;
@@ -36,7 +39,7 @@ export const makeMediaQueryMax = (maxWidth: number, query: string) => {
 
   export const makeMediaQueryMin = (minWidth: number, query: string) => {
     return `
-      @media only screen and (min-width: ${minWidth}px) {
+      ${makeMediaQueryMinStr(minWidth)} {
         ${query}
       }
     `;

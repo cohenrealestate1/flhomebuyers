@@ -3,7 +3,7 @@ import { Button } from "baseui/button";
 import { useFormikContext } from "formik";
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Colors } from "../../constants";
+import { Colors, makeMediaQueryMaxStr } from "../../constants";
 import { Container, FormContainer, FormContentContainer, GreenContainer, OrangeContainer } from "./styled-components";
 
 const Overrides = {
@@ -22,6 +22,9 @@ const Overrides = {
             height: '100px',
             ':hover': {
                 backgroundColor: Colors.Orange,
+            },
+            [makeMediaQueryMaxStr(1000)]: {
+                height: "150px"
             }
         }
     }
