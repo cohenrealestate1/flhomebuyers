@@ -27,7 +27,6 @@ export const CallFormHero = () => {
         $inline: true,
         $fontWeight: 700,
         $typography: Typographies.ButtonBig,
-        $style: makeMediaQueryMax(1000, Typographies.FormSubmitButton)
     }
     return <Container>
         <Button 

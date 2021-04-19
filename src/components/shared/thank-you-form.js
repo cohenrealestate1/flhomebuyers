@@ -1,7 +1,7 @@
 // @flow
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
+import { Colors, Typographies } from "../../constants";
 import Form, { PaddingSizes } from "../form";
 import Bottom from "../lead-intake-form/bottom";
 import Text from "../text";
@@ -23,10 +23,10 @@ export const ThankYouForm = (props: Props) => {
     const {topText, bottomText} = props;
     return <Form additionalContent={<Bottom />} paddingSize={PaddingSizes.Small}>
         <TopContainer>
-            <Text $inline $uppercase $color={Colors.Blue} $typography={Typographies.PageHeader} $style={makeMediaQueryMax(1000, Typographies.TextXLarge)}>
+            <Text $inline $uppercase $color={Colors.Blue} $typography={Typographies.PageHeader}>
             {topText}
             </Text>
-            <Text $margin="21px 0 0 0" $typography={Typographies.TextXLarge} $color={Colors.Gray3} $style={makeMediaQueryMax(1000, Typographies.FormSubmitButton)}>{bottomText}</Text>
+            <Text $margin="21px 0 0 0" $typography={Typographies.TextXLarge} $color={Colors.Gray3} >{bottomText}</Text>
         </TopContainer>
     </Form>
 };

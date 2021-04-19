@@ -33,7 +33,7 @@ const Separator = styled.div`
 
 export const WeCanBeatHero = () => {
     return <Container>
-    <Text $center $typography={Typographies.SubHeaderBig} $style={makeMediaQueryMax(1000, Typographies.ButtonBig)} $color={Colors.Blue} $lineHeight={"73px"} $margin="0 0 54px 0" $uppercase>We Can Beat Other Offers</Text>
+    <Text $center $typography={Typographies.SubHeaderBig} $color={Colors.Blue} $lineHeight={"73px"} $margin="0 0 54px 0" $uppercase>We Can Beat Other Offers</Text>
     <ItemsContainer>
         <Item number="25+" color={Colors.Orange} text="Years of Experience" />
         <Separator />

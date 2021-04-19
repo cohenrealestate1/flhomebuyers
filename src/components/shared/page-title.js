@@ -6,7 +6,6 @@ import Text from "../text";
 
 const Container = styled.div`
     ${Typographies.PageHeader}
-    ${makeMediaQueryMax(1000, Typographies.SubHeaderBig)}
     color: ${Colors.White};
     width: 100%;
     display: flex;
@@ -59,7 +58,7 @@ export const PageTitle = (props: Props) => {
             {title2 && <>&nbsp;<Text $inline $color={Colors.Green}>{title2}</Text></>}
             {title3}
         </Text>
-        {subtitle && <SubtitleContainer><Text $typography={Typographies.TextLarge} $style={makeMediaQueryMax(1000, Typographies.TextSmall)} $color={Colors.White} $center $fontWeight={700}>{subtitle}</Text></SubtitleContainer>}
+        {subtitle && <SubtitleContainer><Text $typography={Typographies.TextLarge}  $color={Colors.White} $center $fontWeight={700}>{subtitle}</Text></SubtitleContainer>}
     </Container>
 }
 

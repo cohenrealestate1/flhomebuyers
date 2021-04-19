@@ -15,8 +15,8 @@ const Container = styled.div`
 
 export const Bottom = () => {
     return <Container>
-        <Text $style={makeMediaQueryMax(1000, Typographies.TextSmall)} $montserrat $color={Colors.Blue} $typography={Typographies.SubHeaderSmall} $uppercase>Or Call Us Today</Text>
-        <PhoneButton style={makeMediaQueryMax(1000, Typographies.TextSmall)} size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} />
+        <Text $montserrat $color={Colors.Blue} $typography={Typographies.SubHeaderSmall} $uppercase>Or Call Us Today</Text>
+        <PhoneButton size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} />
     </Container>
 }
 

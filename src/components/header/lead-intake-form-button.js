@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, makeMediaQueryMax, Routes, Typographies } from "../../constants";
+import { Colors, Routes, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.a`
@@ -20,7 +20,6 @@ const Container = styled.a`
 export const LeadIntakeFormButton = () => {
     const textProps = {
         $typography: Typographies.ButtonMedium,
-        $style: makeMediaQueryMax(875, Typographies.TextSmall),
         $inline: true,
         $color: Colors.White
     };
