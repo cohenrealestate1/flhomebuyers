@@ -1,13 +1,13 @@
 // @flow
 import { TestimonialType } from "../types";
-import { Covid19Href, SiteName } from "./constants";
+import { SiteName } from "./constants";
 import { Routes } from "./routes";
 
 export const TestimonialParentDeath: TestimonialType = {
-    imgHref: Covid19Href,
+    imgHref: "https://drive.google.com/thumbnail?id=1XK_UsDn_Ta3QxUh5gv1cGFoQCOp8b_xG",
     quote: "We inherited a property and didn't know what to do with it",
     name: "Adi",
-    city: "Cooper City",
+    city: "Lauderhill",
     county: "Broward",
     paragraphs: [
         `After the passing of both of our parents, my sister and I inherited the house. We were living out of state, and the thought of becoming landlords felt too daunting and time-intensive.`,
@@ -19,21 +19,21 @@ export const TestimonialParentDeath: TestimonialType = {
 };
 
 export const TestimonialTaxLien: TestimonialType = {
-    imgHref: Covid19Href,
+    imgHref: "https://drive.google.com/thumbnail?id=1MDWNoehhvZrCxmT6JVacM6U5GXyQTrHB",
     quote: "They helped me get my financials back on track",
     name: "Carolina",
     city: "Hialeah",
     county: "Miami-Dade",
     paragraphs: [
-        `2020 has been a hard year for me, and between credit cards and property taxes I just couldn't keep up.`,
-        `I decided to move to Georgia for a lower cost of living and to be closer to my children and grandchildren. The biggest thing keeping me in Florida was my house. I bought it around 20 years ago and I just didn't have the time to renovate it and start dealing with realtors, inspectors, title companies etc.`,
+        `2020 has been a hard year for me, and between credit cards and property taxes I just couldn't keep up. I had started a renovation project but I didn't have the time or money to finish it, so I knew that listing it on the MLS would take way too long.`,
+        `I decided to move to Georgia for a lower cost of living and to be closer to my children and grandchildren. The biggest thing keeping me in Florida was my house. I bought it around 20 years ago and I just didn't have the time to start dealing with realtors, inspectors, title companies etc.`,
         `I met a friend at my church who told me about her experience working with Nava. I gave her a call and she came over the next day with the contractor, they took a look at the house, and emailed me a cash offer. My house was sold within 3 weeks and I got my check from Nava just as we agreed. I was able to pay my debts and start my life all over again.`,
         `I was able to pay my debts and start my life all over again.`
     ]
 };
 
 export const TestimonialMoving: TestimonialType = {
-    imgHref: Covid19Href,
+    imgHref: "https://drive.google.com/thumbnail?id=1h0NrxR9SRG4F4tVzd5rxmRuO7D40sOkJ",
     quote: "I had to move, fast",
     name: "Michael",
     city: "Boynton Beach",

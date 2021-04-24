@@ -59,6 +59,7 @@ export const CardContainer = styled.div`
 export const CardImg = styled.img`
     max-width: 561px;
     flex: 1;
+    object-fit: cover;
     ${makeMediaQueryMax(1200, 'width: 100%; max-width: 100%;')}
 `
 export const CardRightContainer = styled.div`
