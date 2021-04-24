@@ -65,19 +65,27 @@ const SubtitleContainer = styled.div`
     padding-bottom: 30px;
     max-width: 67%;
     margin: ${props => props.$topMargin || '0'} auto 0;
-    ${makeMediaQueryMax(1000, `margin: 0 auto auto; max-width: 90%;`)}
+    ${makeMediaQueryMax(1000, `margin: 0 auto auto; max-width: 90%; text-align: left;`)}
 `
 const ThankYouContainer = styled.div`
     margin-top: 38px;
 `
 
+const subtitleProps = {
+    $lineHeight: "34px",
+    $fontWeight: 600,
+    $style: makeMediaQueryMax(1000, `
+        ::before { content: "•" }
+    `)
+}
+
 const SubtitleLong =  <SubtitleContainer>
-    <Text $lineHeight="34px" $margin="38px 0 10px 0">ARE YOU . . .</Text> 
-    <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Unable to keep up with your mortgage payments?</Text>
-    <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Tired of maintaining your property?</Text>
-    <Text $lineHeight="34px" $margin="0 0 10px 0" $fontWeight={600}>Out of time or money to renovate before selling?</Text>
-    <Text $lineHeight="34px" $margin="0 0 110px 0" $style={makeMediaQueryMax(1000, 'margin: 0 0 20px 0;')} $fontWeight={600}>Do you need to sell quickly to relocate?</Text>
-    <Text $lineHeight="34px" $margin="0 0 30px 0" $fontWeight={800} >WE ARE HERE TO HELP IN ANY SITUATION!</Text>
+    <Text $lineHeight="34px" $center $margin="38px 0 10px 0">ARE YOU . . .</Text> 
+    <Text $margin="0 0 10px 0" {...subtitleProps} >Unable to keep up with your mortgage payments?</Text>
+    <Text $margin="0 0 10px 0" {...subtitleProps} >Tired of maintaining your property?</Text>
+    <Text $margin="0 0 10px 0" {...subtitleProps} >Out of time or money to renovate before selling?</Text>
+    <Text $margin="0 0 10px 0" {...subtitleProps} >Do you need to sell quickly to relocate?</Text>
+    <Text $lineHeight="34px" $margin="0 0 30px 0" $style={makeMediaQueryMax(1000, 'margin: 20px 0 0 0;')}  $fontWeight={800} >WE ARE HERE TO HELP IN ANY SITUATION!</Text>
     <Text $lineHeight="34px" $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
 </SubtitleContainer>
 
