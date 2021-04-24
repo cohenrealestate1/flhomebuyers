@@ -10,7 +10,7 @@ const Container = styled.div`
     gap: 25px;
     max-width: 308px;
     align-items: center;
-    ${makeMediaQueryMax(1000, `max-width: unset;`)}
+    ${makeMediaQueryMax(1000, `max-width: unset; margin-bottom: 20px;`)}
 `;
 
 const Number = styled.div`
@@ -36,7 +36,7 @@ export const Item = (props: Props) => {
     const {number, text} = props;
     return <Container>
         <Number><Text $typography={Typographies.SubHeaderBig} $style={makeMediaQueryMax(1000, Typographies.LargeNumber)} $color={Colors.Blue} $uppercase>{number}</Text></Number>
-        <Text $center $typography={Typographies.TextSmall} $style={makeMediaQueryMax(1000, Typographies.TextLarge)} $uppercase $color={Colors.Blue} $fontWeight={800}>{text}</Text>
+        <Text $center $typography={Typographies.TextSmall} $style={makeMediaQueryMax(1000, Typographies.ButtonBig)} $uppercase $color={Colors.Blue} $fontWeight={800}>{text}</Text>
     </Container>
 }
 
