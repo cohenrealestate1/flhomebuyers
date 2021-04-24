@@ -20,20 +20,21 @@ const StyledButtonContainer = styled(ButtonContainer)`
         ${props => props.$noLeftPadding ? `padding-left: 0px;` : `padding-left: 10px;`}
         width: fit-content;
     `)}
-    `
+`
 
 type Props = {
     buttonBackgroundColor: string,
     buttonTextColor: string,
     href: string,
     buttonText: string,
-    noLeftPadding: boolean
+    noLeftPadding: boolean,
+    textStyle: string
 }
 
 export const ButtonWithCaret = (props: Props) => {
-    const {buttonBackgroundColor, buttonTextColor, href, buttonText, noLeftPadding} = props;
+    const {buttonBackgroundColor, buttonTextColor, href, buttonText, noLeftPadding, textStyle} = props;
     return <StyledButtonContainer $noLeftPadding={noLeftPadding} $buttonBackgroundColor={buttonBackgroundColor} href={href}>
-    <Text $margin="0 12px 0 0" $typography={Typographies.TextMedium} $lineHeight="30px" $fontWeight="bold" $color={buttonTextColor} $uppercase>{buttonText}</Text>
+    <Text $margin="0 12px 0 0" $typography={Typographies.TextMedium} $lineHeight="30px" $fontWeight="bold" $color={buttonTextColor} $uppercase $style={textStyle || ""}>{buttonText}</Text>
     <Caret color={buttonTextColor} />
 </StyledButtonContainer>
 }
