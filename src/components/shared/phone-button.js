@@ -19,6 +19,7 @@ type Props = {
     underlined?: boolean,
     style?: string,
     textStyle?: string;
+    justifyContent?: string;
 }
 
 const Container = styled.a`
@@ -30,14 +31,14 @@ const Container = styled.a`
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: ${props => props.$justifyContent || 'center'};
     box-sizing: border-box;
     ${props => props.$style || ''}
 `
 
 export const PhoneButton = (props: Props) => {
-    const {color, size, textColor, phoneColor, underlined, style, textStyle} = props;
-    return <Container $color={color} $size={size} $textColor={textColor} href={PhoneNumberHref} $style={style} >
+    const {color, size, textColor, phoneColor, underlined, style, textStyle, justifyContent} = props;
+    return <Container $color={color} $size={size} $textColor={textColor} href={PhoneNumberHref} $style={style} $justifyContent={justifyContent} >
         <PhoneOldFashioned color={phoneColor || Colors.White} size={size} />
         <Text $openSans $margin="0 0 0 22px" $underline={underlined} $style={textStyle || ""}>{PhoneNumber}</Text>
     </Container>

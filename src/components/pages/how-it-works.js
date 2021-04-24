@@ -30,8 +30,8 @@ export const HowItWorksPage = (props) => {
             <HereToHelpHero />
         </HereToHelpContainer>
         <CallFormHero />
-        <BlueDivider />
         <WeCanBeatHero />
+        <BlueDivider />
         <AreasWeServeHero />
     </Page>
 }

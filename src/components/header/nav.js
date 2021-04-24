@@ -2,7 +2,7 @@
 import { withRouter } from "fusion-plugin-react-router";
 import React from "react";
 import styled from "styled-components";
-import { Colors, FontFamilies, makeMediaQueryMax, Routes, Typographies } from "../../constants";
+import { Colors, FontFamilies, Routes, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.div`
@@ -11,23 +11,30 @@ const Container = styled.div`
     ${FontFamilies.M}
     margin-left: auto;
     flex-wrap: wrap;
-    ${makeMediaQueryMax(1000, 'flex-direction: column;')}
-`
+    justify-content: flex-end;
+    flex-direction: ${props => props.$isMobile ? 'column' : 'row'}
+    `
 
-export const Nav = () => {
-    return <Container>
-        <NavItem title="How it works" href={Routes.HowItWorks} />
-        <NavItem title="Locations" href={Routes.Locations} />
-        <NavItem title="Testimonials" href={Routes.Testimonials} />
-        <NavItem title="Covid-19" href={Routes.Covid19} />
-        <NavItem title="About Us" href={Routes.AboutUs} />
-        <NavItem title="Contact Us" href={Routes.ContactUs} />
+type Props = {
+    isMobile: boolean;
+}
+export const Nav = (props: Props) => {
+    const {isMobile} = props;
+    return <Container $isMobile={isMobile}>
+        <NavItem isMobile={isMobile} title="How it works" href={Routes.HowItWorks} />
+        <NavItem isMobile={isMobile} title="Locations" href={Routes.Locations} />
+        <NavItem isMobile={isMobile} title="Testimonials" href={Routes.Testimonials} />
+        <NavItem isMobile={isMobile} title="Covid-19" href={Routes.Covid19} />
+        <NavItem isMobile={isMobile} title="About Us" href={Routes.AboutUs} />
+        <NavItem isMobile={isMobile} title="Contact Us" href={Routes.ContactUs} />
+        <NavItem isMobile={isMobile} title="Blog" href={Routes.Blog} />
     </Container>
 }
 
 type NavItemProps = {
     title: string,
-    href: string
+    href: string,
+    isMobile: boolean
 };
 
 const NavItemContainer = styled.div`
@@ -35,13 +42,13 @@ const NavItemContainer = styled.div`
 `
 
 const NavItem = withRouter((props: NavItemProps) => {
-    const {title, href, location: {pathname}} = props;
+    const {title, href, location: {pathname}, isMobile} = props;
     const active = pathname.includes(href);
     return <NavItemContainer $active={active}>
         <Text 
         $a 
         $uppercase 
-        $typography={Typographies.TextXSmall} 
+        $typography={isMobile ? Typographies.TextXLarge : Typographies.TextXSmall} 
         $color={Colors.Blue} 
         $hoverColor={Colors.Orange} 
         $lineHeight="22px" 

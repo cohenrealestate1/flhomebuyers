@@ -2,17 +2,36 @@
 import { useEffect, useState } from 'react';
 
 function getWindowDimensions() {
-  if (typeof window === "undefined") {
+
+  if (typeof screen === "undefined") {
     return {
       width: 0,
-      height: 0
+      height: 0,
     }
   }
-  const { innerWidth: width, innerHeight: height } = window;
+  const screenWidth = screen.width;
+
+  // desktop
+  if (screenWidth > 718) {
+    if (typeof window === "undefined") {
+      return {
+        width: 0,
+        height: 0
+      }
+    }
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+
+  // mobile
   return {
-    width,
-    height
-  };
+    width: screen.width,
+    height: screen.height,
+    isMobile: true
+  }
 }
 
 export default function useWindowDimensions() {

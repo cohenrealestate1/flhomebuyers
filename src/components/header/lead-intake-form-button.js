@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Routes, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Routes, Typographies } from "../../constants";
 import Text from "../text";
 
 const Container = styled.a`
@@ -17,11 +17,17 @@ const Container = styled.a`
     box-sizing: border-box;
 `
 
-export const LeadIntakeFormButton = () => {
+type Props = {
+    isMobile: true
+}
+export const LeadIntakeFormButton = (props: Props) => {
+    const {isMobile} = props;
     const textProps = {
         $typography: Typographies.ButtonMedium,
         $inline: true,
-        $color: Colors.White
+        $color: Colors.White,
+        ...(isMobile ? {} : {$style: makeMediaQueryMax(1235, Typographies.TextSmall)})
+        
     };
     return <Container href={Routes.GetCashOffer}>
         <Text {...textProps}>

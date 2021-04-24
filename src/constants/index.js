@@ -28,7 +28,7 @@ export const ExternalLinkProps = {
 };
   
 export const makeMediaQueryMaxStr = (maxWidth: number) => `@media only screen and (max-width: ${maxWidth}px)`;
-export const makeMediaQueryMinStr = (minWidth: number) => `@media only screen and (mi-width: ${minWidth}px)`;
+export const makeMediaQueryMinStr = (minWidth: number) => `@media only screen and (min-width: ${minWidth}px)`;
 
 export const makeMediaQueryMax = (maxWidth: number, query: string) => {
     return `
