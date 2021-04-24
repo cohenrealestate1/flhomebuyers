@@ -46,6 +46,7 @@ export const PhoneInput = (props: Props) => {
         renderStartEnhancer={active => <Phone active={active} />}
         onChangeMapper={phoneFormat}
         type="tel"
+        inputMode="numeric"
       {...props}
     />
   );

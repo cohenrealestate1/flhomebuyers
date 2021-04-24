@@ -95,11 +95,12 @@ type Props = {
     required?: boolean,
     flex?: boolean,
     error?: string,
-    type?: string
+    type?: string,
+    inputMode?: string
 }
 
 export const Input = (props: Props) => {
-    const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value, label, required, flex, error, type} = props;
+    const {renderStartEnhancer, fieldName, value, placeholder, onChangeMapper = value => value, label, required, flex, error, type, inputMode} = props;
     const {setFieldValue} = useFormikContext();
     const [active, setActive ] = useState(false);
     return <Container $flex={flex}><FormControl label={<Label label={label} required={required} />} overrides={LabelOverrides} error={error}>
@@ -113,6 +114,7 @@ export const Input = (props: Props) => {
                 onBlur={() => setActive(false)} 
                 error={Boolean(error)}
                 type={type}
+                inputMode={inputMode}
             />
 
         </FormControl>
