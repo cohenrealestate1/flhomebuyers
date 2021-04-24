@@ -1,10 +1,10 @@
 // @flow
 import { BlogType } from "../types";
-import { Covid19Href, SiteName } from "./constants";
+import { SiteName } from "./constants";
 import { Routes } from "./routes";
 
 export const BlogParentDeath: BlogType = {
-    imgHref: Covid19Href,
+    imgHref: "https://drive.google.com/thumbnail?id=1Vx6K7dhq73ezxCFByIe6Y-iiFEwKZYkY",
     title: "Landlording In 2021",
     quote: "If you thought being a landlord was hard, get ready for even bigger challenges.",
     date: "April 2021",

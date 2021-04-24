@@ -8,7 +8,7 @@ import Page from "../page";
 import DetailPageInfo from "../shared/detail-page-info";
 import { Info } from "../shared/page-title-image";
 
-const Image = styled.img`
+export const Image = styled.img`
     object-fit: contain;
     height: 600px;
 `
