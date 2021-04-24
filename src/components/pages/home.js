@@ -86,11 +86,11 @@ const SubtitleLong =  <SubtitleContainer>
     <Text $margin="0 0 10px 0" {...subtitleProps} >Out of time or money to renovate before selling?</Text>
     <Text $margin="0 0 10px 0" {...subtitleProps} >Do you need to sell quickly to relocate?</Text>
     <Text $lineHeight="34px" $margin="0 0 30px 0" $style={makeMediaQueryMax(1000, 'margin: 20px 0 0 0;')}  $fontWeight={800} >WE ARE HERE TO HELP IN ANY SITUATION!</Text>
-    <Text $lineHeight="34px" $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
+    <Text $lineHeight="34px" $center $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
 </SubtitleContainer>
 
 const SubtitleShort = <SubtitleContainer $topMargin="18px">
-    <Text $lineHeight="34px" $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
+    <Text $lineHeight="34px" $center $margin="0 0 50px 0" $fontWeight={600} $inline>Complete the form below and our team will give you a call within 30 minutes <Text $uppercase $inline $underline>Guaranteed</Text> to make a cash offer.</Text>
 </SubtitleContainer>
 
 const TitleAndForm = (props) => {

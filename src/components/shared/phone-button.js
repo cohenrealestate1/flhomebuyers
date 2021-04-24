@@ -17,7 +17,8 @@ type Props = {
     textColor?: string,
     phoneColor?: boolean,
     underlined?: boolean,
-    style?: string
+    style?: string,
+    textStyle?: string;
 }
 
 const Container = styled.a`
@@ -35,10 +36,10 @@ const Container = styled.a`
 `
 
 export const PhoneButton = (props: Props) => {
-    const {color, size, textColor, phoneColor, underlined, style} = props;
+    const {color, size, textColor, phoneColor, underlined, style, textStyle} = props;
     return <Container $color={color} $size={size} $textColor={textColor} href={PhoneNumberHref} $style={style} >
         <PhoneOldFashioned color={phoneColor || Colors.White} size={size} />
-        <Text $openSans $margin="0 0 0 22px" $underline={underlined}>{PhoneNumber}</Text>
+        <Text $openSans $margin="0 0 0 22px" $underline={underlined} $style={textStyle || ""}>{PhoneNumber}</Text>
     </Container>
 }
 

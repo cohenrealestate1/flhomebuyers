@@ -10,13 +10,13 @@ const Container = styled.div`
     gap: 10%;
     align-items: center;
     justify-content: center;
-    ${makeMediaQueryMax(600, 'flex-direction: column;')}
+    ${makeMediaQueryMax(1000, 'flex-direction: column; gap: 10px;')}
 `
 
 export const Bottom = () => {
     return <Container>
-        <Text $montserrat $color={Colors.Blue} $typography={Typographies.SubHeaderSmall} $uppercase>Or Call Us Today</Text>
-        <PhoneButton size={PhoneButtonSizes.Big} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} />
+        <Text $montserrat $color={Colors.Blue} $style={makeMediaQueryMax(1000, Typographies.SubHeaderBig)} $typography={Typographies.SubHeaderSmall} $uppercase>Or Call Us Today</Text>
+        <PhoneButton size={PhoneButtonSizes.Big} textStyle={makeMediaQueryMax(1000, Typographies.SubHeaderBig)} color={Colors.White} textColor={Colors.Green} phoneColor={Colors.Green} underlined={true} />
     </Container>
 }
 

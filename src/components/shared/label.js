@@ -12,7 +12,7 @@ const LabelContainer = styled.div`
     ${Uppercase}
     display: flex;
     ${makeMediaQueryMax(1000, `
-        font-size: 35px;
+        font-size: 55px;
         line-height: 45px;
     `)}
 `
