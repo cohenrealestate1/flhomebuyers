@@ -12,12 +12,12 @@ const Container = styled.div`
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    gap: 56px;
     ${makeMediaQueryMax(1000, `padding: 100px 0;`)}
 `
 
 const StyledGrayDivider = styled(GrayDivider)`
     width: 100%;
+    margin: 56px 0;
 `
 
 const Title = styled.div`

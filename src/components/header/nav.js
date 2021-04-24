@@ -11,7 +11,7 @@ const Container = styled.div`
     ${FontFamilies.M}
     margin-left: auto;
     flex-wrap: wrap;
-    ${makeMediaQueryMax(500, 'flex-direction: column;')}
+    ${makeMediaQueryMax(1000, 'flex-direction: column;')}
 `
 
 export const Nav = () => {
