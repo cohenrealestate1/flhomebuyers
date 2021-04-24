@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {
     BrowardCities,
     Colors,
+    FontFamilies,
     HendryCities,
     LeeCities,
     makeMediaQueryMax,
@@ -22,13 +23,13 @@ const Container = styled.div`
     box-sizing: border-box;
     ${makeMediaQueryMax(1000, `
         padding: 20px;
+        text-align: center;
     `)}
 `;
 
 const CountiesAndCitiesContainer = styled.div`
     column-count: 3;
-    ${makeMediaQueryMax(1000, 'column-count: 2;')}
-    ${makeMediaQueryMax(600, 'column-count: 1;')}
+    ${makeMediaQueryMax(1000, 'column-count: 1; text-align: center;')}
 `
 
 type Props = {
@@ -52,7 +53,8 @@ export const AreasWeServeHero = (props: Props) => {
 }
 
 const CountyAndCitiesContainer = styled.div`
-    ${props => !props.$noMargin ? `margin-top: 37px; ${makeMediaQueryMax(1000, 'margin-top: 10px')}` : ''}
+    ${props => !props.$noMargin ? `margin-top: 37px; ${makeMediaQueryMax(1000, 'margin-top: 10px;')}` : ''}
+    ${makeMediaQueryMax(1000, `margin-bottom: 30px;`)}
 `;
 const CountyAndCities = (props) => {
     const {countyName, cityObjects, $noMargin} = props;
@@ -65,11 +67,18 @@ const CountyAndCities = (props) => {
 const City = (props) => {
     const {cityObject} = props;
     const {city, url} = cityObject;
-    return <Text $lineHeight="28px" $hoverColor={Colors.Orange} $color={Colors.Gray3} $montserrat $fontWeight={500} $a $typography={Typographies.TextXSmall} $href={url}>{city}</Text>
+    return <Text $lineHeight="28px" $style={`
+        ${makeMediaQueryMax(1000, Typographies.TextXLarge)}
+    `} $hoverColor={Colors.Orange} $color={Colors.Gray3} $montserrat $fontWeight={500} $a $typography={Typographies.TextXSmall} $href={url}>{city}</Text>
 }
 const County = (props) => {
     const {name} = props;
-    return <Text $color={Colors.Green} $fontWeight={800} $uppercase $lineHeight="24px" $margin="0 0 7px 0" $montserrat $typography={Typographies.TextSmall}>{name}</Text>
+    return <Text $style={makeMediaQueryMax(1000, `
+        ${FontFamilies.M}
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 68px;
+    `)} $color={Colors.Green} $fontWeight={800} $uppercase $lineHeight="24px" $margin="0 0 7px 0" $montserrat $typography={Typographies.TextSmall}>{name}</Text>
 }
 
 export default AreasWeServeHero;
