@@ -4,7 +4,7 @@ import { SIZE } from "baseui/input";
 import { Textarea as BaseUITextarea } from "baseui/textarea";
 import { useFormikContext } from "formik";
 import React, { useState } from "react";
-import { BlueBorder, Colors, NoBorder } from "../../constants";
+import { BlueBorder, Colors, makeMediaQueryMaxStr, NoBorder } from "../../constants";
 import Label, { LabelOverrides } from "./label";
 
 const InputOverrides = (active: boolean) => ({
@@ -15,7 +15,10 @@ const InputOverrides = (active: boolean) => ({
             borderTopRightRadius: "10px",
             borderBottomRightRadius: "10px",
             backgroundColor: Colors.Gray1,
-            ...(active ? BlueBorder : NoBorder)
+            ...(active ? BlueBorder : NoBorder),
+            [makeMediaQueryMaxStr(1000)]: {
+                height: "260px"
+            }
         },
     },
     InputContainer: {
@@ -30,7 +33,12 @@ const InputOverrides = (active: boolean) => ({
             fontSize: "25px",
             lineHeight: "34px",
             fontWeight: "400",
-            fontFamily: "Open Sans"
+            fontFamily: "Open Sans",
+            [makeMediaQueryMaxStr(1000)]: {
+                fontSize: "55px",
+                lineHeight: "45px",
+                fontWeight: "400",
+            }
         }
     }
 })

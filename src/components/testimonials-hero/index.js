@@ -32,16 +32,16 @@ const StyledGrayDivider = styled(GrayDivider)`
     `)}
 `
 
-export const TestimonailsHero = () => {
+export const TestimonialsHero = () => {
     return <Container>
         <StyledGrayDivider />
-        <Text $center $margin="0 0 46px 0" $style={makeMediaQueryMax(1000, 'margin: 0 0 0px 0;')} $typography={Typographies.SubHeaderMedium} $color={Colors.Green} $openSans>Read what our past sellers have to say</Text>
+        <Text $center $margin="0 0 46px 0" $style={makeMediaQueryMax(1000, `margin: 0 0 0px 0; ${Typographies.SubHeaderBig}`)} $typography={Typographies.SubHeaderMedium} $color={Colors.Green} $openSans>Read what our past sellers have to say</Text>
         <TestimonialCard 
             testimonial={Testimonials[0]}
             color={Colors.Blue}
         />
-        <ButtonWithCaret buttonBackgroundColor={Colors.White} buttonTextColor={Colors.Blue} href={Routes.Testimonials} buttonText="View More Testimonials" />
+        <ButtonWithCaret buttonBackgroundColor={Colors.White} buttonTextColor={Colors.Blue} href={Routes.Testimonials} buttonText="View More Testimonials" textStyle={makeMediaQueryMax(1000, Typographies.ButtonBig)} />
     </Container>
 }
 
-export default TestimonailsHero;
+export default TestimonialsHero;
