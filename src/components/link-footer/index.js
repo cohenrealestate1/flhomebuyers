@@ -57,7 +57,7 @@ const LinksColumn = styled.div`
 export const Footer = () => {
     return <Container>
         <LeftContainer>
-            <Text $color={Colors.White} $typography={Typographies.TextSmall} $style={makeMediaQueryMax(1000, Typographies.ButtonBig)} $lineHeight="24px" $uppercase>Get cash for your home today</Text>
+            <Text $color={Colors.White} $center $typography={Typographies.TextSmall} $style={makeMediaQueryMax(1000, Typographies.ButtonBig)} $lineHeight="24px" $uppercase>Get cash for your home today</Text>
             <LinksContainer>
                 <LinksColumn>
                     <Link href={Routes.HowItWorks} text="How it works" />

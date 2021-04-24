@@ -14,18 +14,18 @@ const Container = styled.div`
     padding: 36px 143px 39px 141px;
     background-color: ${Colors.Green};
     box-sizing: border-box;
-    ${makeMediaQueryMax(1000, 'padding: 20px;')}
-    ${makeMediaQueryMax(500, 'flex-direction: column; align-items: center;')}
+    ${makeMediaQueryMax(1000, 'padding: 20px; flex-direction: column; align-items: center; gap: 30px;')}
+    ${makeMediaQueryMax(500, '')}
 `;
 const Copyright = styled.div`
     margin-right: auto;
     padding: 6px 0;
-    ${makeMediaQueryMax(500, 'text-align: center;')}
+    ${makeMediaQueryMax(1000, 'text-align: center; margin-right: unset; width: 80%;')}
 `
 const LogosContainer = styled.div`
     display: flex;
     gap: 11px;
-    ${makeMediaQueryMin(500, 'margin-left: auto;')}
+    ${makeMediaQueryMin(1000, 'margin-left: auto;')}
     align-items: center;
 `
 
