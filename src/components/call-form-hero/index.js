@@ -19,6 +19,7 @@ const Container = styled.div`
         flex-direction: column; 
         gap: 25px;
         padding: 20px;
+        height: 20vh;
     `)}
 `
 export const CallFormHero = () => {
@@ -27,6 +28,7 @@ export const CallFormHero = () => {
         $inline: true,
         $fontWeight: 700,
         $typography: Typographies.ButtonBig,
+        $style: makeMediaQueryMax(1000, Typographies.SubHeaderBig)
     }
     return <Container>
         <Button 
@@ -43,7 +45,7 @@ export const CallFormHero = () => {
 
 const StyledButtonContainer = styled(ButtonContainer)`
     height: 95px;
-    ${makeMediaQueryMax(1000, 'height: 50px; margin-bottom: 6px;')}
+    ${makeMediaQueryMax(1000, 'height: 80px; margin-bottom: 6px;')}
     margin-bottom: 14px;
 `
 const ButtonAndSubtextContainer = styled.div`
@@ -65,7 +67,7 @@ const Button = (props: ButtonProps) => {
             {text}
             {endEnhancer && <ButtonEndEnhancer>{endEnhancer}</ButtonEndEnhancer>}
         </StyledButtonContainer>
-        <Text $color={Colors.White} $center $typography={Typographies.TextXSmall}>{subtext}</Text>
+        <Text $color={Colors.White} $center $style={makeMediaQueryMax(1000, Typographies.TextXLarge)} $typography={Typographies.TextXSmall}>{subtext}</Text>
     </ButtonAndSubtextContainer>
 }
 
