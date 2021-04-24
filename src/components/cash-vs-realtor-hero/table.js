@@ -2,7 +2,7 @@
 import { Table } from "baseui/table-semantic";
 import React from 'react';
 import styled from "styled-components";
-import { CashVsRealtorItems, Colors, Typographies } from "../../constants";
+import { CashVsRealtorItems, Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import Text from "../text";
 import { AgentHeaderCell, CashCell, CashHeaderCell, Overrides, RealtorCell, RowTitle } from "./table-cells";
 
@@ -19,6 +19,9 @@ const GreenContainer = styled.div`
     position: absolute;
     bottom: -25px;
     right: -25px;
+    ${makeMediaQueryMax(1000, `
+        display: none;
+    `)}
 `
 
 const data = CashVsRealtorItems.map((item, index) => [
@@ -39,6 +42,9 @@ const TableContentContainer = styled.div`
     width: 100%;
     height: 100%;
     padding: 57px 81px 79px 88px;
+    ${makeMediaQueryMax(1000, `
+        padding: 20px;
+    `)}
 `
 
 const columns = [

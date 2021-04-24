@@ -12,7 +12,9 @@ import Item from "./item";
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 54px;
+`
+const GrayDividerContainer = styled.div`
+    margin: 54px 0;
 `
 
 export const HowItWorksSection = () => {
@@ -31,7 +33,9 @@ export const HowItWorksSection = () => {
             bottom={-12}
             right={-48}
         />
-        <GrayDivider />
+        <GrayDividerContainer>
+            <GrayDivider />
+        </GrayDividerContainer>
         <Item 
             number={2} 
             title="Get a Cash Offer"
@@ -40,7 +44,9 @@ export const HowItWorksSection = () => {
             bottom={-26}
             right={-63}
         />
-        <GrayDivider />
+        <GrayDividerContainer>
+            <GrayDivider />
+        </GrayDividerContainer>
         <Item 
             number={3} 
             title="Close When You'd Like"

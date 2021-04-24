@@ -1,12 +1,18 @@
 // @flow
 import React, { ReactNode } from 'react';
 import styled from "styled-components";
-import { Colors, FontFamilies, Typographies, Uppercase } from "../../constants";
+import { Colors, FontFamilies, makeMediaQueryMax, Typographies, Uppercase } from "../../constants";
 import Text from "../text";
 
 type Props = {
     isFirst: boolean,
     children: ReactNode
+}
+
+const textProps = {
+    $openSans: true,
+    $typography: Typographies.TextSmall,
+    $style: makeMediaQueryMax(1000, Typographies.ButtonMedium)
 }
 
 const RowTitleContainer = styled.div`
@@ -23,7 +29,7 @@ const RowTitleContainer = styled.div`
 export const RowTitle = (props: Props) => {
     const {children, isFirst} = props;
     return <RowTitleContainer $isFirst={isFirst}>
-        <Text $uppercase $openSans $color={Colors.Gray3} $typography={Typographies.TextSmall} $lineHeight="24px" $fontWeight={800}>
+        <Text {...textProps} $uppercase $color={Colors.Gray3} $lineHeight="24px" $fontWeight={800}>
             {children}
         </Text>
     </RowTitleContainer>;
@@ -33,14 +39,15 @@ const CashCellContainer = styled.div`
     ${props => props.$isFirst ? '' : `border-top: 3px solid ${Colors.Green};`}
     background: rgba(43,182,115,0.23);
     width: 100%;
+    box-sizing: border-box;
     height: 100%;
     padding: 37px 38px;
-    box-sizing: border-box;
-`
+    ${makeMediaQueryMax(1000, `background: unset; padding: unset;`)}
+    `
 export const CashCell = (props: Props) => {
     const {children, isFirst} = props;
     return <CashCellContainer $isFirst={isFirst}>
-        <Text $openSans $center $color={Colors.Green} $typography={Typographies.TextSmall} $lineHeight="27px" $fontWeight={700}>
+        <Text {...textProps} $margin="37px 38px" $center $color={Colors.Green} $lineHeight="27px" $fontWeight={700}>
             {children}
         </Text>
     </CashCellContainer>;
@@ -57,7 +64,7 @@ const RealtorCellContainer = styled.div`
 export const RealtorCell = (props: Props) => {
     const {children, isFirst} = props;
     return <RealtorCellContainer $isFirst={isFirst}>
-        <Text $openSans $center $color={Colors.Gray3} $typography={Typographies.TextSmall} $lineHeight="27px" $fontWeight={400}>
+        <Text {...textProps} $center $color={Colors.Gray3} $lineHeight="27px" $fontWeight={400}>
             {children}
         </Text>
     </RealtorCellContainer>;

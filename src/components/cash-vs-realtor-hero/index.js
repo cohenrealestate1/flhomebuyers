@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Routes } from "../../constants";
+import { Colors, makeMediaQueryMax, Routes } from "../../constants";
 import { ButtonContainer } from "../shared/styled-components";
 import Text from "../text";
 import Table from "./table";
@@ -16,11 +16,17 @@ const TableContainer = styled.div`
     padding-bottom: 102px;
     padding-left: 175px;
     padding-right: 175px;
+    ${makeMediaQueryMax(1000, `
+        padding: 20px;
+    `)}
 `;
 
 const StyledButtonContainer = styled(ButtonContainer)`
     padding: 44px 36px;
     margin-top: 78px;
+    ${makeMediaQueryMax(1000, `
+        margin-top: 20px;
+    `)}
 `
 
 export const CashVsRealtorHero = () => {

@@ -25,11 +25,11 @@ export const HowItWorksPage = (props) => {
         <HowItWorksSectionContainer>
             <HowItWorksSection />
         </HowItWorksSectionContainer>
-        <CallFormHero />
         <CashVsRealtorHero />
         <HereToHelpContainer>
             <HereToHelpHero />
         </HereToHelpContainer>
+        <CallFormHero />
         <BlueDivider />
         <WeCanBeatHero />
         <AreasWeServeHero />
