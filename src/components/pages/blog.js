@@ -16,7 +16,7 @@ const BlogSection = styled.div`
     padding-bottom: 113px;
     padding-left: 10%;
     padding-right: 10%;
-    ${makeMediaQueryMax(1000, 'padding-top: 20px; padding-bottom: 20px;')}
+    ${makeMediaQueryMax(1000, 'padding-top: 80px; padding-bottom: 20px;')}
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -36,12 +36,12 @@ const HereToHelpContainer = styled.div`
 export const BlogPage = (props) => {
     return <Page>
         <PageTitle title="THE BLOG" titleFontWeight={700}/>
-        <CallFormContainer>
-            <CallFormHero />
-        </CallFormContainer>
         <BlogSection>
             {BlogPosts.map((blog, index) => <BlogCard key={`testimonial_card_${index}`} blog={blog} color={getCardColor(index)} />)}
         </BlogSection>
+        <CallFormContainer>
+            <CallFormHero />
+        </CallFormContainer>
         <GrayDivider />
         <HereToHelpContainer>
             <HereToHelpHero />

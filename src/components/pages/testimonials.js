@@ -10,7 +10,7 @@ import TestimonialCard from "../shared/testimonial-card";
 
 const TestimonialSection = styled.div`
     padding-top: 100px;
-    padding-bottom: 166px;
+    padding-bottom: 20px;
     padding-left: 10%;
     padding-right: 10%;
     box-sizing: border-box;
@@ -20,27 +20,19 @@ const TestimonialSection = styled.div`
     justify-content: center;
     gap: 43px;
     ${makeMediaQueryMax(1000, `
-        padding-top: 20px;
+        padding-top: 60px;
         padding-right: 10%;
-        padding-bottom: 20px;
         padding-left: 10%;
     `)}
 `;
-const HereToHelpContainer = styled.div`
-    padding-top: 103px;
-    ${makeMediaQueryMax(1000, 'padding-top: 50px;')}
-`
-
 export const TestimonialsPage = (props) => {
     return <Page>
         <PageTitle title="TESTIMONIALS" titleFontWeight={700} />
-        <HereToHelpContainer>
-            <HereToHelpHero />
-        </HereToHelpContainer>
-        <CallFormHero />
         <TestimonialSection>
             {Testimonials.map((testimonial, index) => <TestimonialCard key={`testimonial_card_${index}`} testimonial={testimonial} color={getCardColor(index)} />)}
         </TestimonialSection>
+        <HereToHelpHero />
+        <CallFormHero />
     </Page>
 }
 
