@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { Colors, Typographies } from "../../constants";
+import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import Text from "../text";
 
 type Props = {
@@ -14,7 +14,7 @@ export const PageTitleImageBox = (props: Props) => {
             <Text $margin="0 0 27px 0" $color={Colors.White} $uppercase $montserrat $fontWeight={800} $center $typography={Typographies.SubHeaderBig} $lineHeight="90px">
                 {title}
             </Text>
-            <Text $color={Colors.White} $montserrat $fontWeight={600} $center $typography={Typographies.TextXLarge} >
+            <Text $color={Colors.White} $montserrat $fontWeight={600} $center $typography={Typographies.TextXLarge} $style={makeMediaQueryMax(1000, Typographies.EmailButton)} >
                 {text}
             </Text>
     </>

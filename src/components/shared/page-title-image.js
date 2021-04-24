@@ -20,6 +20,7 @@ const Container = styled.div`
     font-weight: 800;
     position: relative;
     margin-top: -${TopOffset};
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
     ::before {
@@ -37,7 +38,7 @@ const Container = styled.div`
     }
 `
 
-const Info = styled.div`
+export const Info = styled.div`
     background-color: ${props => props.$backgroundColor};
     padding-top: 77px;
     padding-right: 10%;
@@ -47,9 +48,9 @@ const Info = styled.div`
     margin-right: 10%;
     margin-top: 20px;
     ${makeMediaQueryMax(1000, `
-        padding-right: 0;
-        padding-bottom: 0;
-        padding-left: 0;
+        padding-right: 75px;
+        padding-bottom: 75px;
+        padding-left: 75px;
         margin-left: 0;
         margin-right: 0;
         margin-top: 0;

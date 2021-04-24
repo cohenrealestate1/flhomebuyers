@@ -1,18 +1,19 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Ben, Colors, Eli, Nava, Typographies } from "../../constants";
+import { Ben, Colors, Eli, makeMediaQueryMax, Nava, Typographies } from "../../constants";
 import { GrayDivider } from "../shared/styled-components";
 import Text from "../text";
 import Item from "./item";
 
 const Container = styled.div`
-    padding: 100px 0;
+    padding: 100px 40px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
     gap: 56px;
+    ${makeMediaQueryMax(1000, `padding: 100px 0;`)}
 `
 
 const StyledGrayDivider = styled(GrayDivider)`

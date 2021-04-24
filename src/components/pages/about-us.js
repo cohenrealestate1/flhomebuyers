@@ -1,19 +1,19 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Covid19Href, Routes, Typographies } from "../../constants";
+import { Colors, Routes, Typographies } from "../../constants";
 import AreasWeServeHero from "../areas-we-serve-hero";
 import CallFormHero from "../call-form-hero";
 import MeetTheTeamHero from "../meet-the-team-hero";
 import Page from "../page";
-import PageTitleImage from "../shared/page-title-image";
+import { Info } from "../shared/page-title-image";
 import PageTitleImageBox from "../shared/page-title-image-box";
 import { BlueDivider, ButtonContainer } from "../shared/styled-components";
 import Text from "../text";
 import WeCanBeatHero from "../we-can-beat-hero";
 
 const CashOfferButtonContainer = styled.div`
-    margin-top: 103px;
+    margin-top: 20px;
     margin-bottom: 67px;
     max-width: 800px;
     margin-left: auto;
@@ -27,9 +27,10 @@ const StyledButton = styled(ButtonContainer)`
 
 export const AboutUsPage = (props) => {
     return <Page>
-        <PageTitleImage imgHref={Covid19Href} backgroundColor={Colors.Blue}>
+        <Info $backgroundColor={Colors.Blue}>
             <PageTitleImageBox title="About Us" text="Ben here! Thanks for checking us out. We buy houses, multi-family, apartments, and condos in the South Florida, Treasure Coast, and Gulf Coast areas. We are family-run, and we make our family values the center of our business - trustworthiness, fairness, and respect. Get in touch with us, and we’ll get you a cash offer on your property ASAP!" />
-        </PageTitleImage>
+        </Info>
+        <MeetTheTeamHero />
         <CashOfferButtonContainer>
             <StyledButton href={Routes.GetCashOffer}><Text $center $inline $color={Colors.White}>Get Your Cash Offer{" "}<Text $inline $underline>Now!</Text></Text></StyledButton>
         </CashOfferButtonContainer>
@@ -39,7 +40,6 @@ export const AboutUsPage = (props) => {
             to make our highest and best offer.</Text>
         <BlueDivider />
         <WeCanBeatHero />
-        <MeetTheTeamHero />
         <CallFormHero />
         <AreasWeServeHero />
     </Page>
