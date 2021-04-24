@@ -14,13 +14,13 @@ const Container = styled.div`
     padding: 36px 143px 39px 141px;
     background-color: ${Colors.Green};
     box-sizing: border-box;
-    ${makeMediaQueryMax(1000, 'padding: 20px; flex-direction: column; align-items: center; gap: 30px;')}
+    ${makeMediaQueryMax(1000, 'padding: 20px; flex-direction: column; align-items: center;')}
     ${makeMediaQueryMax(500, '')}
 `;
 const Copyright = styled.div`
     margin-right: auto;
     padding: 6px 0;
-    ${makeMediaQueryMax(1000, 'text-align: center; margin-right: unset; width: 80%;')}
+    ${makeMediaQueryMax(1000, 'text-align: center; margin-right: unset; width: 80%; margin-bottom: 30px;')}
 `
 const LogosContainer = styled.div`
     display: flex;

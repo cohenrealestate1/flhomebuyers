@@ -13,11 +13,11 @@ const Container = styled.div`
     background-color: ${Colors.Blue};
     box-sizing: border-box;
     gap: 40px;
-    ${makeMediaQueryMax(1350, `padding: 20px; flex-direction: column; gap: 20px; align-items: center; justify-content: center;`)}
+    ${makeMediaQueryMax(1350, `padding: 20px; flex-direction: column; align-items: center; justify-content: center;`)}
 `;
 const LeftContainer = styled.div`
     ${makeMediaQueryMin(1350, 'margin-right: auto;')}
-    ${makeMediaQueryMax(1350, `align-items: center;`)}
+    ${makeMediaQueryMax(1350, `align-items: center; margin-bottom: 30px`)}
     display: flex;
     flex-direction: column;
     margin-top: 23px;
