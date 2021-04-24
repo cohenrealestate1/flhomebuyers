@@ -24,7 +24,7 @@ const Overrides = {
                 backgroundColor: Colors.Orange,
             },
             [makeMediaQueryMaxStr(1000)]: {
-                height: "150px"
+                height: "200px"
             }
         }
     }
