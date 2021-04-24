@@ -11,5 +11,10 @@ export const Svg = styled.svg`
     ${makeMediaQueryMax(1000, `
         height: 70px;
         width: 70px;
-    `)}
+        `)}
+        `
+
+export const SvgFooter = styled.svg`
+    height: 50px;
+    width: 58px;
 `

@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Covid19Href, Typographies } from "../../constants";
+import { Ben, Colors, Eli, Nava, Typographies } from "../../constants";
 import { GrayDivider } from "../shared/styled-components";
 import Text from "../text";
 import Item from "./item";
@@ -26,26 +26,17 @@ const Title = styled.div`
     align-items: center;
     justify-content: center;
 `
-
-const itemProps = {
-    name: "Ben",
-    title: "The Behind the Scenes Guy",
-    email: "ben@flhomecashbuyers.com",
-    favoriteBook: "World Without End by Ken Follet",
-    imgHref: Covid19Href
-}
-
 export const MeetTheTeamHero = () => {
     return <>
         <Title>
             <Text $fontWeight={800} $typography={Typographies.SubHeaderBig} $color={Colors.White} $uppercase>Meet the Team</Text>
         </Title>
         <Container>
-            <Item {...itemProps} />
+            <Item {...Ben} />
             <StyledGrayDivider />
-            <Item {...itemProps} />
+            <Item {...Eli} />
             <StyledGrayDivider />
-            <Item {...itemProps} />
+            <Item {...Nava} />
         </Container>
     </>
 }

@@ -21,7 +21,7 @@ const Container = styled.a`
 
 export const EmailButton = () => {
     return <Container href={EmailHref} >
-        <Envelope color={Colors.White}/>
+        <Envelope footer size="90px" color={Colors.White}/>
         <Text $openSans $margin="0 0 0 22px" $color={Colors.White} $typography={Typographies.EmailButton}>{Email}</Text>
     </Container>
 }

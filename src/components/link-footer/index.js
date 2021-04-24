@@ -12,10 +12,12 @@ const Container = styled.div`
     padding: 50px 143px 65px 141px;
     background-color: ${Colors.Blue};
     box-sizing: border-box;
+    gap: 40px;
     ${makeMediaQueryMax(1350, `padding: 20px; flex-direction: column; gap: 20px; align-items: center; justify-content: center;`)}
 `;
 const LeftContainer = styled.div`
     ${makeMediaQueryMin(1350, 'margin-right: auto;')}
+    ${makeMediaQueryMax(1350, `align-items: center;`)}
     display: flex;
     flex-direction: column;
     margin-top: 23px;
@@ -55,7 +57,7 @@ const LinksColumn = styled.div`
 export const Footer = () => {
     return <Container>
         <LeftContainer>
-            <Text $color={Colors.White} $typography={Typographies.TextSmall} $lineHeight="24px" $uppercase>Get cash for your home today</Text>
+            <Text $color={Colors.White} $typography={Typographies.TextSmall} $style={makeMediaQueryMax(1000, Typographies.ButtonBig)} $lineHeight="24px" $uppercase>Get cash for your home today</Text>
             <LinksContainer>
                 <LinksColumn>
                     <Link href={Routes.HowItWorks} text="How it works" />
@@ -83,7 +85,7 @@ export const Footer = () => {
 
 const Link = (props) => {
     const {href, text} = props;
-    return <Text $a $lineHeight="28px" $fontWeight={500} $hoverColor={Colors.Orange} $href={href} $color={Colors.White}>{text}</Text>;
+    return <Text $a $lineHeight="28px" $fontWeight={500} $style={makeMediaQueryMax(1000, Typographies.ButtonMedium)} $hoverColor={Colors.Orange} $href={href} $color={Colors.White}>{text}</Text>;
 }
 
 export default Footer;
