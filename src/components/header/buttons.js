@@ -1,5 +1,6 @@
 // @flow
 import React from "react";
+import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 import { Colors, makeMediaQueryMax, Typographies } from "../../constants";
 import PhoneButton, { PhoneButtonSizes } from "../shared/phone-button";
@@ -13,11 +14,7 @@ const Container = styled.div`
     ${makeMediaQueryMax(1235, 'flex-direction: column;')}
 `
 
-type Props = {
-    isMobile: Boolean;
-}
-export const Buttons = (props: Props) => {
-    const {isMobile} = props;
+export const Buttons = () => {
     return <Container>
         <LeadIntakeFormButton isMobile={isMobile}/>
         <PhoneButton textStyle={isMobile ? "" : makeMediaQueryMax(1235, Typographies.TextSmall)} justifyContent="flex-start" color={Colors.Green} size={PhoneButtonSizes.Small} />
