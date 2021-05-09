@@ -1,12 +1,11 @@
 // @flow
 const sendgrid = require("@sendgrid/mail");
 
-export const sendEmailLead = (values, pathname) => {
-  sendgrid.setApiKey(
-    "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"
-  );
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
+
+export const sendEmailLead = (values) => {
   const {
-    email: emailAddress, phoneNumber, address 
+    email: emailAddress, phoneNumber, address, pathname
   } = values;
 
   const html = `
@@ -37,9 +36,6 @@ export const sendEmailLead = (values, pathname) => {
 };
 
 export const sendEmailContactUs = (values) => {
-  sendgrid.setApiKey(
-    "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"
-  );
   const {
     firstName,
     lastName,

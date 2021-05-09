@@ -2,7 +2,11 @@
 import { Routes } from "../../constants";
 
 export const handleSubmit = async (values, props) => {
-    await props.props.sendEmailLead(values, props.props.history.pathname);
+    const vals = {
+        ...values,
+        pathname: props.props.history.location.pathname
+    };
+    await props.props.sendEmailLead(vals);
     await props.props.history.push(Routes.ThankYouLeadIntakeForm)
 }
 
