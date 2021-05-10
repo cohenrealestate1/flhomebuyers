@@ -81,7 +81,7 @@ export const MiamiCityNames = [
   "North Bay Village",
   "North Miami Beach",
   "North Miami",
-  "Opa-locka",
+  "Opa Locka",
   "South Miami",
   "Sunny Isles Beach",
   "Sweetwater",
@@ -118,7 +118,7 @@ export const HendryCities = generateCityObjects(
 export const LeeCityNames = ["Bonita Springs", "Cape Coral", "Fort Myers"];
 export const LeeCities = generateCityObjects(LeeCityNames, Counties.Lee);
 
-export const StLucieCityNames = ["Fort Pierce", "Port St. Lucie"];
+export const StLucieCityNames = ["Fort Pierce", "Port St Lucie"];
 export const StLucieCities = generateCityObjects(
   StLucieCityNames,
   Counties.StLucie
