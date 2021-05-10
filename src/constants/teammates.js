@@ -7,7 +7,7 @@ export const Ben = {
     email: "ben@flhomecashbuyers.com",
     responsibilites: "Ben manages the website and makes sure that everything goes smoothly when it comes time to close",
     favoriteBook: "Little Fires Everywhere by Celeste Ng",
-    imgHref: "",
+    imgHref: "https://drive.google.com/thumbnail?id=1httJdHS-F1d1GST7ru9EiMdGv75CERFm",
     imgRatioWidthToHeight: 1
 }
 
@@ -27,6 +27,6 @@ export const Eli = {
     email: "eli@flhomecashbuyers.com",
     responsibilites: `Eli is our licensed General Contractor (Florida GC #: ${DadContractorNumber}). He helps us determine what repairs will need to be made on the property after purchase.`,
     favoriteBook: "The Great Gatsby by F. Scott Fitzgerald",
-    imgHref: "",
+    imgHref: "https://drive.google.com/thumbnail?id=1uAFFX_76-oU2VbC9CZy_DQZGAvIQQONu",
     imgRatioWidthToHeight: 1
 }

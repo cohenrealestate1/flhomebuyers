@@ -13,6 +13,13 @@ const root = (
     <BaseProvider theme={LightTheme}>
         <link href={`https://fonts.googleapis.com/css?family=Montserrat:${FontFamilySuffix}`} rel="stylesheet"/>
         <link href={`https://fonts.googleapis.com/css?family=Open+Sans:${FontFamilySuffix}`} rel="stylesheet"/>
+        <script type="text/javascript">
+            var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+            document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script language="JavaScript" type="text/javascript">
+        TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+        </script>
     <Switch>
     {BlogPosts.map(blog => <Route key={blog.url} exact path={blog.url} component={Pages.BlogDetail} />)}
     {Testimonials.map(testimonial => <Route key={testimonial.url} exact path={testimonial.url} component={Pages.TestimonialDetail} />)}
