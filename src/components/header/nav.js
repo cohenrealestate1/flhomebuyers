@@ -7,7 +7,6 @@ import Text from "../text";
 
 const Container = styled.div`
     display: flex;
-    gap: 22px;
     ${FontFamilies.M}
     margin-left: auto;
     flex-wrap: wrap;
@@ -39,6 +38,8 @@ type NavItemProps = {
 
 const NavItemContainer = styled.div`
     ${props => props.$active ? `border-bottom: 5px solid ${Colors.Blue}; :hover {border-bottom: 5px solid ${Colors.Orange}}` : ''}
+    margin-left: 11px;
+    margin-right: 11px;
 `
 
 const NavItem = withRouter((props: NavItemProps) => {

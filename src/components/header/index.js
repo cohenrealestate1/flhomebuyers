@@ -74,21 +74,21 @@ export const Header = () => {
 
         <ButtonsAndNavContainer>
 
-        <BrowserView>
-            <RightContainerDesktop>
+        <RightContainerDesktop>
+            <BrowserView>
                 <Buttons />
                 <Nav />
-            </RightContainerDesktop>
-        </BrowserView>
-        <MobileView>
-            <DrawerContainer>
+            </BrowserView>
+        </RightContainerDesktop>
+        <DrawerContainer>
+            <MobileView>
                 <Drawer overrides={Overrides} renderAll anchor={ANCHOR.right} autoFocus isOpen={isOpen} onClose={() => setIsOpen(false)}>
                     <Buttons />
                     <Nav />
                 </Drawer>
                 <Menu size={80} onClick={() => setIsOpen(true)} />
-            </DrawerContainer>
-        </MobileView>
+            </MobileView>
+        </DrawerContainer>
 
         </ButtonsAndNavContainer>
 
