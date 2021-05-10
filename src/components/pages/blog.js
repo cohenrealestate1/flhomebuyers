@@ -33,7 +33,7 @@ const HereToHelpContainer = styled.div`
 `
 
 export const BlogPage = (props) => {
-    return <Page>
+    return <Page title="Blog">
         <PageTitle title="THE BLOG" titleFontWeight={700}/>
         <BlogSection>
             {BlogPosts.map((blog, index) => <BlogCard key={`testimonial_card_${index}`} blog={blog} color={getCardColor(index)} />)}

@@ -16,12 +16,13 @@ const Container = styled.div`
 
 type Props = {
     children: ReactNode,
+    title: ReactNode;
 }
 
 export const Page = (props: Props) => {
     return <Container>
         <Helmet>
-            <title>{SiteName}</title>
+            <title>{SiteName} | {props.title}</title>
             <link rel="icon" type="image/png" href={assetUrl("../static/favicon.png")}/>
         </Helmet>
         <Header />

@@ -1,5 +1,5 @@
 // @flow
-import { Route, Switch, withRouter } from "fusion-plugin-react-router";
+import { Route, Switch, useRouteMatch, withRouter } from "fusion-plugin-react-router";
 import { useRPCRedux } from "fusion-plugin-rpc-redux-react";
 import React from "react";
 import styled from "styled-components";
@@ -27,7 +27,10 @@ const HerosContainer = styled.div`
 `
 
 export const HomePage = (props) => {
-    return <Page>
+    const isThankYou = useRouteMatch(Routes.ThankYouLeadIntakeForm);
+    const cityName = getCityNameFromUrl(props.history.location.pathname);
+    const title = isThankYou ? "Cash Offer On The Way!" : cityName ? `Get Your Cash Offer Now! | ${cityName}` : "Get Your Cash Offer Now!";
+    return <Page title={title}>
         <TitleAndForm {...props} />
         <Switch>
             {makeCityRoutes(() => <>

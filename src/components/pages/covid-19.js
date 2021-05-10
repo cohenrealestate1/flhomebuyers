@@ -20,7 +20,7 @@ const HowItWorksContainer = styled.div`
 `
 
 export const Covid19Page = (props) => {
-    return <Page>
+    return <Page title="Covid 19">
         <PageTitleImage imgHref={Covid19Href} backgroundColor={Colors.Blue}>
             <PageTitleImageBox title="Covid-19 Safety" text="Florida Home Cash Buyers is committed to keeping our customers safe. We wear N-95 masks and face shields at all times and practice strict social distancing. We will work with you to keep as much of the process virtual as possible." />
         </PageTitleImage>

@@ -16,7 +16,7 @@ export const ContactUsPage = (props) => {
     const sendEmailContactUs = useRPCRedux("sendEmailContactUs");
     const {location: {pathname}} = props;
     const isThankYouPage = pathname === Routes.ThankYouContactUs;
-    return <Page>
+    return <Page title="Contact Us">
         <PageTitle title="CONTACT US" hasForm={true} titleFontWeight={700} />
         <FormContainer>
             {isThankYouPage ? <ContactUsFormThankYou /> : <ContactUsForm sendEmailContactUs={sendEmailContactUs} {...props} />}

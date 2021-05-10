@@ -18,7 +18,7 @@ export const BlogDetailPage = (props) => {
         paragraphs
     } = blog;
     const subtitle = `${date} | ${author}`;
-    return <Page>
+    return <Page title={title}>
         <Image src={imgHref} />
         <Info $backgroundColor={Colors.White}>
             <DetailPageInfo title={title} subtitle={subtitle} paragraphs={paragraphs} buttonHref={Routes.Blog} buttonText="VIEW MORE POSTS" />

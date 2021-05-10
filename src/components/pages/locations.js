@@ -20,7 +20,7 @@ const AreasWeServeContainer = styled.div`
 `
 
 export const LocationsPage = (props) => {
-    return <Page>
+    return <Page title="Locations">
         <PageTitle title="AREAS WE SERVE" titleFontWeight={700} />
         <AreasWeServeContainer>
             <AreasWeServeHero hideTitle />
