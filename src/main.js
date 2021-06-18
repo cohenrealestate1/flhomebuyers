@@ -34,11 +34,13 @@ export default () => {
   app.register(Styletron);
   app.register(Router);
 
-  app.register(RobotsToken, Robots);
-  app.register(RobotsPlugin);
-
-  app.register(SitemapToken, 'asdas')
-  app.register(SitemapPlugin);
+  if (__NODE__) {
+    app.register(RobotsToken, Robots);
+    app.register(RobotsPlugin);
+    
+    app.register(SitemapToken, 'asdas')
+    app.register(SitemapPlugin);
+  }
 
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(RPCToken, RPC);

@@ -475,7 +475,6 @@ const SitemapContent = `
      middleware({sitemap}) {
        return (ctx, next) => {
          if (ctx.element) {
-             console.log('here 1')
            ctx.template.head.push(
              html`
                <meta name="sitemap" all />
@@ -483,8 +482,6 @@ const SitemapContent = `
            );
          }
          if (ctx.method === 'GET' && ctx.path === '/sitemap.xml') {
-            console.log('here 2')
-             console.log(sitemap);
            ctx.body = SitemapContent;
          }
          return next();
