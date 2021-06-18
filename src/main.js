@@ -2,6 +2,9 @@
 import HelmetPlugin from 'fusion-plugin-react-helmet-async';
 import Redux, { ReducerToken, ReduxToken } from "fusion-plugin-react-redux";
 import Router from "fusion-plugin-react-router";
+import RobotsPlugin, {
+  RobotsToken
+} from 'fusion-plugin-robots';
 import RPC, { RPCHandlersToken, RPCToken } from "fusion-plugin-rpc";
 import { createRPCReducer } from "fusion-plugin-rpc-redux-react";
 import Styletron from "fusion-plugin-styletron-react";
@@ -19,10 +22,19 @@ const reducer = createRPCReducer("sendEmailLead", {
   failure: (state, action) => ({ ...state, loading: false }),
 });
 
+export const Robots = `
+  User-agent: *
+  Disallow:
+  Sitemap: https://www.flhomecashbuyers.com/sitemap.xml
+`;
+
 export default () => {
   const app = new App(root);
   app.register(Styletron);
   app.register(Router);
+
+  app.register(RobotsToken, Robots);
+  app.register(RobotsPlugin)
 
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(RPCToken, RPC);

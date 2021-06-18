@@ -4032,6 +4032,11 @@ expect@^25.5.0:
     jest-message-util "^25.5.0"
     jest-regex-util "^25.2.6"
 
+express-robots-txt@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/express-robots-txt/-/express-robots-txt-0.5.0.tgz#fba93a96777d817d12cca0be4264ae1a4708bfc4"
+  integrity sha512-ISyI++3Yy1lZ982/gQK3RVbghxe2R+/+VDQ8EWrmAmNncyD4VITJR9jYiSbvfxRSVqcGjKWndKkYbgY6fVFdOA==
+
 express@^4.16.2:
   version "4.17.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -4570,6 +4575,11 @@ fusion-plugin-react-router@^2.1.3:
     history "^4.9.0"
     prop-types "^15.7.2"
     react-router-dom "^5.1.0"
+
+fusion-plugin-robots@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-robots/-/fusion-plugin-robots-1.0.0.tgz#68c3489ef7e30a27adb93496840ee7b092ef394f"
+  integrity sha512-8pxT7DgSGo0ob60HfVfqm1AQd8oSDw+nvMlpHSBLQkHJkxAkKFkRwjvzD/PuNs5O8vpHQeW6JlJFoVYNtFGQ+g==
 
 fusion-plugin-rpc-redux-react@^4.3.8:
   version "4.3.8"
