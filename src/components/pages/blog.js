@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { BlogPosts, getCardColor, makeMediaQueryMax } from "../../constants";
+import { BlogPosts, getCardColor, makeMediaQueryMax, SiteName } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import HowItWorksHero from "../how-it-works-hero";
@@ -33,7 +33,7 @@ const HereToHelpContainer = styled.div`
 `
 
 export const BlogPage = (props) => {
-    return <Page title="Blog">
+    return <Page title="Blog" description={`The ${SiteName} team has plenty of informative blog posts to help you navigate the process of selling your home.`}>
         <PageTitle title="THE BLOG" titleFontWeight={700}/>
         <BlogSection>
             {BlogPosts.map((blog, index) => <BlogCard key={`testimonial_card_${index}`} blog={blog} color={getCardColor(index)} />)}

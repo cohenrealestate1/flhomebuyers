@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { Colors, Covid19Href, makeMediaQueryMax } from "../../constants";
+import { Colors, Covid19Href, makeMediaQueryMax, SiteName } from "../../constants";
 import CallFormHero from "../call-form-hero";
 import HereToHelpHero from "../here-to-help-hero";
 import HowItWorksHero from "../how-it-works-hero";
@@ -20,7 +20,7 @@ const HowItWorksContainer = styled.div`
 `
 
 export const Covid19Page = (props) => {
-    return <Page title="Covid 19">
+    return <Page title="Covid 19" description={`Here at ${SiteName} we are committed to providing a safe experience as you sell your home.`}>
         <PageTitleImage imgHref={Covid19Href} backgroundColor={Colors.Blue}>
             <PageTitleImageBox title="Covid-19 Safety" text="Florida Home Cash Buyers is committed to keeping our customers safe. We wear N-95 masks and face shields at all times and practice strict social distancing. We will work with you to keep as much of the process virtual as possible." />
         </PageTitleImage>

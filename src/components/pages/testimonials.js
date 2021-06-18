@@ -26,7 +26,7 @@ const TestimonialSection = styled.div`
     `)}
 `;
 export const TestimonialsPage = (props) => {
-    return <Page title="Testimonials">
+    return <Page title="Testimonials" description="Read first-hand accounts from people who have sold their homes to us in the past.">
         <PageTitle title="TESTIMONIALS" titleFontWeight={700} />
         <TestimonialSection>
             {Testimonials.map((testimonial, index) => <TestimonialCard key={`testimonial_card_${index}`} testimonial={testimonial} color={getCardColor(index)} />)}

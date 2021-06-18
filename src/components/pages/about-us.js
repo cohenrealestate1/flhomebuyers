@@ -26,7 +26,7 @@ const StyledButton = styled(ButtonContainer)`
 `;
 
 export const AboutUsPage = (props) => {
-    return <Page title="About us">
+    return <Page title="About us" description={`We buy houses, multi-family, apartments, and condos in South Florida. Learn more about how we can help you sell your house quickly for cash.`}>
         <Info $backgroundColor={Colors.Blue}>
             <PageTitleImageBox title="About Us" text="Ben here! Thanks for checking us out. We buy houses, multi-family, apartments, and condos in the South Florida, Treasure Coast, and Gulf Coast areas. We are family-run, and we make our family values the center of our business - trustworthiness, fairness, and respect. Get in touch with us, and we’ll get you a cash offer on your property ASAP!" />
         </Info>

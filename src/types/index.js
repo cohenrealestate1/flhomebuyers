@@ -9,6 +9,7 @@ export type TestimonialType = {
 }
 
 export type BlogType = {
+    description: string,
     imgHref: string,
     title: string,
     quote: string,

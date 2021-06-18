@@ -20,7 +20,7 @@ const HereToHelpContainer = styled.div`
 `
 
 export const HowItWorksPage = (props) => {
-    return <Page title="How It Works">
+    return <Page title="How It Works" description="We can help you sell your home quickly and easily. Learn more about our process!">
         <PageTitle title="HOW IT WORKS" titleFontWeight={700}/>
         <HowItWorksSectionContainer>
             <HowItWorksSection />

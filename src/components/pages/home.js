@@ -29,8 +29,9 @@ const HerosContainer = styled.div`
 export const HomePage = (props) => {
     const isThankYou = useRouteMatch(Routes.ThankYouLeadIntakeForm);
     const cityName = getCityNameFromUrl(props.history.location.pathname);
-    const title = isThankYou ? "Cash Offer On The Way!" : cityName ? `Get Your Cash Offer Now! | ${cityName}` : "Get Your Cash Offer Now!";
-    return <Page title={title}>
+    const title = isThankYou ? "Cash Offer On The Way!" : cityName ? `${cityName} | Get Your Cash Offer Now!` : "Get Your Cash Offer Now!";
+    const description = cityName ? `Sell your home for cash in ${cityName}` : "Sell your home for cash in South Florida or the Treasure Coast";
+    return <Page title={title} description={description}>
         <TitleAndForm {...props} />
         <Switch>
             {makeCityRoutes(() => <>

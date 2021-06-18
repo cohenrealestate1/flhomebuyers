@@ -10,6 +10,7 @@ export const BlogParentDeath: BlogType = {
     date: "April 2021",
     author: "Ben",
     url: Routes.BlogDetail("landlording-2021-sell-house-cash"),
+    description: "Landlording in 2021 becoming ever more difficult. We can help you offload troublesome investment properties at a price that makes sense for you.",
     paragraphs: [
         `2021 has been a challenging year, to say the least. The pandemic has made all facets of our lives more difficult in ways that we never thought possible. Owning an investment property is no exception.`,
         `At the start of the pandemic, the Federal US government put in place an eviction moratorium, making it much more difficult to evict tenants, even if they are not paying rent. While many large rental property businesses have enough cash on hand to weather the storm, many small- and mid-size landlords have not been so lucky. Countless landlords all across the country are defaulting on their mortgages because they have problematic tenants who are not paying rent, and they simply do not have enough money to pay the mortgage on their investment properties.`,

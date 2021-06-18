@@ -20,11 +20,11 @@ export const TestimonialDetailPage = (props) => {
         city,
         county,
         paragraphs,
-        imgHref
+        imgHref,
     } = testimonial;
     const storyStr = `${name}'s Story`;
     const cityCountyStr = `${city}, ${county} County`;
-    return <Page title={storyStr}>
+    return <Page title={storyStr} description={`Read ${storyStr} to learn about how easy it was for ${name} to sell their house for cash!`}>
         <Image src={imgHref} />
         <Info $backgroundColor={Colors.White}>
             <DetailPageInfo renderQuote title={storyStr} subtitle={cityCountyStr} paragraphs={paragraphs} buttonHref={Routes.Testimonials} buttonText="VIEW MORE TESTIMONIALS" />

@@ -20,7 +20,7 @@ const AreasWeServeContainer = styled.div`
 `
 
 export const LocationsPage = (props) => {
-    return <Page title="Locations">
+    return <Page title="Locations" description="We serve the entirety of the South Florida, Gulf Coast and Treasure Coast areas. Learn more about selling your home now.">
         <PageTitle title="AREAS WE SERVE" titleFontWeight={700} />
         <AreasWeServeContainer>
             <AreasWeServeHero hideTitle />

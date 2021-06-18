@@ -15,10 +15,11 @@ export const BlogDetailPage = (props) => {
         title,
         date,
         author,
-        paragraphs
+        paragraphs,
+        description
     } = blog;
     const subtitle = `${date} | ${author}`;
-    return <Page title={title}>
+    return <Page title={title} description={description}>
         <Image src={imgHref} />
         <Info $backgroundColor={Colors.White}>
             <DetailPageInfo title={title} subtitle={subtitle} paragraphs={paragraphs} buttonHref={Routes.Blog} buttonText="VIEW MORE POSTS" />
