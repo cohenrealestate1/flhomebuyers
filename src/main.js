@@ -14,6 +14,7 @@ import UniversalEvents, {
 import App from "fusion-react";
 import { FetchToken } from "fusion-tokens";
 import { handlers } from "./api/plugins/send-api";
+import SitemapPlugin, { SitemapToken } from "./api/plugins/sitemap";
 import root from "./root.jsx";
 
 const reducer = createRPCReducer("sendEmailLead", {
@@ -34,7 +35,10 @@ export default () => {
   app.register(Router);
 
   app.register(RobotsToken, Robots);
-  app.register(RobotsPlugin)
+  app.register(RobotsPlugin);
+
+  app.register(SitemapToken, 'asdas')
+  app.register(SitemapPlugin);
 
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(RPCToken, RPC);
